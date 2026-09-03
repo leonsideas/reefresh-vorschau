@@ -1,0 +1,98 @@
+{
+  "ui": {
+    "boot": "Archiv wird geladen",
+    "bootFirst": "Erstes Exemplar wird geladen",
+    "enter": "Zum Archiv",
+    "mode3d": "3D-Modell",
+    "modeDraw": "Zeichnung",
+    "viewLine": "Zeitstrahl",
+    "viewGrid": "Übersicht",
+    "aboutTitle": "Über dieses Archiv",
+    "close": "Schließen",
+    "closeEsc": "Schließen (Esc)",
+    "hint3d": "Seitlich ziehen zum Blättern · Koralle anklicken für den Eintrag · auf ihr ziehen zum Drehen",
+    "hintDraw": "Seitlich ziehen zum Blättern · Koralle anklicken für den Eintrag",
+    "specimen": "Exemplar {id} · {n} von {total}",
+    "source": "Vorlage",
+    "range": "Verbreitung {year}",
+    "seaSame": "Meeresspiegel wie heute",
+    "seaHigher": "Meeresspiegel {n} m höher als heute",
+    "seaLower": "Meeresspiegel {n} m tiefer als heute",
+    "unknownArtist": "Zeichner:in unbekannt — der Name beschreibt die auffälligste Anpassung.",
+    "namedAfter": "Benannt nach <strong>{name}</strong>, von der oder dem die Zeichnung stammt.",
+    "invented": "Artname, Varietät, Jahr und Verbreitung gehören zum Archiv und sind nicht real vergeben.",
+    "langLabel": "Sprache"
+  },
+  "specimens": {},
+  "about": [
+    {
+      "h": "Eine Reise in die Zukunft …"
+    },
+    {
+      "p": "Gemeinsam reisen wir in die Zukunft — hinunter in die dunkle Tiefsee."
+    },
+    {
+      "p": "Der Klimawandel hat auch dort den Lebensraum verändert. Viele Tiefseekorallen kämpfen unter den neuen Bedingungen ums Überleben."
+    },
+    {
+      "p": "Doch dann wird eine neue Art von Tiefseekoralle entdeckt. Sie hat einen besonderen Schutzmechanismus entwickelt, der ihr hilft, mit den Folgen des Klimawandels zurechtzukommen."
+    },
+    {
+      "p": "Wie könnte diese Tiefseekoralle aussehen? Wie schützt sie sich?"
+    },
+    {
+      "lead": "Zeichne deine Tiefseekoralle der Zukunft und zeig, welchen Schutz sie entwickelt hat."
+    },
+    {
+      "p": "Ob biologisch korrekt, frei erfunden, ungewöhnlich oder völlig verrückt — alles ist erlaubt. Lass deiner Fantasie freien Lauf."
+    },
+    {
+      "lead": "Es gibt keine richtigen oder falschen Antworten!"
+    },
+    {
+      "h": "So machst du mit"
+    },
+    {
+      "step": [
+        "1. Nimm dir ein Blatt Papier und einen Stift.",
+        ""
+      ]
+    },
+    {
+      "step": [
+        "2. Zeichne deine Idee.",
+        "Zeichne, wie sich eine Koralle vor den Folgen des Klimawandels schützen könnte. Lass deiner Fantasie freien Lauf!"
+      ]
+    },
+    {
+      "step": [
+        "3. Ein Name ist nicht nötig.",
+        "Ob du deinen Namen auf das Blatt schreibst, entscheidest du selbst. Wenn du ihn hinschreibst, wird er zum wissenschaftlichen Namen deiner erfundenen Koralle."
+      ]
+    },
+    {
+      "step": [
+        "4. Wirf das fertige Blatt in die Box.",
+        ""
+      ]
+    },
+    {
+      "h": "Was dieses Archiv ist"
+    },
+    {
+      "p": "Alle Exemplare gehen auf dieselbe Vorlage zurück: <em>Desmophyllum pertusum</em>, eine Kaltwasser-Steinkoralle, die in kalten, dunklen Tiefen bis weit unter 1000 Meter Riffe bildet."
+    },
+    {
+      "p": "Teilnehmende haben diese Vorlage ausgemalt und weitergedacht — sie haben der Koralle Schutzhüllen, Kühlsysteme, Waffen, Beine oder schlicht neue Farben gegeben. Jede Zeichnung wurde anschließend in ein 3D-Modell überführt."
+    },
+    {
+      "p": "Jedes Exemplar hat hier eine erfundene Umgebung bekommen: das Meer, das es gebraucht hätte, damit genau diese Anpassung sinnvoll wird. Die Jahreszahlen ordnen diese Szenarien zu einer möglichen Abfolge — sie sind Erzählung, keine Prognose."
+    },
+    {
+      "p": "Auch die Varietätsnamen sind erfunden. Wo die Zeichnerin oder der Zeichner bekannt ist, trägt die Koralle den eigenen Namen; sonst beschreibt der Name die auffälligste Anpassung."
+    },
+    {
+      "credit": "Mitmachaktion Tiefwasserkorallen · Leon Albers"
+    }
+  ]
+}

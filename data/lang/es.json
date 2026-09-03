@@ -1,0 +1,98 @@
+{
+  "ui": {
+    "boot": "Cargando el archivo",
+    "bootFirst": "Cargando el primer ejemplar",
+    "enter": "Entrar al archivo",
+    "mode3d": "Modelo 3D",
+    "modeDraw": "Dibujo",
+    "viewLine": "Cronología",
+    "viewGrid": "Vista general",
+    "aboutTitle": "Sobre este archivo",
+    "close": "Cerrar",
+    "closeEsc": "Cerrar (Esc)",
+    "hint3d": "Arrastra de lado para pasar · haz clic en un coral para su ficha · arrastra sobre él para girarlo",
+    "hintDraw": "Arrastra de lado para pasar · haz clic en un coral para su ficha",
+    "specimen": "Ejemplar {id} · {n} de {total}",
+    "source": "Dibujo original",
+    "range": "Distribución {year}",
+    "seaSame": "Nivel del mar como hoy",
+    "seaHigher": "Nivel del mar {n} m por encima del actual",
+    "seaLower": "Nivel del mar {n} m por debajo del actual",
+    "unknownArtist": "Autoría desconocida — el nombre describe en su lugar la adaptación más llamativa.",
+    "namedAfter": "Lleva el nombre de <strong>{name}</strong>, quien hizo el dibujo.",
+    "invented": "El nombre de la especie, la variedad, el año y la distribución pertenecen al archivo y no son designaciones reales.",
+    "langLabel": "Idioma"
+  },
+  "specimens": {},
+  "about": [
+    {
+      "h": "Un viaje al futuro …"
+    },
+    {
+      "p": "Viajamos juntos al futuro — hacia abajo, a las profundidades oscuras del océano."
+    },
+    {
+      "p": "El cambio climático también ha transformado el hábitat de allí. Muchos corales de aguas profundas luchan por sobrevivir bajo las nuevas condiciones."
+    },
+    {
+      "p": "Pero entonces se descubre una nueva especie de coral de profundidad. Ha desarrollado un mecanismo de defensa especial que le ayuda a afrontar los efectos del cambio climático."
+    },
+    {
+      "p": "¿Cómo podría ser este coral de profundidad? ¿Cómo se protege?"
+    },
+    {
+      "lead": "Dibuja tu coral de profundidad del futuro y muestra qué protección ha desarrollado."
+    },
+    {
+      "p": "Ya sea biológicamente exacto, completamente inventado, insólito o del todo extravagante — todo vale. Deja volar tu imaginación."
+    },
+    {
+      "lead": "¡No hay respuestas correctas ni incorrectas!"
+    },
+    {
+      "h": "Cómo participar"
+    },
+    {
+      "step": [
+        "1. Coge una hoja de papel y un bolígrafo.",
+        ""
+      ]
+    },
+    {
+      "step": [
+        "2. Dibuja tu idea.",
+        "Dibuja cómo un coral podría protegerse de los efectos del cambio climático. ¡Deja volar tu imaginación!"
+      ]
+    },
+    {
+      "step": [
+        "3. El nombre no es obligatorio.",
+        "Tú decides si quieres escribir tu nombre en la hoja. Si lo escribes, se convertirá en el nombre científico de tu coral imaginario."
+      ]
+    },
+    {
+      "step": [
+        "4. Deposita la hoja terminada en la caja.",
+        ""
+      ]
+    },
+    {
+      "h": "Qué es este archivo"
+    },
+    {
+      "p": "Todos los ejemplares parten de la misma plantilla: <em>Desmophyllum pertusum</em>, un coral pétreo de aguas frías que forma arrecifes en profundidades frías y oscuras, muy por debajo de los 1000 metros."
+    },
+    {
+      "p": "Las personas participantes colorearon esa plantilla y la llevaron más lejos — dieron al coral cubiertas protectoras, sistemas de refrigeración, armas, patas o simplemente colores nuevos. Cada dibujo se convirtió después en un modelo 3D."
+    },
+    {
+      "p": "Aquí cada ejemplar ha recibido un entorno inventado: el mar que habría necesitado para que justamente esa adaptación tuviera sentido. Los años ordenan estos escenarios en una secuencia posible — son relato, no pronóstico."
+    },
+    {
+      "p": "Los nombres de variedad también son inventados. Cuando se conoce a quien dibujó, el coral lleva su nombre; si no, el nombre describe la adaptación más llamativa."
+    },
+    {
+      "credit": "Mitmachaktion Tiefwasserkorallen · Leon Albers"
+    }
+  ]
+}

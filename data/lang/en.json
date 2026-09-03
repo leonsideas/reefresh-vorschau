@@ -1,0 +1,98 @@
+{
+  "ui": {
+    "boot": "Loading the archive",
+    "bootFirst": "Loading the first specimen",
+    "enter": "Enter the archive",
+    "mode3d": "3D model",
+    "modeDraw": "Drawing",
+    "viewLine": "Timeline",
+    "viewGrid": "Overview",
+    "aboutTitle": "About this archive",
+    "close": "Close",
+    "closeEsc": "Close (Esc)",
+    "hint3d": "Drag sideways to browse · click a coral for its record · drag on it to turn it",
+    "hintDraw": "Drag sideways to browse · click a coral for its record",
+    "specimen": "Specimen {id} · {n} of {total}",
+    "source": "Original drawing",
+    "range": "Distribution {year}",
+    "seaSame": "Sea level as today",
+    "seaHigher": "Sea level {n} m above today",
+    "seaLower": "Sea level {n} m below today",
+    "unknownArtist": "Artist unknown — the name describes the most striking adaptation instead.",
+    "namedAfter": "Named after <strong>{name}</strong>, who made the drawing.",
+    "invented": "Species name, variety, year and distribution belong to the archive and are not real designations.",
+    "langLabel": "Language"
+  },
+  "specimens": {},
+  "about": [
+    {
+      "h": "A Journey into the Future …"
+    },
+    {
+      "p": "Together, we’re traveling into the future — deep down into the dark depths of the ocean."
+    },
+    {
+      "p": "Climate change has altered the habitat there as well. Many deep-sea corals are struggling to survive under the new conditions."
+    },
+    {
+      "p": "But then, a new species of deep-sea coral is discovered. It has developed a special defense mechanism that helps it cope with the effects of climate change."
+    },
+    {
+      "p": "What might this deep-sea coral look like? How does it protect itself?"
+    },
+    {
+      "lead": "Draw your deep-sea coral of the future and show what kind of protection it has developed."
+    },
+    {
+      "p": "Whether biologically accurate, completely made up, unusual, or totally bizarre — anything goes. Let your imagination run wild."
+    },
+    {
+      "lead": "There are no right or wrong answers!"
+    },
+    {
+      "h": "How to take part"
+    },
+    {
+      "step": [
+        "1. Grab a sheet of paper and a pen.",
+        ""
+      ]
+    },
+    {
+      "step": [
+        "2. Draw your idea.",
+        "Draw how a coral might protect itself from the effects of climate change. Let your imagination run wild!"
+      ]
+    },
+    {
+      "step": [
+        "3. A name is not required.",
+        "It’s up to you whether you want to write your name on the sheet. If you do write your name, it will become the scientific name of your imaginary coral."
+      ]
+    },
+    {
+      "step": [
+        "4. Put the completed piece of paper in the box.",
+        ""
+      ]
+    },
+    {
+      "h": "What this archive is"
+    },
+    {
+      "p": "Every specimen goes back to the same template: <em>Desmophyllum pertusum</em>, a cold-water stony coral that builds reefs in cold, dark depths far below 1000 metres."
+    },
+    {
+      "p": "Participants coloured that template in and thought it further — giving the coral shields, cooling systems, weapons, legs, or simply new colours. Each drawing was then turned into a 3D model."
+    },
+    {
+      "p": "Every specimen has been given an invented environment here: the sea it would have needed for exactly this adaptation to make sense. The years arrange these scenarios into one possible sequence — they are narrative, not forecast."
+    },
+    {
+      "p": "The variety names are invented too. Where the artist is known, the coral carries their name; otherwise the name describes the most striking adaptation."
+    },
+    {
+      "credit": "Mitmachaktion Tiefwasserkorallen · Leon Albers"
+    }
+  ]
+}

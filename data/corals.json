@@ -1,0 +1,4275 @@
+{
+  "meta": {
+    "baseSpecies": "Desmophyllum pertusum",
+    "commonName": "Kaltwasser-Steinkoralle",
+    "classification": {
+      "Stamm": "Cnidaria",
+      "Klasse": "Anthozoa",
+      "Ordnung": "Scleractinia",
+      "Familie": "Caryophylliidae"
+    },
+    "note": "Alle Exemplare gehen auf dieselbe Vorlage zurück: eine Kaltwasserkoralle der Art Desmophyllum pertusum. Die Varietätsnamen sind erfunden und beschreiben die jeweils gezeichnete Anpassung.",
+    "credits": "Mitmachaktion Tiefwasserkorallen · Leon Albers"
+  },
+  "specimens": [
+    {
+      "id": "01",
+      "variety": "var. emmae",
+      "varietyDescriptive": "var. umbraculifera",
+      "title": "Sonnenschirm-Koralle",
+      "author": "Emma",
+      "venue": "Emma",
+      "summary": "Eine Koralle, die sich selbst beschattet, kühlt und putzen lässt — Klimaanlage und Vorratskammer inklusive.",
+      "scenario": {
+        "year": 2810,
+        "title": "Das überhitzte Flachmeer",
+        "story": "Die Deckschicht erwärmte sich schneller, als Wolken sie beschatten konnten. Über Monate stand das Licht senkrecht und ungefiltert im Wasser. Wer bleiben wollte, musste sich selbst beschatten, selbst kühlen und Vorräte anlegen — die Strömung brachte kaum noch Nahrung heran.",
+        "palette": [
+          "#556e79",
+          "#3b5762"
+        ],
+        "drift": 0.15,
+        "set": {
+          "floor": "#7c7667",
+          "fog": "#3b5762",
+          "density": 0.034,
+          "light": "dim",
+          "particles": "snow",
+          "props": [
+            "rock",
+            "shells"
+          ],
+          "ground": "sediment",
+          "water": true
+        },
+        "world": {
+          "sea": 31,
+          "note": "Ein flaches, weites Warmmeer steht über dem, was Tiefland war.",
+          "marks": [
+            {
+              "lon": 39,
+              "lat": 20,
+              "name": "rotesmeer"
+            },
+            {
+              "lon": 70,
+              "lat": 12,
+              "name": "indien"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Sonnenschirme",
+          "text": "Aufspannbare Schirme über den Ästen halten zu warmes Licht ab."
+        },
+        {
+          "name": "Ventilatoren",
+          "text": "Kleine Rotoren wälzen das Wasser um und kühlen die Kolonie."
+        },
+        {
+          "name": "Schutzschicht",
+          "text": "Eine zusätzliche Hülle liegt über dem lebenden Gewebe."
+        },
+        {
+          "name": "Reinigungstierchen",
+          "text": "Symbiotische Helfer entfernen Ablagerungen von der Oberfläche."
+        },
+        {
+          "name": "Großer Nahrungsspeicher",
+          "text": "Ein Vorratsdepot am Fuß überbrückt Zeiten ohne Nahrung."
+        }
+      ]
+    },
+    {
+      "id": "02",
+      "variety": "var. dimidiata",
+      "varietyDescriptive": "var. dimidiata",
+      "title": "Love & Hate",
+      "author": null,
+      "venue": "Emma",
+      "summary": "Ein Exemplar, das mitten hindurch geteilt ist: eine warme, lebendige Hälfte und eine erkaltete, ergraute.",
+      "scenario": {
+        "year": 3740,
+        "title": "Die geteilte See",
+        "story": "Eine Front lief mitten durch das Riff. Auf der einen Seite hielt eine kühle Restströmung das Leben in Gang, auf der anderen war das Wasser bereits gekippt. Dieselbe Kolonie wuchs in beide Welten hinein und trug die Grenze mitten durch den eigenen Stamm.",
+        "palette": [
+          "#606772",
+          "#29363f"
+        ],
+        "drift": 0.2,
+        "set": {
+          "floor": "#67636a",
+          "fog": "#29363f",
+          "density": 0.068,
+          "light": "dark",
+          "particles": "snow",
+          "props": [
+            "rock",
+            "bones"
+          ],
+          "ground": "sediment",
+          "water": true
+        },
+        "world": {
+          "sea": 54,
+          "note": "Warmes und kaltes Wasser stehen nebeneinander, ohne sich zu mischen.",
+          "marks": [
+            {
+              "lon": 6,
+              "lat": 65,
+              "name": "norwegenschelf"
+            },
+            {
+              "lon": 143,
+              "lat": 36,
+              "name": "japan"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Warme Seite",
+          "text": "Durchblutetes Gewebe, offene Polypen, Wachstum — beschriftet mit „Love“."
+        },
+        {
+          "name": "Kalte Seite",
+          "text": "Ausgeblichenes Skelett in Grautönen — beschriftet mit „Hate“."
+        },
+        {
+          "name": "Bruchlinie",
+          "text": "Der Übergang verläuft als scharfe Kante mitten durch den Stamm."
+        }
+      ]
+    },
+    {
+      "id": "03",
+      "variety": "var. viridis",
+      "varietyDescriptive": "var. viridis",
+      "title": "Grünkoralle mit Begleitfischen",
+      "author": null,
+      "venue": "FÖG",
+      "summary": "Eine ruhig kolorierte Kolonie in Grüntönen, umgeben von einem kleinen Schwarm.",
+      "scenario": {
+        "year": 2190,
+        "title": "Das grüne Wasser",
+        "story": "Nährstoffe aus dem Land ließen Algen explodieren. Das Wasser färbte sich grün und trüb, Licht kam nur noch diffus an. Fische sammelten sich in den letzten klaren Nischen — dicht an den Korallen, die als Einzige noch Struktur boten.",
+        "palette": [
+          "#586f6f",
+          "#354a42"
+        ],
+        "drift": 0.4,
+        "set": {
+          "floor": "#535c49",
+          "fog": "#354a42",
+          "density": 0.085,
+          "light": "dark",
+          "particles": "dust",
+          "props": [
+            "kelp",
+            "fish"
+          ],
+          "ground": "sediment",
+          "water": true
+        },
+        "world": {
+          "sea": 6,
+          "note": "Die Flussmündungen sind breiter geworden; das Wasser davor steht grün.",
+          "marks": [
+            {
+              "lon": -9,
+              "lat": 45,
+              "name": "biskaya"
+            },
+            {
+              "lon": 16,
+              "lat": 37,
+              "name": "mittelmeer"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Grünes Gewebe",
+          "text": "Durchgehend grün gefärbte Äste, vermutlich algenreich."
+        },
+        {
+          "name": "Begleitfische",
+          "text": "Vier Fische in Rosa und Orange halten sich dicht an der Kolonie."
+        }
+      ]
+    },
+    {
+      "id": "04",
+      "variety": "var. cani",
+      "varietyDescriptive": "var. custodiens",
+      "title": "CO₂-Schutz und Schutzzonen",
+      "author": "Can",
+      "venue": "FÖG",
+      "summary": "Die Koralle überlebt, weil um sie herum Meeresschutzzonen eingerichtet werden — und weil ihr Gewebe mehr CO₂ aushält.",
+      "scenario": {
+        "year": 4160,
+        "title": "Innerhalb der Schutzzone",
+        "story": "Der CO₂-Gehalt stieg weiter, doch an dieser Stelle zog man eine Linie: keine Netze, keine Boote, kein Abbau. Innerhalb der Grenze konnte das Gewebe robust genug werden, um mit dem sauren Wasser zu leben. Draußen gelang das nicht.",
+        "palette": [
+          "#536d76",
+          "#294550"
+        ],
+        "drift": 0.18,
+        "set": {
+          "floor": "#746f63",
+          "fog": "#294550",
+          "density": 0.041,
+          "light": "dim",
+          "particles": "snow",
+          "props": [
+            "rock",
+            "fish",
+            "kelp"
+          ],
+          "ground": "sediment",
+          "water": true
+        },
+        "world": {
+          "sea": 37,
+          "note": "Innerhalb der Schutzzonen bleibt das Wasser, was es einmal war.",
+          "marks": [
+            {
+              "lon": 6,
+              "lat": 65,
+              "name": "norwegenschelf"
+            },
+            {
+              "lon": -14,
+              "lat": 57,
+              "name": "rockall"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "CO₂-Regulierung",
+          "text": "Anpassung an erhöhte CO₂-Werte durch widerstandsfähiges Gewebe.",
+          "at": [
+            0.28,
+            0.22
+          ]
+        },
+        {
+          "name": "Schutzzonen",
+          "text": "Meeresschutzräume schaffen, in denen Korallen geschützt wachsen können.",
+          "at": [
+            0.76,
+            0.28
+          ]
+        }
+      ]
+    },
+    {
+      "id": "05",
+      "variety": "var. debbieae",
+      "varietyDescriptive": "var. armata",
+      "title": "Evolutionäre Koralle: Anti-Umwelt-Anpassung (Specimen 2085)",
+      "author": "Debbie",
+      "venue": "FÖG",
+      "date": "17.07.2026",
+      "summary": "Ein durchkonstruiertes Zukunftsexemplar: gepanzert, hitzefest, selbstreinigend und im Dunkeln leuchtend.",
+      "scenario": {
+        "year": 3220,
+        "title": "Speicher 2085",
+        "story": "Hitzewellen, Mikroplastikwolken und Stürme trafen zusammen. Die Kolonie zog sich in kühlere, dunklere Tiefen zurück und rüstete auf: verstärktes Skelett, hitzefeste Symbionten, Bürsten gegen die Partikel. Licht machte sie sich am Ende selbst.",
+        "palette": [
+          "#294553",
+          "#0b1923"
+        ],
+        "drift": 0.55,
+        "set": {
+          "floor": "#3a424b",
+          "fog": "#0b1923",
+          "density": 0.085,
+          "light": "dark",
+          "particles": "plastic",
+          "props": [
+            "rock",
+            "plastic"
+          ],
+          "ground": "rock",
+          "water": true
+        },
+        "world": {
+          "sea": 48,
+          "note": "Europa ist in Inselgruppen zerfallen; dazwischen steht flaches Wasser.",
+          "marks": [
+            {
+              "lon": 16,
+              "lat": 37,
+              "name": "mittelmeer"
+            },
+            {
+              "lon": -9,
+              "lat": 45,
+              "name": "biskaya"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Thermotolerante Super-Polypen",
+          "text": "Hitzebeständige Symbiose.",
+          "at": [
+            0.3,
+            0.28
+          ]
+        },
+        {
+          "name": "Abgewehrte Mikroplastik-Plume",
+          "text": "Abgewehrtes und zersetztes Mikroplastik.",
+          "at": [
+            0.3,
+            0.66
+          ]
+        },
+        {
+          "name": "Gepanzertes Skelett",
+          "text": "Kieselsäureverstärkung gegen Hitze und Stürme.",
+          "at": [
+            0.49,
+            0.5
+          ]
+        },
+        {
+          "name": "Schützender Panzerschild",
+          "text": "Verstärkte Struktur an Polypen und Ästen.",
+          "at": [
+            0.72,
+            0.22
+          ]
+        },
+        {
+          "name": "Mikroplastik-Reinigungsbürsten",
+          "text": "Feine Zilien transportieren Partikel ab.",
+          "at": [
+            0.78,
+            0.57
+          ]
+        },
+        {
+          "name": "Biolumineszente Tiefsee-Licht-Kristalle",
+          "text": "Anpassung an dunkle, kühle Tiefen.",
+          "at": [
+            0.67,
+            0.78
+          ]
+        }
+      ]
+    },
+    {
+      "id": "06",
+      "variety": "var. calidiflexa",
+      "varietyDescriptive": "var. calidiflexa",
+      "title": "Wie verändert sich die Koralle, wenn das Klima immer wärmer wird?",
+      "author": null,
+      "venue": "FÖG",
+      "summary": "Fünf Schritte, mit denen die Kolonie auf steigende Temperaturen antwortet — vom Algenpartner bis zum Umzug in die Tiefe.",
+      "scenario": {
+        "year": 2730,
+        "title": "Das langsam kochende Meer",
+        "story": "Kein einzelnes Ereignis, sondern ein Trend: Jedes Jahrzehnt ein Bruchteil wärmer. Die Kolonie tauschte ihre Algenpartner aus, baute stabiler, wuchs flacher und wanderte Stück für Stück in tiefere, schattigere Lagen.",
+        "palette": [
+          "#5d6b6c",
+          "#44423d"
+        ],
+        "drift": 0.22,
+        "set": {
+          "floor": "#6f685c",
+          "fog": "#44423d",
+          "density": 0.051,
+          "light": "dim",
+          "particles": "snow",
+          "props": [
+            "rock"
+          ],
+          "ground": "sediment",
+          "water": true
+        },
+        "world": {
+          "sea": 28,
+          "note": "Die großen Deltas sind fort, die Küste liegt hunderte Kilometer landeinwärts.",
+          "marks": [
+            {
+              "lon": 70,
+              "lat": 12,
+              "name": "indien"
+            },
+            {
+              "lon": 117,
+              "lat": 15,
+              "name": "suedchinasee"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Wärmeresistente Algenpartner",
+          "text": "Sie liefern auch bei höheren Temperaturen Energie.",
+          "at": [
+            0.24,
+            0.2
+          ]
+        },
+        {
+          "name": "Hitzetoleranz",
+          "text": "Angepasste Proteine und Zellstrukturen überstehen höhere Temperaturen.",
+          "at": [
+            0.75,
+            0.25
+          ]
+        },
+        {
+          "name": "Stärkere Strukturen",
+          "text": "Stabilere Skelette schützen vor Stürmen und Versauerung.",
+          "at": [
+            0.42,
+            0.5
+          ]
+        },
+        {
+          "name": "Flexiblere Form",
+          "text": "Flacher und verzweigter wachsen, angepasst an stärkere Strömungen.",
+          "at": [
+            0.76,
+            0.62
+          ]
+        },
+        {
+          "name": "Neue Lebensräume",
+          "text": "Anpassung an tiefere oder schattigere, kühlere Orte.",
+          "at": [
+            0.44,
+            0.83
+          ]
+        }
+      ]
+    },
+    {
+      "id": "07",
+      "variety": "var. madinae",
+      "varietyDescriptive": "var. symbiotica",
+      "title": "Gemeinsam überleben",
+      "author": "Madina",
+      "venue": "FÖG",
+      "summary": "Kein Einzelkämpfer: Koralle, Algen, Muscheln, Garnelen und Fische halten sich gegenseitig am Leben.",
+      "scenario": {
+        "year": 5350,
+        "title": "Die Allianz",
+        "story": "Allein hielt hier nichts mehr durch. Was überlebte, tat es im Verbund: Algen als Sonnenschutz, Garnelen als Putztrupp, Muscheln als Filter. Das Riff wurde weniger ein Ort als ein Abkommen zwischen Arten.",
+        "palette": [
+          "#577076",
+          "#2f4c4d"
+        ],
+        "drift": 0.3,
+        "set": {
+          "floor": "#717164",
+          "fog": "#2f4c4d",
+          "density": 0.044,
+          "light": "dim",
+          "particles": "bubbles",
+          "props": [
+            "kelp",
+            "fish",
+            "shells"
+          ],
+          "ground": "sediment",
+          "water": true
+        },
+        "world": {
+          "sea": -38,
+          "note": "Das Wasser kommt zurück und mit ihm die alten Verbindungen.",
+          "marks": [
+            {
+              "lon": 176,
+              "lat": -44,
+              "name": "neuseeland"
+            },
+            {
+              "lon": -76,
+              "lat": -30,
+              "name": "chile"
+            },
+            {
+              "lon": 21,
+              "lat": -36,
+              "name": "suedafrika"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Fluoreszierende Spitzen",
+          "text": "Reflektieren zu viel Sonnenlicht und schützen vor Wärme.",
+          "at": [
+            0.27,
+            0.17
+          ]
+        },
+        {
+          "name": "Algen als Sonnenschutz",
+          "text": "Schützende Algen umhüllen die Koralle.",
+          "at": [
+            0.28,
+            0.42
+          ]
+        },
+        {
+          "name": "Filterbüschel",
+          "text": "Filtern Schmutz und Mikroplastik aus dem Wasser.",
+          "at": [
+            0.3,
+            0.66
+          ]
+        },
+        {
+          "name": "Sauerstoffblasen",
+          "text": "Verbessern die Wasserqualität direkt an der Koralle.",
+          "at": [
+            0.24,
+            0.76
+          ]
+        },
+        {
+          "name": "Garnelen als Putztrupp",
+          "text": "Fressen Ablagerungen, die die Koralle krank machen.",
+          "at": [
+            0.78,
+            0.46
+          ]
+        },
+        {
+          "name": "Dichtere, stabilere Äste",
+          "text": "Robuster gegen Stress, Hitze und Stürme.",
+          "at": [
+            0.72,
+            0.6
+          ]
+        },
+        {
+          "name": "Lebensgemeinschaft",
+          "text": "Koralle, Algen, Muscheln, Garnelen und Fische helfen sich gegenseitig.",
+          "at": [
+            0.61,
+            0.84
+          ]
+        }
+      ]
+    },
+    {
+      "id": "08",
+      "variety": "var. jeanmichaelii",
+      "varietyDescriptive": "var. mucosa",
+      "title": "Die Koralle der Zukunft",
+      "author": "Jean-Michael",
+      "venue": "FÖG",
+      "summary": "Zwei nüchterne Anpassungen: eine Schleimhülle nach außen, mehr Kalk nach innen.",
+      "scenario": {
+        "year": 2970,
+        "title": "Die trübe See",
+        "story": "Aufgewühltes Sediment und Schwebstoffe legten sich dauerhaft ins Wasser. Alles, was offen lag, verstopfte. Die Kolonie legte eine Schleimhülle an, die Partikel abgleiten ließ, und verdichtete ihr Skelett gegen die Strömung.",
+        "palette": [
+          "#5a6a6d",
+          "#3b3f3e"
+        ],
+        "drift": 0.6,
+        "set": {
+          "floor": "#615f57",
+          "fog": "#3b3f3e",
+          "density": 0.085,
+          "light": "dark",
+          "particles": "dust",
+          "props": [
+            "rock",
+            "rubble"
+          ],
+          "ground": "sediment",
+          "water": true
+        },
+        "world": {
+          "sea": 38,
+          "note": "Von den Kontinenten spült beständig Sediment ins trübe Flachmeer.",
+          "marks": [
+            {
+              "lon": 70,
+              "lat": 12,
+              "name": "indien"
+            },
+            {
+              "lon": -17,
+              "lat": 20,
+              "name": "westafrika"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Schleimschutz",
+          "text": "Eine transparente Schutzschicht hält schädliche Partikel fern.",
+          "at": [
+            0.37,
+            0.68
+          ]
+        },
+        {
+          "name": "Stärkeres Skelett",
+          "text": "Verdichtete Kalkstrukturen erhöhen die Stabilität.",
+          "at": [
+            0.68,
+            0.56
+          ]
+        }
+      ]
+    },
+    {
+      "id": "09",
+      "variety": "var. bicolor",
+      "varietyDescriptive": "var. bicolor",
+      "title": "Zweifarbige Kolonie",
+      "author": null,
+      "venue": "FÖG",
+      "summary": "Eine Kolonie im Übergang: eine kräftig rote Hälfte, eine bereits sandfarben ausgeblichene.",
+      "scenario": {
+        "year": 2560,
+        "title": "Die Bleichfront",
+        "story": "Die Wärmeanomalie zog wie eine Wand durch das Riff. Man konnte den Tag ablesen, an dem sie eine Kolonie erreichte: Vor der Front noch volle Farbe, hinter ihr nur Kalk. Dieses Exemplar wurde genau im Übergang aufgenommen.",
+        "palette": [
+          "#616c72",
+          "#4f4d4b"
+        ],
+        "drift": 0.25,
+        "set": {
+          "floor": "#7e7c78",
+          "fog": "#4f4d4b",
+          "density": 0.051,
+          "light": "dim",
+          "particles": "snow",
+          "props": [
+            "rubble"
+          ],
+          "ground": "sediment",
+          "water": true
+        },
+        "world": {
+          "sea": 21,
+          "note": "Die Bleichfront zieht mit der Wärme über die geflutete Schelfkante.",
+          "marks": [
+            {
+              "lon": -72,
+              "lat": 19,
+              "name": "karibik"
+            },
+            {
+              "lon": -37,
+              "lat": -14,
+              "name": "brasilien"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Rotes Gewebe",
+          "text": "Die linke Hälfte ist voll durchgefärbt und lebendig."
+        },
+        {
+          "name": "Ausbleichende Hälfte",
+          "text": "Rechts verliert das Gewebe Farbe bis ins Sandfarbene."
+        },
+        {
+          "name": "Einzelne Restpolypen",
+          "text": "Vereinzelt bleiben kräftig orange und türkise Polypen erhalten."
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "variety": "var. cinerea",
+      "varietyDescriptive": "var. cinerea",
+      "title": "Graue Koralle mit Algenfäden",
+      "author": null,
+      "venue": "FÖG",
+      "summary": "Ein grau gewordenes Skelett, an dem noch farbige Polypen sitzen und Algen wachsen.",
+      "scenario": {
+        "year": 2640,
+        "title": "Nach der Bleiche",
+        "story": "Das Gewebe war fort, das Skelett blieb. Auf dem freien Kalk siedelten sich Fadenalgen an und übernahmen die Fläche. Nur an wenigen Stellen hielten sich Polypen — Reste einer Kolonie, die formal noch existierte.",
+        "palette": [
+          "#586b72",
+          "#354246"
+        ],
+        "drift": 0.35,
+        "set": {
+          "floor": "#7a7d7b",
+          "fog": "#354246",
+          "density": 0.065,
+          "light": "dark",
+          "particles": "snow",
+          "props": [
+            "rubble",
+            "kelp"
+          ],
+          "ground": "sediment",
+          "water": true
+        },
+        "world": {
+          "sea": 24,
+          "note": "Was Riff war, ist Schutt; die Küstenebenen sind Meer.",
+          "marks": [
+            {
+              "lon": -37,
+              "lat": -14,
+              "name": "brasilien"
+            },
+            {
+              "lon": -17,
+              "lat": 20,
+              "name": "westafrika"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Graues Skelett",
+          "text": "Der Ast selbst ist bereits farblos, das Kalkgerüst tritt hervor."
+        },
+        {
+          "name": "Farbige Restpolypen",
+          "text": "Blaue, violette und orange Polypen halten sich noch."
+        },
+        {
+          "name": "Algenfäden",
+          "text": "Grüne und türkise Fäden siedeln sich am Fuß an."
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "variety": "var. iridescens",
+      "varietyDescriptive": "var. iridescens",
+      "title": "Schillernde Koralle",
+      "author": null,
+      "venue": "FÖG",
+      "summary": "Ein Exemplar in Pastell: die Farben laufen fließend ineinander, kein Ast gleicht dem anderen.",
+      "scenario": {
+        "year": 3390,
+        "title": "Der schillernde Auftrieb",
+        "story": "Eine ungewöhnliche Wasserschicht brachte wechselnde Salzgehalte und Temperaturen im Tagesrhythmus. Die Kolonie stellte sich nicht auf einen Zustand ein, sondern auf den Wechsel — ihre Farben verlaufen fließend ineinander wie die Bedingungen selbst.",
+        "palette": [
+          "#5c6c7b",
+          "#3f4d64"
+        ],
+        "drift": 0.2,
+        "set": {
+          "floor": "#6f717c",
+          "fog": "#3f4d64",
+          "density": 0.048,
+          "light": "dim",
+          "particles": "bubbles",
+          "props": [
+            "rock"
+          ],
+          "ground": "sediment",
+          "water": true
+        },
+        "world": {
+          "sea": 55,
+          "note": "Der Auftrieb an den neuen Steilküsten trägt, was übrig ist.",
+          "marks": [
+            {
+              "lon": -76,
+              "lat": -30,
+              "name": "chile"
+            },
+            {
+              "lon": -61,
+              "lat": -47,
+              "name": "patagonien"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Farbverläufe",
+          "text": "Blau, Violett und Gelb gehen weich ineinander über."
+        },
+        {
+          "name": "Mehrfarbige Polypen",
+          "text": "Jeder Polyp trägt mehrere Farben gleichzeitig."
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "variety": "var. aurantiaca",
+      "varietyDescriptive": "var. aurantiaca",
+      "title": "Orangekoralle",
+      "author": null,
+      "venue": "FÖG",
+      "summary": "Kräftig orange durchgefärbt, mit hell- und olivgrünen Polypenkronen.",
+      "scenario": {
+        "year": 3140,
+        "title": "Das eisenreiche Wasser",
+        "story": "Staub vom ausgetrockneten Festland trug Eisen ins Meer. Das Wasser nahm einen rostigen Ton an, und mit ihm die Kolonien. Was zunächst wie Krankheit aussah, war eine Einlagerung — das Metall wurde Teil des Gewebes.",
+        "palette": [
+          "#606c6c",
+          "#504231"
+        ],
+        "drift": 0.3,
+        "set": {
+          "floor": "#665443",
+          "fog": "#504231",
+          "density": 0.078,
+          "light": "dark",
+          "particles": "dust",
+          "props": [
+            "rock"
+          ],
+          "ground": "sediment",
+          "water": true
+        },
+        "world": {
+          "sea": 45,
+          "note": "Eisenreicher Staub weht von den ausgetrockneten Innenländern her.",
+          "marks": [
+            {
+              "lon": -125,
+              "lat": 36,
+              "name": "kalifornien"
+            },
+            {
+              "lon": -76,
+              "lat": -30,
+              "name": "chile"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Orangenes Gewebe",
+          "text": "Durchgehend sattes Orange über die gesamte Kolonie."
+        },
+        {
+          "name": "Grüne Polypen",
+          "text": "Die Kronen setzen sich in Limette und Oliv deutlich ab."
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "variety": "var. spinosa",
+      "varietyDescriptive": "var. spinosa",
+      "title": "Dornenkoralle",
+      "author": null,
+      "venue": "FÖG",
+      "summary": "Rosa Kolonie mit einem durchgehenden Dornensaum entlang aller Äste.",
+      "scenario": {
+        "year": 2440,
+        "title": "Unter Fraßdruck",
+        "story": "Als die Räuber verschwanden, vermehrten sich die Weidegänger ungebremst. Seesterne und Schnecken zogen über das Riff und ließen wenig stehen. Nur Kolonien mit Dornensaum überstanden die Wellen — wer glatt blieb, wurde abgeweidet.",
+        "palette": [
+          "#616b76",
+          "#453946"
+        ],
+        "drift": 0.25,
+        "set": {
+          "floor": "#6b6461",
+          "fog": "#453946",
+          "density": 0.054,
+          "light": "dim",
+          "particles": "snow",
+          "props": [
+            "rubble",
+            "rock"
+          ],
+          "ground": "rock",
+          "water": true
+        },
+        "world": {
+          "sea": 16,
+          "note": "Das Mittelmeer hat sich über seine Ebenen ausgedehnt.",
+          "marks": [
+            {
+              "lon": 16,
+              "lat": 37,
+              "name": "mittelmeer"
+            },
+            {
+              "lon": 39,
+              "lat": 20,
+              "name": "rotesmeer"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Dornensaum",
+          "text": "Ein Kranz spitzer Fortsätze zieht sich um jeden Ast."
+        },
+        {
+          "name": "Kontrastpolypen",
+          "text": "Türkise und grüne Kronen heben sich vom rosa Gewebe ab."
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "variety": "var. defensiva",
+      "varietyDescriptive": "var. defensiva",
+      "title": "Schutzsysteme der Zukunftskoralle",
+      "author": null,
+      "venue": "FÖG",
+      "summary": "Drei ineinandergreifende Systeme gegen Plastik, Hitze und UV-Strahlung.",
+      "scenario": {
+        "year": 2890,
+        "title": "Unter der dünnen Schicht",
+        "story": "Die Ozonschicht erholte sich langsamer als erhofft, während das Wasser klarer und flacher wurde. UV-Strahlung erreichte Tiefen, in denen sie nie eine Rolle gespielt hatte. Reflektierendes Gewebe wurde zur Grundausstattung.",
+        "palette": [
+          "#5d717c",
+          "#41525f"
+        ],
+        "drift": 0.18,
+        "set": {
+          "floor": "#7f7e79",
+          "fog": "#41525f",
+          "density": 0.027,
+          "light": "dim",
+          "particles": "none",
+          "props": [
+            "rock"
+          ],
+          "ground": "sediment",
+          "water": true
+        },
+        "world": {
+          "sea": 34,
+          "note": "Die Schelfe sind breit und flach — kaum noch Tiefe zum Ausweichen.",
+          "marks": [
+            {
+              "lon": 117,
+              "lat": 15,
+              "name": "suedchinasee"
+            },
+            {
+              "lon": 143,
+              "lat": 36,
+              "name": "japan"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Mikroalgen",
+          "text": "Fangen Plastikpartikel an der Korallenoberfläche auf.",
+          "at": [
+            0.28,
+            0.25
+          ]
+        },
+        {
+          "name": "Schutzschild",
+          "text": "Gefahren können durch Filterporen abgepumpt werden.",
+          "at": [
+            0.31,
+            0.69
+          ]
+        },
+        {
+          "name": "UV-Abwehr",
+          "text": "Reflektierendes Gewebe leitet überschüssige Wärme ab.",
+          "at": [
+            0.76,
+            0.28
+          ]
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "variety": "var. bullata",
+      "varietyDescriptive": "var. bullata",
+      "title": "Koralle im Schutzmantel",
+      "author": null,
+      "venue": "FÖG",
+      "summary": "Eine rote Kolonie, die von einer hellblauen Hülle umschlossen wird — ringsum Seegras und Luftblasen.",
+      "scenario": {
+        "year": 3430,
+        "title": "Die sauerstoffarme Zone",
+        "story": "In der Tiefe breitete sich eine Schicht ohne Sauerstoff aus und stieg langsam an. Die Kolonie umgab sich mit einer eigenen Hülle, in der sie ihr Wasser selbst aufbereitete — eine Blase mit eigener Atmosphäre.",
+        "palette": [
+          "#556d78",
+          "#2e424c"
+        ],
+        "drift": 0.45,
+        "set": {
+          "floor": "#4a5057",
+          "fog": "#2e424c",
+          "density": 0.085,
+          "light": "dark",
+          "particles": "bubbles",
+          "props": [
+            "kelp",
+            "bones"
+          ],
+          "ground": "sediment",
+          "water": true
+        },
+        "world": {
+          "sea": 57,
+          "note": "In den flachen, warmen Randmeeren geht der Sauerstoff aus.",
+          "marks": [
+            {
+              "lon": 70,
+              "lat": 12,
+              "name": "indien"
+            },
+            {
+              "lon": 39,
+              "lat": 20,
+              "name": "rotesmeer"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Blaue Schutzhülle",
+          "text": "Eine durchsichtige Schicht legt sich um die gesamte Kolonie."
+        },
+        {
+          "name": "Eingelagerte Algen",
+          "text": "Kleine grüne Blätter sitzen innerhalb der Hülle auf dem Gewebe."
+        },
+        {
+          "name": "Sauerstoffblasen",
+          "text": "Aufsteigende Blasen zeigen aktiven Gasaustausch."
+        }
+      ]
+    },
+    {
+      "id": "16",
+      "variety": "var. anticorpus",
+      "varietyDescriptive": "var. anticorpus",
+      "title": "Plastik zersetzende Antikörper",
+      "author": null,
+      "venue": "FÖG",
+      "summary": "Grüne Kapseln zersetzen Plastik — daneben zeigt weißes Skelett, wo das Gewebe schon verloren ist.",
+      "scenario": {
+        "year": 3060,
+        "title": "Die Plastiksuppe",
+        "story": "Der Wirbel sammelte Jahrzehnte an Kunststoff und zerrieb ihn zu Partikeln. Das Wasser trug mehr Plastik als Plankton. Wo Polypen den Kampf verloren, blieb weißes Skelett; wo sie ihn aufnahmen, wuchsen Kapseln, die das Material zersetzten.",
+        "palette": [
+          "#5c7073",
+          "#3b4943"
+        ],
+        "drift": 0.7,
+        "set": {
+          "floor": "#5b605c",
+          "fog": "#3b4943",
+          "density": 0.085,
+          "light": "dark",
+          "particles": "plastic",
+          "props": [
+            "plastic",
+            "rock"
+          ],
+          "ground": "sediment",
+          "water": true
+        },
+        "world": {
+          "sea": 41,
+          "note": "In den neuen Randmeeren sammelt sich, was die alten Küsten hergaben.",
+          "marks": [
+            {
+              "lon": 117,
+              "lat": 15,
+              "name": "suedchinasee"
+            },
+            {
+              "lon": -72,
+              "lat": 19,
+              "name": "karibik"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Grüne Punkte",
+          "text": "Biologische Antikörper-Kapseln, die Plastikpartikel zersetzen.",
+          "at": [
+            0.71,
+            0.38
+          ]
+        },
+        {
+          "name": "Korallenbleiche",
+          "text": "Weiße Bereiche zeigen freiliegendes Kalkskelett ohne lebendes Gewebe.",
+          "at": [
+            0.38,
+            0.68
+          ]
+        }
+      ]
+    },
+    {
+      "id": "17",
+      "variety": "var. nessiae",
+      "varietyDescriptive": "var. conscientia",
+      "title": "Was die Koralle am Leben hält",
+      "author": "Nessi",
+      "venue": "Family",
+      "summary": "Kein Panzer, keine Waffe: Diese Koralle wird von Begriffen gespeist, die durch grüne Rohre zugeführt werden.",
+      "scenario": {
+        "year": 5610,
+        "title": "Die Kehrtwende",
+        "story": "Das einzige Exemplar im Archiv, dessen Umgebung sich zum Guten veränderte. Kein technischer Durchbruch rettete dieses Riff, sondern eine Verschiebung im Verhalten: Aufklärung, Rücksicht, Gemeinschaft. Was der Koralle zufloss, waren keine Nährstoffe.",
+        "palette": [
+          "#5a7377",
+          "#35564e"
+        ],
+        "drift": 0.12,
+        "set": {
+          "floor": "#757466",
+          "fog": "#35564e",
+          "density": 0.034,
+          "light": "dim",
+          "particles": "bubbles",
+          "props": [
+            "kelp",
+            "fish",
+            "shells",
+            "rock"
+          ],
+          "ground": "sediment",
+          "water": true
+        },
+        "world": {
+          "sea": 2,
+          "note": "Die Welt sieht aus wie am Anfang des Archivs — nur ist niemand mehr derselbe.",
+          "marks": [
+            {
+              "lon": -14,
+              "lat": 57,
+              "name": "rockall"
+            },
+            {
+              "lon": 6,
+              "lat": 65,
+              "name": "norwegenschelf"
+            },
+            {
+              "lon": 176,
+              "lat": -44,
+              "name": "neuseeland"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Zuleitungen",
+          "text": "Grüne Rohre münden in die Kolonie und tragen Beschriftungen: Aufklärung, Verständnis, Innovation."
+        },
+        {
+          "name": "Kreislauf",
+          "text": "Ein Ring aus Akzeptanz, Bewusstsein, Veränderung, Wissen, Hoffnung, Gemeinschaft und Achtsamkeit."
+        },
+        {
+          "name": "Weitere Zuflüsse",
+          "text": "Von unten kommen Mut, Liebe, Halt und Respekt hinzu."
+        },
+        {
+          "name": "Herzströme",
+          "text": "Statt Polypenkronen strömen bunte Herzen entlang der Äste."
+        }
+      ]
+    },
+    {
+      "id": "18",
+      "variety": "var. rolfii",
+      "varietyDescriptive": "var. venatoria",
+      "title": "Die bedrohte Koralle",
+      "author": "Rolf",
+      "venue": "Family",
+      "summary": "Eine türkise Kolonie inmitten einer Jagdszene: Taucher mit Harpunen, ein getroffener Hai, Figuren am Rand.",
+      "scenario": {
+        "year": 2310,
+        "title": "Das leergefischte Meer",
+        "story": "Zuerst verschwanden die großen Räuber, dann alles, was sich noch verkaufen ließ. Taucher kamen bis in die Riffkanten. Die Kolonie überlebte nicht, weil sie unangreifbar war, sondern weil sie zu unscheinbar wirkte, um sie mitzunehmen.",
+        "palette": [
+          "#556c77",
+          "#233844"
+        ],
+        "drift": 0.3,
+        "set": {
+          "floor": "#676865",
+          "fog": "#233844",
+          "density": 0.065,
+          "light": "dark",
+          "particles": "snow",
+          "props": [
+            "bones",
+            "net",
+            "rock"
+          ],
+          "ground": "sediment",
+          "water": true
+        },
+        "world": {
+          "sea": 10,
+          "note": "Die alten Hafenstädte liegen unter Wasser, die Fanggründe darüber.",
+          "marks": [
+            {
+              "lon": -17,
+              "lat": 20,
+              "name": "westafrika"
+            },
+            {
+              "lon": -9,
+              "lat": 45,
+              "name": "biskaya"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Harpunen",
+          "text": "Mehrere Taucher zielen von links auf die Kolonie."
+        },
+        {
+          "name": "Getroffener Hai",
+          "text": "Rechts unten blutet ein harpunierter Hai."
+        },
+        {
+          "name": "Türkises Gewebe",
+          "text": "Die Koralle selbst bleibt farbig und intakt — noch."
+        }
+      ]
+    },
+    {
+      "id": "19",
+      "variety": "var. stephani",
+      "varietyDescriptive": "var. reticulata",
+      "title": "Koralle in der Leine",
+      "author": "Stephan",
+      "venue": "Family",
+      "summary": "Ein grüntürkises Exemplar, durch das eine gespannte Leine verläuft.",
+      "scenario": {
+        "year": 2230,
+        "title": "Im Schleppnetzgrund",
+        "story": "Über diesem Grund wurde gefischt, solange es sich lohnte. Grundleinen zogen in regelmäßigen Abständen durch das Riff und rissen ab, was hervorstand. Was blieb, wuchs flach und zäh — und trug die Leine mit sich.",
+        "palette": [
+          "#546e76",
+          "#274246"
+        ],
+        "drift": 0.35,
+        "set": {
+          "floor": "#5d5f59",
+          "fog": "#274246",
+          "density": 0.068,
+          "light": "dark",
+          "particles": "dust",
+          "props": [
+            "net",
+            "rubble"
+          ],
+          "ground": "rock",
+          "water": true
+        },
+        "world": {
+          "sea": 7,
+          "note": "Über den ersten geräumten Flachgründen liegen die Schleppnetzrouten.",
+          "marks": [
+            {
+              "lon": -14,
+              "lat": 57,
+              "name": "rockall"
+            },
+            {
+              "lon": -9,
+              "lat": 45,
+              "name": "biskaya"
+            },
+            {
+              "lon": 6,
+              "lat": 65,
+              "name": "norwegenschelf"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Fangleine",
+          "text": "Eine diagonale Leine zieht sich quer durch die Kolonie."
+        },
+        {
+          "name": "Strömungskante",
+          "text": "Links deutet eine blaue Fläche die anströmende Wassermasse an."
+        }
+      ]
+    },
+    {
+      "id": "20",
+      "variety": "var. claudiae",
+      "varietyDescriptive": "var. thermographa",
+      "title": "30 °C oben, 25 °C unten",
+      "author": "Claudia",
+      "venue": "Family",
+      "summary": "Eine Temperaturkarte als Zeichnung: Wo 30 °C steht, ist die Koralle rotbraun; wo 25 °C steht, bleibt sie unberührt blau.",
+      "scenario": {
+        "year": 2480,
+        "title": "Fünf Grad Unterschied",
+        "story": "Zwischen Riffdach und Grund lagen plötzlich fünf Grad. Oben stand das Wasser bei dreißig und ließ das Gewebe verglühen, unten hielten sich fünfundzwanzig zwischen den Steinen. Dieselbe Kolonie lebte in zwei Klimazonen gleichzeitig.",
+        "palette": [
+          "#626c6e",
+          "#3b5361"
+        ],
+        "drift": 0.2,
+        "set": {
+          "floor": "#736c5d",
+          "fog": "#3b5361",
+          "density": 0.044,
+          "light": "dim",
+          "particles": "snow",
+          "props": [
+            "rock"
+          ],
+          "ground": "sediment",
+          "water": true
+        },
+        "world": {
+          "sea": 17,
+          "note": "Florida ist eine Kette von Inseln, die Warmschicht steht darüber.",
+          "marks": [
+            {
+              "lon": -79,
+              "lat": 30,
+              "name": "florida"
+            },
+            {
+              "lon": -72,
+              "lat": 19,
+              "name": "karibik"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "30 °C-Zone",
+          "text": "Die oberen Äste sind mit 30 °C beschriftet und rotbraun eingefärbt."
+        },
+        {
+          "name": "25 °C-Zone",
+          "text": "Die Steine am Boden tragen 25 °C und bleiben kühl-blau."
+        },
+        {
+          "name": "Farbgrenze",
+          "text": "Zwischen beiden Zonen verläuft die Grenze zwischen lebendem und verlorenem Gewebe."
+        }
+      ]
+    },
+    {
+      "id": "21",
+      "variety": "var. lenae",
+      "varietyDescriptive": "var. tumultuosa",
+      "title": "Koralle und Schiff",
+      "author": "Lene",
+      "venue": "Family",
+      "summary": "Eine blau überzeichnete Kolonie, daneben ein orangefarbenes Netz und ein Schiffskörper.",
+      "scenario": {
+        "year": 2400,
+        "title": "Unter der Fahrrinne",
+        "story": "Der Schiffsverkehr verdichtete sich zu einem Dauerzustand: Lärm, Schatten, aufgewühlter Grund, Farbreste im Wasser. Das Riff lag mitten in einer Route, die niemand mehr verlegen konnte.",
+        "palette": [
+          "#576e7a",
+          "#2f4152"
+        ],
+        "drift": 0.4,
+        "set": {
+          "floor": "#595c5c",
+          "fog": "#2f4152",
+          "density": 0.082,
+          "light": "dark",
+          "particles": "dust",
+          "props": [
+            "rubble",
+            "plastic"
+          ],
+          "ground": "sediment",
+          "water": true
+        },
+        "world": {
+          "sea": 14,
+          "note": "Die neue Fahrrinne verläuft quer über ertrunkenes Küstenland.",
+          "marks": [
+            {
+              "lon": 6,
+              "lat": 65,
+              "name": "norwegenschelf"
+            },
+            {
+              "lon": -14,
+              "lat": 57,
+              "name": "rockall"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Übermalte Äste",
+          "text": "Dichte blaue Striche legen sich über die gesamte linke Kolonie."
+        },
+        {
+          "name": "Netz und Rumpf",
+          "text": "Rechts stehen ein orangefarbenes Gitter und ein bunter Schiffskörper."
+        }
+      ]
+    },
+    {
+      "id": "22",
+      "variety": "var. fridae",
+      "varietyDescriptive": "var. involucrata",
+      "title": "Schutzhülle",
+      "author": "Frida",
+      "venue": "Family",
+      "summary": "Eine Blase aus Perlenketten umschließt die Koralle. Von außen zeigen vier rote Pfeile, wogegen sie hilft.",
+      "scenario": {
+        "year": 4300,
+        "title": "Alles auf einmal",
+        "story": "Hier kam nichts nacheinander: Erwärmung, Fangnetze, Tauchtourismus und Plastikmüll trafen dieselbe Kolonie im selben Jahrzehnt. Die Antwort war keine einzelne Anpassung, sondern eine geschlossene Hülle gegen alles von außen.",
+        "palette": [
+          "#5b6f79",
+          "#35434d"
+        ],
+        "drift": 0.5,
+        "set": {
+          "floor": "#626465",
+          "fog": "#35434d",
+          "density": 0.078,
+          "light": "dark",
+          "particles": "plastic",
+          "props": [
+            "net",
+            "plastic",
+            "rock"
+          ],
+          "ground": "sediment",
+          "water": true
+        },
+        "world": {
+          "sea": 41,
+          "note": "Jede Küste trägt eine andere Belastung; keine ist mehr unberührt.",
+          "marks": [
+            {
+              "lon": 16,
+              "lat": 37,
+              "name": "mittelmeer"
+            },
+            {
+              "lon": 117,
+              "lat": 15,
+              "name": "suedchinasee"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Klimawandel",
+          "text": "Steigende Temperaturen prallen an der Hülle ab."
+        },
+        {
+          "name": "Fangnetze",
+          "text": "Netze von oben rechts können nicht bis zur Kolonie durchdringen."
+        },
+        {
+          "name": "Attraktion Touristen",
+          "text": "Besucherandrang wird von der Hülle ferngehalten."
+        },
+        {
+          "name": "Plastikmüll",
+          "text": "Treibender Müll bleibt außerhalb der Schutzblase."
+        },
+        {
+          "name": "„Self-Service Store“",
+          "text": "Am rechten Rand steht ein Laden — der Mensch bedient sich selbst."
+        }
+      ]
+    },
+    {
+      "id": "23",
+      "variety": "var. festiva",
+      "varietyDescriptive": "var. festiva",
+      "title": "Riffleben",
+      "author": null,
+      "venue": "Family",
+      "summary": "Eine Kolonie in Magenta und Gelb, umgeben von Fischen, Quallen, Seesternen und Sandboden.",
+      "scenario": {
+        "year": 2150,
+        "title": "Das letzte volle Riff",
+        "story": "Eine Aufnahme aus einem Abschnitt, den die Veränderungen zuletzt erreichten. Fische, Quallen, Seesterne, Sandbank — alles noch an seinem Platz. Aufgenommen wurde das Bild nicht wegen einer Anpassung, sondern als Vergleichswert.",
+        "palette": [
+          "#55707c",
+          "#2c5265"
+        ],
+        "drift": 0.15,
+        "set": {
+          "floor": "#767060",
+          "fog": "#2c5265",
+          "density": 0.034,
+          "light": "dim",
+          "particles": "bubbles",
+          "props": [
+            "kelp",
+            "fish",
+            "shells",
+            "rock"
+          ],
+          "ground": "sediment",
+          "water": true
+        },
+        "world": {
+          "sea": 4,
+          "note": "Die Küstenlinien stimmen noch mit den alten Karten überein.",
+          "marks": [
+            {
+              "lon": -14,
+              "lat": 57,
+              "name": "rockall"
+            },
+            {
+              "lon": 6,
+              "lat": 65,
+              "name": "norwegenschelf"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Bunte Äste",
+          "text": "Jeder Ast trägt eine eigene Farbe von Magenta bis Ocker."
+        },
+        {
+          "name": "Mitbewohner",
+          "text": "Fische, Quallen und Seesterne bevölkern das Wasser ringsum."
+        },
+        {
+          "name": "Sandbank",
+          "text": "Rechts begrenzt ein gelber Sandhang das Bild."
+        }
+      ]
+    },
+    {
+      "id": "24",
+      "variety": "var. enrae",
+      "varietyDescriptive": "var. amica",
+      "title": "Bobbler",
+      "author": "Enra",
+      "venue": "NKM Frankfurt / Höfling",
+      "summary": "Eine grüne Koralle, die von ihrer Zeichnerin einen eigenen Namen bekommen hat.",
+      "scenario": {
+        "year": 5480,
+        "title": "Die getaufte Kolonie",
+        "story": "In dieser Bucht begannen Menschen, einzelne Kolonien zu benennen und wiederzubesuchen. Was einen Namen trug, wurde gemeldet, gepflegt und im Zweifel verteidigt. Diese hier hieß Bobbler.",
+        "palette": [
+          "#5a7379",
+          "#325452"
+        ],
+        "drift": 0.2,
+        "set": {
+          "floor": "#737165",
+          "fog": "#325452",
+          "density": 0.044,
+          "light": "dim",
+          "particles": "snow",
+          "props": [
+            "kelp",
+            "fish"
+          ],
+          "ground": "sediment",
+          "water": true
+        },
+        "world": {
+          "sea": -17,
+          "note": "Die Küsten stehen fast wieder dort, wo die ersten Karten sie zeigten.",
+          "marks": [
+            {
+              "lon": -14,
+              "lat": 57,
+              "name": "rockall"
+            },
+            {
+              "lon": 176,
+              "lat": -44,
+              "name": "neuseeland"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Namensgebung",
+          "text": "„Bobbler“ steht zweimal auf dem Blatt — die Koralle ist benannt worden."
+        },
+        {
+          "name": "Pastellpolypen",
+          "text": "Die Kronen sind in Flieder, Rosa und Orange gehalten."
+        },
+        {
+          "name": "Umgebung",
+          "text": "Fische, Seesterne und eine Sonne umgeben die Kolonie."
+        }
+      ]
+    },
+    {
+      "id": "25",
+      "variety": "var. hospitalis",
+      "varietyDescriptive": "var. hospitalis",
+      "title": "Koralle mit Publikum",
+      "author": null,
+      "venue": "NKM Frankfurt / Höfling",
+      "summary": "Eine grüne Kolonie, umringt von Fischen mit Gesichtern, Seesternen und zwei Sonnen.",
+      "scenario": {
+        "year": 5220,
+        "title": "Das Rückzugsriff",
+        "story": "Als die umliegenden Flächen unbewohnbar wurden, sammelte sich das Leben auf den letzten intakten Strukturen. Die Kolonie beherbergte am Ende mehr Arten, als je an ihr gemessen worden waren — nicht aus Stärke, sondern aus Mangel an Alternativen.",
+        "palette": [
+          "#597173",
+          "#384f43"
+        ],
+        "drift": 0.28,
+        "set": {
+          "floor": "#6d7165",
+          "fog": "#384f43",
+          "density": 0.058,
+          "light": "dark",
+          "particles": "snow",
+          "props": [
+            "kelp",
+            "fish",
+            "shells"
+          ],
+          "ground": "sediment",
+          "water": true
+        },
+        "world": {
+          "sea": -59,
+          "note": "In den tiefen Rinnen, die noch Wasser führen, sammelt sich, was übrig ist.",
+          "marks": [
+            {
+              "lon": 176,
+              "lat": -44,
+              "name": "neuseeland"
+            },
+            {
+              "lon": 159,
+              "lat": -41,
+              "name": "tasmansee"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Grünes Gewebe",
+          "text": "Gleichmäßig grün schraffierte Äste."
+        },
+        {
+          "name": "Fische mit Gesichtern",
+          "text": "Rundherum schwimmen gezeichnete Tiere mit Augen und Mund."
+        }
+      ]
+    },
+    {
+      "id": "26",
+      "variety": "var. tempestas",
+      "varietyDescriptive": "var. tempestas",
+      "title": "Im Farbsturm",
+      "author": null,
+      "venue": "NKM Frankfurt / Höfling",
+      "summary": "Die Kolonie verschwindet fast in einem Wirbel aus Rot, Orange und Blau; ein gezeichneter Rahmen fasst alles ein.",
+      "scenario": {
+        "year": 3470,
+        "title": "Der Dauersturm",
+        "story": "Die Sturmsaison hörte auf, eine Saison zu sein. Wellen und Strömungen wechselten täglich die Richtung, Sediment und Farbe wirbelten durcheinander. Was in diesem Wasser wuchs, wuchs in alle Richtungen gleichzeitig.",
+        "palette": [
+          "#5d6d71",
+          "#3b3c3c"
+        ],
+        "drift": 0.75,
+        "set": {
+          "floor": "#615c57",
+          "fog": "#3b3c3c",
+          "density": 0.085,
+          "light": "storm",
+          "particles": "dust",
+          "props": [
+            "rubble",
+            "rock"
+          ],
+          "ground": "rock",
+          "water": true
+        },
+        "world": {
+          "sea": 58,
+          "note": "Über der größten Wasserfläche der Erdgeschichte steht Sturm.",
+          "marks": [
+            {
+              "lon": -72,
+              "lat": 19,
+              "name": "karibik"
+            },
+            {
+              "lon": -79,
+              "lat": 30,
+              "name": "florida"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Farbwirbel",
+          "text": "Dichte Strudel aus Buntstift überlagern die gesamte Fläche."
+        },
+        {
+          "name": "Rahmen",
+          "text": "Ein grauer, schraffierter Rand fasst die Szene wie ein Bilderrahmen."
+        }
+      ]
+    },
+    {
+      "id": "27",
+      "variety": "var. pallium",
+      "varietyDescriptive": "var. pallium",
+      "title": "Mantelkoralle in Rot",
+      "author": null,
+      "venue": "NKM Frankfurt / Höfling",
+      "summary": "Eine grüne Koralle, um die ein roter Mantel gelegt ist — Titel von der Zeichnerin selbst vergeben.",
+      "scenario": {
+        "year": 3600,
+        "title": "Der Kaltwassereinbruch",
+        "story": "Eine veränderte Strömung schob unvermittelt kaltes Tiefenwasser über das Riff. Die Kolonie legte eine zusätzliche äußere Schicht an — einen Mantel, der die Temperatur an der Oberfläche des Gewebes abpufferte.",
+        "palette": [
+          "#5d6a75",
+          "#3b3845"
+        ],
+        "drift": 0.25,
+        "set": {
+          "floor": "#59555d",
+          "fog": "#3b3845",
+          "density": 0.061,
+          "light": "dark",
+          "particles": "snow",
+          "props": [
+            "rock"
+          ],
+          "ground": "sediment",
+          "water": true
+        },
+        "world": {
+          "sea": 60,
+          "note": "Der Kälteeinbruch bindet Wasser wieder als Eis; die Küsten treten zurück.",
+          "marks": [
+            {
+              "lon": -24,
+              "lat": 72,
+              "name": "groenlandsee"
+            },
+            {
+              "lon": 6,
+              "lat": 65,
+              "name": "norwegenschelf"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Roter Mantel",
+          "text": "Eine rosarote Kontur umschließt die gesamte Silhouette wie ein Umhang."
+        },
+        {
+          "name": "Grünes Gewebe",
+          "text": "Darunter bleibt der Körper in zwei Grüntönen."
+        },
+        {
+          "name": "Bunte Kronen",
+          "text": "Die Polypen reichen von Blau über Gelb bis Schwarz."
+        }
+      ]
+    },
+    {
+      "id": "28",
+      "variety": "var. glacialis",
+      "varietyDescriptive": "var. glacialis",
+      "title": "Eiswürfel und Ventilator",
+      "author": null,
+      "venue": "NKM Frankfurt / Höfling",
+      "summary": "Wenn das Wasser zu warm wird, kühlt man es eben: mit Eiswürfeln von oben und einem Ventilator von unten.",
+      "scenario": {
+        "year": 3880,
+        "title": "Die Kühlversuche",
+        "story": "Man versuchte, das Meer zu kühlen. Eis wurde eingebracht, Wasser umgewälzt, Anlagen aufgestellt. Für einzelne Riffe funktionierte es tageweise. Die Kolonie wuchs in den Rhythmus dieser Eingriffe hinein.",
+        "palette": [
+          "#59707c",
+          "#354d5e"
+        ],
+        "drift": 0.3,
+        "set": {
+          "floor": "#737473",
+          "fog": "#354d5e",
+          "density": 0.051,
+          "light": "lamp",
+          "particles": "bubbles",
+          "props": [
+            "ice",
+            "rock"
+          ],
+          "ground": "sediment",
+          "water": true
+        },
+        "world": {
+          "sea": 48,
+          "note": "Erste Kühlanlagen stehen dort, wo das Wasser noch kalt genug bleibt.",
+          "marks": [
+            {
+              "lon": -24,
+              "lat": 72,
+              "name": "groenlandsee"
+            },
+            {
+              "lon": -146,
+              "lat": 57,
+              "name": "alaska"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Eiswürfel",
+          "text": "Blaue Würfel schweben über der Kolonie und kühlen das Wasser."
+        },
+        {
+          "name": "Ventilator",
+          "text": "Ein Ventilator unten links soll das Wasser fest werden lassen."
+        },
+        {
+          "name": "Regenbogenäste",
+          "text": "Die Kolonie selbst ist in allen Farben durchgefärbt."
+        }
+      ]
+    },
+    {
+      "id": "29",
+      "variety": "var. samuelis",
+      "varietyDescriptive": "var. cubata",
+      "title": "Eiswürfel",
+      "author": "Samuel",
+      "venue": "NKM Frankfurt / Höfling",
+      "summary": "Ein grau schraffiertes Skelett, umgeben von hellblauen Eiswürfeln.",
+      "scenario": {
+        "year": 4020,
+        "title": "Am Tropf",
+        "story": "Aus den Versuchen wurde Routine: Regelmäßig sanken Eisblöcke auf das Riff und hielten die Temperatur unter der kritischen Marke. Die Farbe kehrte nicht zurück, aber das Skelett hörte auf zu zerfallen.",
+        "palette": [
+          "#5c727c",
+          "#3d4e59"
+        ],
+        "drift": 0.22,
+        "set": {
+          "floor": "#757978",
+          "fog": "#3d4e59",
+          "density": 0.054,
+          "light": "lamp",
+          "particles": "snow",
+          "props": [
+            "ice",
+            "rubble"
+          ],
+          "ground": "sediment",
+          "water": true
+        },
+        "world": {
+          "sea": 43,
+          "note": "Die Versorgung kommt von den Polen; dort ist noch Eis zu holen.",
+          "marks": [
+            {
+              "lon": -146,
+              "lat": 57,
+              "name": "alaska"
+            },
+            {
+              "lon": -176,
+              "lat": 57,
+              "name": "beringmeer"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Eiswürfel",
+          "text": "Fünf blaue Blöcke umstehen die Kolonie und halten sie kühl."
+        },
+        {
+          "name": "Graues Gewebe",
+          "text": "Der Körper ist durchgehend grau — die Farbe ist bereits gewichen."
+        },
+        {
+          "name": "Sandfarbene Polypen",
+          "text": "Die Kronen bleiben in gedecktem Ocker."
+        }
+      ]
+    },
+    {
+      "id": "30",
+      "variety": "var. enrae",
+      "varietyDescriptive": "var. fugax",
+      "title": "Legs to run away",
+      "author": "Enra",
+      "venue": "NKM Frankfurt / Höfling",
+      "summary": "Diese Koralle wartet nicht ab: Sie hat Beine bekommen, um wegzulaufen.",
+      "scenario": {
+        "year": 5000,
+        "title": "Als Bleiben aufhörte zu funktionieren",
+        "story": "Die Bedingungen verschoben sich schneller, als eine festgewachsene Kolonie ihnen folgen konnte. Die einzige verbliebene Anpassung war die radikalste: sich vom Untergrund zu lösen und mitzuwandern.",
+        "palette": [
+          "#5d6c7b",
+          "#51534e"
+        ],
+        "drift": 0.3,
+        "set": {
+          "floor": "#6f675c",
+          "fog": "#51534e",
+          "density": 0.0,
+          "light": "dry",
+          "particles": "dust",
+          "props": [
+            "bones",
+            "rubble",
+            "shells"
+          ],
+          "ground": "dry",
+          "water": false
+        },
+        "world": {
+          "sea": -120,
+          "note": "Die Schelfe fallen trocken: wo Riff stand, liegt Land. Bleiben hört auf zu funktionieren.",
+          "marks": [
+            {
+              "lon": 134,
+              "lat": -38,
+              "name": "suedaustralien"
+            },
+            {
+              "lon": -61,
+              "lat": -47,
+              "name": "patagonien"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Beine",
+          "text": "Grüne Gliedmaßen wachsen aus dem Fuß — beschriftet mit „Legs to run away“."
+        },
+        {
+          "name": "Violettes Gewebe",
+          "text": "Die Kolonie ist gleichmäßig lila koloriert."
+        },
+        {
+          "name": "Zweifarbige Polypen",
+          "text": "Kronen wechseln zwischen Hellblau und Rosa."
+        }
+      ]
+    },
+    {
+      "id": "31",
+      "variety": "var. armigera",
+      "varietyDescriptive": "var. armigera",
+      "title": "Gangster Coral",
+      "author": null,
+      "venue": "NKM Frankfurt / Höfling",
+      "summary": "„Coral with Guns!“ — die Kolonie hat aufgerüstet und schießt zurück.",
+      "scenario": {
+        "year": 4440,
+        "title": "Das umkämpfte Riff",
+        "story": "Um die letzten intakten Flächen wurde offen gestritten. Wer zuerst da war, blieb — notfalls mit Gewalt. Die Kolonie stellte sich darauf ein, dass Verteidigung wichtiger geworden war als Wachstum.",
+        "palette": [
+          "#616e70",
+          "#4a4237"
+        ],
+        "drift": 0.35,
+        "set": {
+          "floor": "#686157",
+          "fog": "#4a4237",
+          "density": 0.068,
+          "light": "dark",
+          "particles": "dust",
+          "props": [
+            "rubble",
+            "bones"
+          ],
+          "ground": "rock",
+          "water": true
+        },
+        "world": {
+          "sea": 43,
+          "note": "Um die letzten tragfähigen Gründe wird gekämpft.",
+          "marks": [
+            {
+              "lon": -72,
+              "lat": 19,
+              "name": "karibik"
+            },
+            {
+              "lon": 117,
+              "lat": 15,
+              "name": "suedchinasee"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Waffen",
+          "text": "Aus mehreren Ästen ragen gezeichnete Pistolen, eine ist mit „Guns“ beschriftet."
+        },
+        {
+          "name": "Schüsse",
+          "text": "Gestrichelte Linien zeigen die Flugbahnen."
+        },
+        {
+          "name": "Warnfarben",
+          "text": "Grün-gelbe Äste mit knallroten Polypen."
+        }
+      ]
+    },
+    {
+      "id": "32",
+      "variety": "var. fulminea",
+      "varietyDescriptive": "var. fulminea",
+      "title": "Kanonen und Strom",
+      "author": null,
+      "venue": "NKM Frankfurt / Höfling",
+      "summary": "Rundum unter Hochspannung: Die Kolonie ist mit Kanonen bestückt und von einem elektrischen Zaun umgeben.",
+      "scenario": {
+        "year": 4590,
+        "title": "Unter Spannung",
+        "story": "Rund um die geschützten Riffe entstanden Sperranlagen: elektrische Zäune, akustische Barrieren, automatische Abwehr. Das Wasser stand unter Strom. Die Kolonie wuchs in diese Infrastruktur hinein, bis sie Teil davon war.",
+        "palette": [
+          "#5a6f7d",
+          "#2e3c53"
+        ],
+        "drift": 0.4,
+        "set": {
+          "floor": "#4c515b",
+          "fog": "#2e3c53",
+          "density": 0.075,
+          "light": "lamp",
+          "particles": "none",
+          "props": [
+            "rock",
+            "net"
+          ],
+          "ground": "rock",
+          "water": true
+        },
+        "world": {
+          "sea": 45,
+          "note": "Die verbliebenen Riffe stehen unter Bewachung und unter Strom.",
+          "marks": [
+            {
+              "lon": 143,
+              "lat": 36,
+              "name": "japan"
+            },
+            {
+              "lon": 117,
+              "lat": 15,
+              "name": "suedchinasee"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Kanonen",
+          "text": "Schwarze Rohre ragen in alle Richtungen, dazu „Boom“-Rufe."
+        },
+        {
+          "name": "Hochspannung",
+          "text": "Ein Schild warnt: „Achtung Hochspannung“."
+        },
+        {
+          "name": "Stromhülle",
+          "text": "Ein gelber Blitzsaum umschließt die gesamte Koralle."
+        }
+      ]
+    },
+    {
+      "id": "33",
+      "variety": "var. bullaprotecta",
+      "varietyDescriptive": "var. bullaprotecta",
+      "title": "Schutz-Blase wehrt alles ab!",
+      "author": null,
+      "venue": "NKM Frankfurt / Höfling",
+      "summary": "Eine unsichtbare Blase legt sich um die vielfarbige Kolonie und hält alles draußen.",
+      "scenario": {
+        "year": 4730,
+        "title": "Hinter der Blase",
+        "story": "Am Ende war der Unterschied zwischen den Bedrohungen gleichgültig geworden. Was zählte, war eine Grenze zwischen innen und außen. Die Kolonie zog sie um sich und regelte, was hindurch durfte.",
+        "palette": [
+          "#5b727b",
+          "#364d54"
+        ],
+        "drift": 0.32,
+        "set": {
+          "floor": "#5d666b",
+          "fog": "#364d54",
+          "density": 0.065,
+          "light": "dark",
+          "particles": "plastic",
+          "props": [
+            "rock"
+          ],
+          "ground": "sediment",
+          "water": true
+        },
+        "world": {
+          "sea": 47,
+          "note": "Draußen ist nichts mehr auszuhalten; drinnen, in der Blase, schon.",
+          "marks": [
+            {
+              "lon": 70,
+              "lat": 12,
+              "name": "indien"
+            },
+            {
+              "lon": 134,
+              "lat": -38,
+              "name": "suedaustralien"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Schutzblase",
+          "text": "Eine hellblau umrissene Hülle umschließt die ganze Koralle."
+        },
+        {
+          "name": "Farbfelder",
+          "text": "Jeder Ast trägt eine eigene Farbe von Violett bis Grün."
+        }
+      ]
+    },
+    {
+      "id": "34",
+      "variety": "var. glacifera",
+      "varietyDescriptive": "var. glacifera",
+      "title": "Ice maker",
+      "author": null,
+      "venue": "NKM Frankfurt / Höfling",
+      "summary": "Über der Koralle fährt ein Eisboot und wirft Eiswürfel ab — eine Kühlmaschine für das ganze Riff.",
+      "scenario": {
+        "year": 4090,
+        "title": "Die Eisflotte",
+        "story": "Aus einzelnen Kühlversuchen wurde ein Betrieb. Boote fuhren Routen ab und warfen Eis über den Riffen ab, Anlagen an der Oberfläche produzierten nach. Das Meer wurde bewirtschaftet wie ein Gewächshaus.",
+        "palette": [
+          "#59717d",
+          "#364e5e"
+        ],
+        "drift": 0.28,
+        "set": {
+          "floor": "#747774",
+          "fog": "#364e5e",
+          "density": 0.048,
+          "light": "lamp",
+          "particles": "bubbles",
+          "props": [
+            "ice"
+          ],
+          "ground": "sediment",
+          "water": true
+        },
+        "world": {
+          "sea": 40,
+          "note": "Eisflotten fahren zwischen den Polen und den letzten Riffen.",
+          "marks": [
+            {
+              "lon": -176,
+              "lat": 57,
+              "name": "beringmeer"
+            },
+            {
+              "lon": 10,
+              "lat": -63,
+              "name": "antarktisrand"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Ice maker",
+          "text": "An der Wasseroberfläche produziert eine Maschine laufend Eis."
+        },
+        {
+          "name": "Ice boat",
+          "text": "Ein Boot bringt den Nachschub heran."
+        },
+        {
+          "name": "Ice cubes",
+          "text": "Sechs große Würfel sinken rings um die Kolonie herab."
+        }
+      ]
+    },
+    {
+      "id": "35",
+      "variety": "var. malleus",
+      "varietyDescriptive": "var. malleus",
+      "title": "Torkoralle mit Thorshammer",
+      "author": null,
+      "venue": "NKM Frankfurt / Höfling",
+      "summary": "Blitze, ein Hammer und ein Netz: Diese Koralle verteidigt sich mit Donner.",
+      "scenario": {
+        "year": 3510,
+        "title": "Die Gewitterküste",
+        "story": "Über dieser Küste entluden sich Stürme fast täglich. Blitze schlugen bis ins flache Wasser, Netze trieben herrenlos umher. Die Kolonie wuchs härter, dichter und lauter, als eine Koralle es müsste.",
+        "palette": [
+          "#5a6f7a",
+          "#2e3a4a"
+        ],
+        "drift": 0.5,
+        "set": {
+          "floor": "#5a5e65",
+          "fog": "#2e3a4a",
+          "density": 0.085,
+          "light": "storm",
+          "particles": "dust",
+          "props": [
+            "rubble",
+            "net"
+          ],
+          "ground": "rock",
+          "water": true
+        },
+        "world": {
+          "sea": 60,
+          "note": "Höchststand: die Kontinente sind auf ihre Hochländer zusammengeschrumpft.",
+          "marks": [
+            {
+              "lon": 21,
+              "lat": -36,
+              "name": "suedafrika"
+            },
+            {
+              "lon": -37,
+              "lat": -14,
+              "name": "brasilien"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Thorshammer",
+          "text": "Rechts steht ein Hammer mit Blitzsymbol."
+        },
+        {
+          "name": "Blitze",
+          "text": "Gelbe und blaue Entladungen fahren von oben herab."
+        },
+        {
+          "name": "Netz",
+          "text": "Ein gelbes Fangnetz greift von links an."
+        },
+        {
+          "name": "Starker Schutz",
+          "text": "Die Beschriftung „starker Schutz“ verweist auf die Abwehr."
+        }
+      ]
+    },
+    {
+      "id": "36",
+      "variety": "var. hyliaca",
+      "varietyDescriptive": "var. hyliaca",
+      "title": "Zelda Koralle",
+      "author": null,
+      "venue": "NKM Frankfurt / Höfling",
+      "summary": "„Waffen zur Verteidigung und Beine zum schnellen Wegrennen“ — ausgerüstet mit Schild, Schwert und Turnschuhen.",
+      "scenario": {
+        "year": 4880,
+        "title": "Das feindliche Flachwasser",
+        "story": "Es half nichts mehr, nur widerstandsfähig zu sein. Diese Kolonie legte sich beides zu: etwas zum Verteidigen und etwas zum Weglaufen. Ob das je funktioniert hat, ist nicht überliefert.",
+        "palette": [
+          "#646e72",
+          "#51443d"
+        ],
+        "drift": 0.3,
+        "set": {
+          "floor": "#77675c",
+          "fog": "#51443d",
+          "density": 0.051,
+          "light": "dim",
+          "particles": "dust",
+          "props": [
+            "rubble",
+            "bones"
+          ],
+          "ground": "sediment",
+          "water": true
+        },
+        "world": {
+          "sea": 29,
+          "note": "Das Wasser fällt schneller, als die Riffe absteigen können.",
+          "marks": [
+            {
+              "lon": 134,
+              "lat": -38,
+              "name": "suedaustralien"
+            },
+            {
+              "lon": 159,
+              "lat": -41,
+              "name": "tasmansee"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Schild",
+          "text": "Ein blaues Wappenschild hängt am oberen linken Ast."
+        },
+        {
+          "name": "Schwert",
+          "text": "Rechts steckt ein Schwert mit blauem Griff in der Kolonie."
+        },
+        {
+          "name": "Beine mit Schuhen",
+          "text": "Am Fuß wachsen orange Beine in weißen Turnschuhen."
+        }
+      ]
+    },
+    {
+      "id": "37",
+      "variety": "var. manuelis",
+      "varietyDescriptive": "var. superba",
+      "title": "Die Superkoralle, die sich gegen alles verteidigen kann",
+      "author": "Manuel",
+      "venue": "NKM Frankfurt / Höfling",
+      "summary": "Mit Umhang und Emblem auf der Brust: Diese Koralle ist zur Superheldin geworden.",
+      "scenario": {
+        "year": 5090,
+        "title": "Die Rettungserwartung",
+        "story": "Je aussichtsloser die Lage wurde, desto größer wurde die Hoffnung auf eine einzelne Lösung — eine Technologie, eine Art, ein Exemplar, das alles aufhält. Dieses Exemplar wurde mit genau dieser Erwartung gezeichnet.",
+        "palette": [
+          "#5b707d",
+          "#2f415b"
+        ],
+        "drift": 0.25,
+        "set": {
+          "floor": "#6e7171",
+          "fog": "#2f415b",
+          "density": 0.054,
+          "light": "dim",
+          "particles": "snow",
+          "props": [
+            "rock"
+          ],
+          "ground": "sediment",
+          "water": true
+        },
+        "world": {
+          "sea": -80,
+          "note": "Die Küstenlinie liegt weit draußen auf dem alten Schelfrand.",
+          "marks": [
+            {
+              "lon": -61,
+              "lat": -47,
+              "name": "patagonien"
+            },
+            {
+              "lon": -76,
+              "lat": -30,
+              "name": "chile"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Umhang",
+          "text": "Ein roter Mantel spannt sich hinter der Kolonie auf."
+        },
+        {
+          "name": "Emblem",
+          "text": "Auf dem Stamm sitzt ein Wappen in Rot, Gelb und Blau."
+        },
+        {
+          "name": "Zweifarbiger Körper",
+          "text": "Der Stamm ist blau, die oberen Äste sandfarben."
+        }
+      ]
+    },
+    {
+      "id": "38",
+      "variety": "var. colorius",
+      "varietyDescriptive": "var. colorius",
+      "title": "Corallus colorius",
+      "author": null,
+      "venue": "NKM Frankfurt / Höfling",
+      "summary": "Die einzige Koralle im Archiv, die von ihrer Zeichnerin bereits einen wissenschaftlichen Namen bekommen hat.",
+      "scenario": {
+        "year": 3300,
+        "title": "Das saure Meer",
+        "story": "Der pH-Wert sank so weit, dass Kalk sich schneller löste, als er gebildet werden konnte. Die Kolonie überzog sich mit einer Schicht, die die Säure abpufferte, und setzte auf Farbe — als Signal, als Schutz, als Rest von Eigenwillen.",
+        "palette": [
+          "#606f7c",
+          "#454159"
+        ],
+        "drift": 0.4,
+        "set": {
+          "floor": "#77747c",
+          "fog": "#454159",
+          "density": 0.065,
+          "light": "dark",
+          "particles": "bubbles",
+          "props": [
+            "rubble"
+          ],
+          "ground": "sediment",
+          "water": true
+        },
+        "world": {
+          "sea": 51,
+          "note": "Das Meer bedeckt mehr Fläche als je zuvor — und löst Kalk schneller, als er wächst.",
+          "marks": [
+            {
+              "lon": 159,
+              "lat": -41,
+              "name": "tasmansee"
+            },
+            {
+              "lon": 176,
+              "lat": -44,
+              "name": "neuseeland"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Helfende Farben",
+          "text": "Die regenbogenfarbenen Polypen erfüllen eine Funktion, nicht nur Zierde."
+        },
+        {
+          "name": "Schutz-Strahlen",
+          "text": "Farbige Strahlen umgeben die Kolonie als Abwehrfeld."
+        },
+        {
+          "name": "Glibber gegen Säure",
+          "text": "Eine Schleimschicht am Stamm neutralisiert saures Wasser."
+        }
+      ]
+    },
+    {
+      "id": "39",
+      "variety": "var. leoi",
+      "varietyDescriptive": "var. saepifera",
+      "title": "Hecke mit Eingang",
+      "author": "Leo",
+      "venue": "Nils Oldebusch",
+      "summary": "Eine rote Kolonie hinter einer geschlossenen grünen Hecke, in die ein Eingang gelassen wurde.",
+      "scenario": {
+        "year": 4250,
+        "title": "Der Eingang",
+        "story": "Von hier an war jede Kolonie ein Gelände. Um diese stand eine geschlossene Hecke, und in die Hecke war genau eine Lücke gelassen — nicht vergessen, sondern eingezeichnet und beschriftet.",
+        "palette": [
+          "#516164",
+          "#354547"
+        ],
+        "drift": 0.24,
+        "set": {
+          "floor": "#6d6c60",
+          "fog": "#354547",
+          "density": 0.058,
+          "light": "dim",
+          "particles": "snow",
+          "props": [
+            "kelp",
+            "rock",
+            "shells"
+          ],
+          "ground": "sediment",
+          "water": true
+        },
+        "world": {
+          "sea": 40,
+          "note": "Innerhalb der Zäune bleibt das Wasser, was es einmal war.",
+          "marks": [
+            {
+              "lon": 6,
+              "lat": 65,
+              "name": "norwegenschelf"
+            },
+            {
+              "lon": -14,
+              "lat": 57,
+              "name": "rockall"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Schutzhecke",
+          "text": "Ein dichter Ring aus stacheligen Pflanzen um die Kolonie."
+        },
+        {
+          "name": "Eingang",
+          "text": "Eine einzige Lücke, ausdrücklich als solche bezeichnet."
+        }
+      ]
+    },
+    {
+      "id": "40",
+      "variety": "var. juliusi",
+      "varietyDescriptive": "var. subnavigans",
+      "title": "Unter dem Entsorgungsboot",
+      "author": "Julius",
+      "venue": "Nils Oldebusch",
+      "summary": "Eine Kolonie unter einer Route, auf der abgeladen wird, was oben niemand mehr will.",
+      "scenario": {
+        "year": 2930,
+        "title": "Unter der Abwurfroute",
+        "story": "Über diesem Abschnitt verlief eine Route, auf der abgeladen wurde, was an Land keinen Platz mehr hatte. Es kam nicht als Unfall, sondern nach Plan, in regelmäßigen Abständen, jahrzehntelang.",
+        "palette": [
+          "#4e5c63",
+          "#333f46"
+        ],
+        "drift": 0.4,
+        "set": {
+          "floor": "#665f55",
+          "fog": "#333f46",
+          "density": 0.07,
+          "light": "dark",
+          "particles": "dust",
+          "props": [
+            "rubble",
+            "plastic",
+            "net"
+          ],
+          "ground": "sediment",
+          "water": true
+        },
+        "world": {
+          "sea": 36,
+          "note": "Über den ertrunkenen Küsten laufen die neuen Entsorgungsrouten.",
+          "marks": [
+            {
+              "lon": 117,
+              "lat": 15,
+              "name": "suedchinasee"
+            },
+            {
+              "lon": 143,
+              "lat": 36,
+              "name": "japan"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Entsorgungsboot",
+          "text": "Über dem Riff liegt ein Boot und lässt fallen, was es geladen hat."
+        },
+        {
+          "name": "Sinkgut",
+          "text": "Braune Trümmer stehen dauerhaft im Wasser."
+        },
+        {
+          "name": "Trübe Deckschicht",
+          "text": "Von oben kommt kaum noch Licht durch."
+        }
+      ]
+    },
+    {
+      "id": "41",
+      "variety": "var. juliusi",
+      "varietyDescriptive": "var. filifera",
+      "title": "Kabel und Bot",
+      "author": "Julius",
+      "venue": "Nils Oldebusch",
+      "summary": "Eine Kolonie, an der ein Kabel entlangläuft, mit einem Bot am Fuß und Messkugeln im Wasser.",
+      "scenario": {
+        "year": 3260,
+        "title": "Am Kabel",
+        "story": "Ab hier wurde jede Kolonie angeschlossen. Ein Kabel führte vom Grund in die Krone, ein Gerät am Fuß maß mit, und was gemessen wurde, entschied, ob nachgeholfen wurde. Die Koralle wuchs um das Kabel herum.",
+        "palette": [
+          "#4c5a63",
+          "#313f4a"
+        ],
+        "drift": 0.3,
+        "set": {
+          "floor": "#5f5f5c",
+          "fog": "#313f4a",
+          "density": 0.06,
+          "light": "lamp",
+          "particles": "none",
+          "props": [
+            "rock",
+            "net"
+          ],
+          "ground": "rock",
+          "water": true
+        },
+        "world": {
+          "sea": 50,
+          "note": "Vor Japan steht das Wasser über den alten Küstenebenen.",
+          "marks": [
+            {
+              "lon": 143,
+              "lat": 36,
+              "name": "japan"
+            },
+            {
+              "lon": -176,
+              "lat": 57,
+              "name": "beringmeer"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Kabel",
+          "text": "Ein schwarzer Strang führt vom Grund bis in die Krone."
+        },
+        {
+          "name": "Bot",
+          "text": "Ein Gerät am Fuß, das nicht mehr weggeht."
+        },
+        {
+          "name": "Messkugeln",
+          "text": "Durchsichtige Kugeln hängen im Wasser ringsum."
+        }
+      ]
+    },
+    {
+      "id": "42",
+      "variety": "var. eliseae",
+      "varietyDescriptive": "var. fulcrata",
+      "title": "Die Koralle sinkt",
+      "author": "Elise",
+      "venue": "Nils Oldebusch",
+      "summary": "Eine Kolonie auf Stelzen, die dem weicher werdenden Grund davonwächst, in einer Kammer mit Sand, Löchern und Eingang.",
+      "scenario": {
+        "year": 3180,
+        "title": "Der weiche Grund",
+        "story": "Das Sediment kam schneller, als es sich setzen konnte, und der Boden hörte auf, ein Boden zu sein. Wer nicht mitsinken wollte, musste sich abstützen und mit jeder neuen Schicht ein Stück höher.",
+        "palette": [
+          "#55605e",
+          "#39443f"
+        ],
+        "drift": 0.42,
+        "set": {
+          "floor": "#6b6355",
+          "fog": "#39443f",
+          "density": 0.068,
+          "light": "dark",
+          "particles": "dust",
+          "props": [
+            "rubble",
+            "rock"
+          ],
+          "ground": "sediment",
+          "water": true
+        },
+        "world": {
+          "sea": 46,
+          "note": "Staub von den trockengefallenen Innenländern füllt die Becken auf.",
+          "marks": [
+            {
+              "lon": -125,
+              "lat": 36,
+              "name": "kalifornien"
+            },
+            {
+              "lon": 143,
+              "lat": 36,
+              "name": "japan"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Stelzen",
+          "text": "Braune Stützen heben den Stamm über den Grund."
+        },
+        {
+          "name": "Löcher",
+          "text": "Öffnungen in der Wand lassen Wasser durch, aber nichts Großes."
+        },
+        {
+          "name": "Sandschicht",
+          "text": "Oben wird laufend Sand nachgefüllt."
+        }
+      ]
+    },
+    {
+      "id": "43",
+      "variety": "var. lioneli",
+      "varietyDescriptive": "var. fulgurans",
+      "title": "Die Koralle kann blenden",
+      "author": "Lionel",
+      "venue": "Nils Oldebusch",
+      "summary": "Eine Kolonie, die Licht abgibt, hinter einer Dornenhecke mit explodierenden Samen.",
+      "scenario": {
+        "year": 4350,
+        "title": "Was den Zaun berührt",
+        "story": "Die Hecke reichte nicht mehr; sie musste auch antworten. Die Früchte an dieser gingen hoch, wenn etwas sie streifte, und die Kolonie dahinter gab Licht ab, das jeden blendete, der bis dorthin kam.",
+        "palette": [
+          "#4f5f5f",
+          "#334241"
+        ],
+        "drift": 0.28,
+        "set": {
+          "floor": "#6b6a5c",
+          "fog": "#334241",
+          "density": 0.062,
+          "light": "dim",
+          "particles": "dust",
+          "props": [
+            "kelp",
+            "rubble",
+            "rock"
+          ],
+          "ground": "rock",
+          "water": true
+        },
+        "world": {
+          "sea": 42,
+          "note": "Zwischen den eingefassten Feldern liegt Wasser, das niemand mehr betritt.",
+          "marks": [
+            {
+              "lon": 16,
+              "lat": 37,
+              "name": "mittelmeer"
+            },
+            {
+              "lon": -9,
+              "lat": 45,
+              "name": "biskaya"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Blendlicht",
+          "text": "Gelbe Strahlen gehen von den Ästen aus."
+        },
+        {
+          "name": "Dornenhecke",
+          "text": "Eine grüne Wand mit roten Früchten schließt das Feld."
+        },
+        {
+          "name": "Explodierende Samen",
+          "text": "Die Früchte gehen hoch, wenn etwas sie berührt."
+        }
+      ]
+    },
+    {
+      "id": "44",
+      "variety": "var. oliviae",
+      "varietyDescriptive": "var. impermeabilis",
+      "title": "Grüne Regenjacke",
+      "author": "Olivia",
+      "venue": "Nils Oldebusch",
+      "summary": "Eine bunte Kolonie unter einer grünen Außenhaut, mit einem Eingang an der Seite.",
+      "scenario": {
+        "year": 4390,
+        "title": "Die Außenhaut",
+        "story": "Was von außen kam, kam inzwischen von überall. Diese Kolonie hörte auf, einzelne Abwehren zu bauen, und legte sich stattdessen eine durchgehende Schicht über das ganze Gewebe — mit einer Öffnung, sonst nichts.",
+        "palette": [
+          "#4d6060",
+          "#324343"
+        ],
+        "drift": 0.3,
+        "set": {
+          "floor": "#6a6b5e",
+          "fog": "#324343",
+          "density": 0.064,
+          "light": "dark",
+          "particles": "dust",
+          "props": [
+            "kelp",
+            "fish",
+            "rock"
+          ],
+          "ground": "sediment",
+          "water": true
+        },
+        "world": {
+          "sea": 43,
+          "note": "Vor Südafrika steht das Wasser hoch über den alten Schelfkanten.",
+          "marks": [
+            {
+              "lon": 21,
+              "lat": -36,
+              "name": "suedafrika"
+            },
+            {
+              "lon": -37,
+              "lat": -14,
+              "name": "brasilien"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Regenjacke",
+          "text": "Eine grüne Schicht liegt über dem ganzen Gewebe."
+        },
+        {
+          "name": "Eingang",
+          "text": "Eine Öffnung an der Flanke, sonst ist alles geschlossen."
+        }
+      ]
+    },
+    {
+      "id": "45",
+      "variety": "var. jonatani",
+      "varietyDescriptive": "var. murifisca",
+      "title": "Eine Fischmauer",
+      "author": "Jonatan",
+      "venue": "Nils Oldebusch",
+      "summary": "Ein Riff, das sich hinter einer stehenden Wand aus Fischen verbirgt, mit violetten Polypen dahinter.",
+      "scenario": {
+        "year": 2360,
+        "title": "Hinter dem Fischzug",
+        "story": "Was von den Schwärmen übrig war, zog sich an die letzten stehenden Strukturen zurück und blieb dort. Zwischen Kolonie und offenem Wasser stand von da an eine Wand aus Fischen — Schutz für beide Seiten.",
+        "palette": [
+          "#4f6b70",
+          "#31514f"
+        ],
+        "drift": 0.24,
+        "set": {
+          "floor": "#6d7065",
+          "fog": "#31514f",
+          "density": 0.046,
+          "light": "dark",
+          "particles": "snow",
+          "props": [
+            "fish",
+            "kelp",
+            "rock"
+          ],
+          "ground": "sediment",
+          "water": true
+        },
+        "world": {
+          "sea": 12,
+          "note": "Die alten Fanggründe liegen unter Wasser, die Schwärme darüber.",
+          "marks": [
+            {
+              "lon": -9,
+              "lat": 45,
+              "name": "biskaya"
+            },
+            {
+              "lon": -17,
+              "lat": 20,
+              "name": "westafrika"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Fischmauer",
+          "text": "Ein dichter Zug hält Abstand zwischen Kolonie und offenem Wasser."
+        },
+        {
+          "name": "Violette Polypen",
+          "text": "Die Polypen sind dunkel gefärbt und im Schatten der Mauer kaum zu sehen."
+        }
+      ]
+    },
+    {
+      "id": "46",
+      "variety": "var. gevae",
+      "varietyDescriptive": "var. spumifera",
+      "title": "Seifenblasen und Eis",
+      "author": "Geva",
+      "venue": "Nils Oldebusch",
+      "summary": "Eine Kolonie in einer Blase, um die Eiswürfel und weitere Blasen treiben.",
+      "scenario": {
+        "year": 3670,
+        "title": "Blase und Block",
+        "story": "Der Kälteeinbruch kam, aber nicht überall gleich. Wo er ausblieb, half man nach: eine Hülle um die Kolonie, Eis an ihren Fuß, und die Hoffnung, dass beides zusammen reicht.",
+        "palette": [
+          "#4a626e",
+          "#2e4453"
+        ],
+        "drift": 0.3,
+        "set": {
+          "floor": "#6f7176",
+          "fog": "#2e4453",
+          "density": 0.05,
+          "light": "lamp",
+          "particles": "bubbles",
+          "props": [
+            "ice",
+            "rock"
+          ],
+          "ground": "sediment",
+          "water": true
+        },
+        "world": {
+          "sea": 57,
+          "note": "Der Kälteeinbruch bindet Wasser als Eis; die Küsten treten zurück.",
+          "marks": [
+            {
+              "lon": -24,
+              "lat": 72,
+              "name": "groenlandsee"
+            },
+            {
+              "lon": -146,
+              "lat": 57,
+              "name": "alaska"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Seifenblasen",
+          "text": "Mehrere Hüllen liegen ineinander."
+        },
+        {
+          "name": "Eiswürfel",
+          "text": "Am Fuß gestapelt, wo das Wasser am wärmsten steht."
+        }
+      ]
+    },
+    {
+      "id": "47",
+      "variety": "var. yanaeli",
+      "varietyDescriptive": "var. glacispina",
+      "title": "Im Stachelrahmen",
+      "author": "Yan-Ael",
+      "venue": "Nils Oldebusch",
+      "summary": "Eine kräftig gefärbte Kolonie hinter einem Rahmen aus Stacheln, mit Eiswürfeln im Inneren.",
+      "scenario": {
+        "year": 3810,
+        "title": "Der Stachelring",
+        "story": "Kaltes Wasser zog Leben an, und Leben zog anderes Leben an. Um die Kolonien wurden Ringe gesetzt, die nichts hereinließen, was nicht hineingehörte — und Eis dazu, damit die Kälte blieb.",
+        "palette": [
+          "#4c626c",
+          "#304552"
+        ],
+        "drift": 0.3,
+        "set": {
+          "floor": "#71736f",
+          "fog": "#304552",
+          "density": 0.052,
+          "light": "lamp",
+          "particles": "snow",
+          "props": [
+            "ice",
+            "rock",
+            "rubble"
+          ],
+          "ground": "rock",
+          "water": true
+        },
+        "world": {
+          "sea": 51,
+          "note": "Am Rand des kalten Wassers wird jede tragfähige Fläche eingefasst.",
+          "marks": [
+            {
+              "lon": -146,
+              "lat": 57,
+              "name": "alaska"
+            },
+            {
+              "lon": -176,
+              "lat": 57,
+              "name": "beringmeer"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Stachelrahmen",
+          "text": "Ein Ring aus Spitzen und roten Beeren um das Feld."
+        },
+        {
+          "name": "Eiswürfel",
+          "text": "Blaue Blöcke stehen zwischen den Ästen."
+        }
+      ]
+    },
+    {
+      "id": "48",
+      "variety": "var. ivae",
+      "varietyDescriptive": "var. ventifera",
+      "title": "Windräder und Schirme",
+      "author": "Iva",
+      "venue": "Nils Oldebusch",
+      "summary": "Sonnenschirme gegen Licht und Plastik, Windräder zum Kühlen, Eiswürfel und ein Nahrungsvorrat am Fuß.",
+      "scenario": {
+        "year": 2770,
+        "title": "Das Meer unter Schirmen",
+        "story": "Zwei Dinge kamen von oben und beide waren zu viel: Licht und Plastik. Die Schirme über dieser Kolonie halten beides ab, die Rotoren dazwischen bewegen das Wasser, das sich sonst nicht mehr rührte.",
+        "palette": [
+          "#5b7075",
+          "#3c5259"
+        ],
+        "drift": 0.22,
+        "set": {
+          "floor": "#7c7568",
+          "fog": "#3c5259",
+          "density": 0.04,
+          "light": "dim",
+          "particles": "plastic",
+          "props": [
+            "plastic",
+            "rock"
+          ],
+          "ground": "sediment",
+          "water": true
+        },
+        "world": {
+          "sea": 29,
+          "note": "Ein flaches, weites Warmmeer steht über dem, was Tiefland war.",
+          "marks": [
+            {
+              "lon": 39,
+              "lat": 20,
+              "name": "rotesmeer"
+            },
+            {
+              "lon": 70,
+              "lat": 12,
+              "name": "indien"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Sonnenschirme",
+          "text": "Sie halten Sonne und Plastik gleichermaßen ab."
+        },
+        {
+          "name": "Windräder",
+          "text": "Kleine Rotoren halten die Koralle kühl."
+        },
+        {
+          "name": "Eiswürfel",
+          "text": "Am Boden gestapelt, gegen die Wärme."
+        },
+        {
+          "name": "Nahrung",
+          "text": "Ein Depot für die Zeiten ohne Strömung."
+        }
+      ]
+    },
+    {
+      "id": "49",
+      "variety": "var. alineae",
+      "varietyDescriptive": "var. raiifera",
+      "title": "Beschützer-Rochen",
+      "author": "Aline",
+      "venue": "Nils Oldebusch",
+      "summary": "Eine Kolonie mit Schirmkappen, bewacht von einem Rochen, mit Qualle und Fisch als Untermietern.",
+      "scenario": {
+        "year": 3950,
+        "title": "Der bewachte Fels",
+        "story": "Zu den Anlagen kamen Wächter. Ein Rochen hielt sich dauerhaft über dieser Kolonie, und was darunter lebte, lebte unter seinem Schatten. Es war keine Absprache; es war eine Gewohnheit, die beiden nützte.",
+        "palette": [
+          "#4b5f62",
+          "#2f4344"
+        ],
+        "drift": 0.26,
+        "set": {
+          "floor": "#6a6c67",
+          "fog": "#2f4344",
+          "density": 0.056,
+          "light": "dim",
+          "particles": "snow",
+          "props": [
+            "fish",
+            "rock",
+            "kelp"
+          ],
+          "ground": "rock",
+          "water": true
+        },
+        "world": {
+          "sea": 45,
+          "note": "Am Antarktisrand liegen die letzten kalten, flachen Gründe.",
+          "marks": [
+            {
+              "lon": 10,
+              "lat": -63,
+              "name": "antarktisrand"
+            },
+            {
+              "lon": 21,
+              "lat": -36,
+              "name": "suedafrika"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Schirmkappen",
+          "text": "Pilzförmige Dächer über den oberen Ästen."
+        },
+        {
+          "name": "Beschützer-Rochen",
+          "text": "Ein Rochen hält sich dauerhaft über der Kolonie."
+        },
+        {
+          "name": "Schwarzer Sockel",
+          "text": "Der Fuß steht auf einem dunklen Block."
+        }
+      ]
+    },
+    {
+      "id": "50",
+      "variety": "var. retirumpens",
+      "varietyDescriptive": "var. retirumpens",
+      "title": "Netzbrecher",
+      "author": null,
+      "venue": "Nils Oldebusch",
+      "summary": "Eine Kolonie mit scharfkantigen Ästen, an denen die Grundleinen zerreißen statt der Koralle.",
+      "scenario": {
+        "year": 2270,
+        "title": "Der zerschnittene Grund",
+        "story": "Die Leinen kamen weiter, aber sie kamen nicht mehr heil zurück. Wo eine Kolonie hart genug wuchs, riss sie das Netz auf, statt selbst abzubrechen. Für eine Weile war das genug, um in Ruhe gelassen zu werden.",
+        "palette": [
+          "#4d6674",
+          "#2f4b5b"
+        ],
+        "drift": 0.2,
+        "set": {
+          "floor": "#6f6a5d",
+          "fog": "#2f4b5b",
+          "density": 0.04,
+          "light": "dark",
+          "particles": "dust",
+          "props": [
+            "net",
+            "rubble",
+            "rock"
+          ],
+          "ground": "rock",
+          "water": true
+        },
+        "world": {
+          "sea": 9,
+          "note": "Über den geräumten Flachgründen liegt eine Route, die niemand mehr fährt.",
+          "marks": [
+            {
+              "lon": -14,
+              "lat": 57,
+              "name": "rockall"
+            },
+            {
+              "lon": -9,
+              "lat": 45,
+              "name": "biskaya"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Schnittkanten",
+          "text": "Die Astgabeln laufen in harte Kanten aus, die eine Leine durchtrennen."
+        },
+        {
+          "name": "Netzreste",
+          "text": "Über der Kolonie hängt, was von den letzten Zügen übrig blieb."
+        }
+      ]
+    },
+    {
+      "id": "51",
+      "variety": "var. theae",
+      "varietyDescriptive": "var. multicolor",
+      "title": "Meine Koralle ist bunt",
+      "author": "Thea",
+      "venue": "Nils Oldebusch",
+      "summary": "Eine Kolonie in allen Farben — damit Fische sich in ihr verstecken können — mit Lüfter, Vorratsregal und Pflegezeug.",
+      "scenario": {
+        "year": 2520,
+        "title": "Das bunte Versteck",
+        "story": "Wer sichtbar blieb, wurde gefressen; wer verschwand, fand nichts mehr. Diese Kolonie löste beides zugleich: so viele Farben, dass niemand mehr erkennen konnte, wo die Koralle aufhört und ein Fisch anfängt.",
+        "palette": [
+          "#5a6f78",
+          "#3d5560"
+        ],
+        "drift": 0.18,
+        "set": {
+          "floor": "#7a7468",
+          "fog": "#3d5560",
+          "density": 0.036,
+          "light": "dim",
+          "particles": "snow",
+          "props": [
+            "fish",
+            "shells",
+            "rock"
+          ],
+          "ground": "sediment",
+          "water": true
+        },
+        "world": {
+          "sea": 19,
+          "note": "Das Mittelmeer steht über seinen Ebenen, die Küsten sind Inselketten.",
+          "marks": [
+            {
+              "lon": 16,
+              "lat": 37,
+              "name": "mittelmeer"
+            },
+            {
+              "lon": -79,
+              "lat": 30,
+              "name": "florida"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Lüfter",
+          "text": "Ein Ventilator am Stamm, falls es zu heiß wird."
+        },
+        {
+          "name": "Tarnfarben",
+          "text": "Jeder Abschnitt trägt eine andere Farbe, in der sich Fische verlieren."
+        },
+        {
+          "name": "Vorratsregal",
+          "text": "Am Fuß steht, was die Kolonie zum Leben braucht — bis hin zur Zahnbürste."
+        }
+      ]
+    },
+    {
+      "id": "52",
+      "variety": "var. avae",
+      "varietyDescriptive": "var. tetraodontis",
+      "title": "Kugelfischmauer",
+      "author": "Ava",
+      "venue": "Nils Oldebusch",
+      "summary": "Eine Kolonie, umgeben von einer stehenden Wand aus aufgestellten Kugelfischen.",
+      "scenario": {
+        "year": 4490,
+        "title": "Die lebende Mauer",
+        "story": "Nicht jede Wand war gebaut. Um diese Kolonie stellte sich ein Zug Kugelfische auf und blieb — aufgestellt, stachelig, dicht an dicht. Was hindurch wollte, kam nicht hindurch.",
+        "palette": [
+          "#4e5f66",
+          "#324249"
+        ],
+        "drift": 0.28,
+        "set": {
+          "floor": "#686a66",
+          "fog": "#324249",
+          "density": 0.06,
+          "light": "dark",
+          "particles": "snow",
+          "props": [
+            "fish",
+            "rock"
+          ],
+          "ground": "sediment",
+          "water": true
+        },
+        "world": {
+          "sea": 44,
+          "note": "Südaustralien ist auf sein Hochland zusammengeschrumpft.",
+          "marks": [
+            {
+              "lon": 134,
+              "lat": -38,
+              "name": "suedaustralien"
+            },
+            {
+              "lon": 159,
+              "lat": -41,
+              "name": "tasmansee"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Kugelfischmauer",
+          "text": "Hunderte aufgeblasene Fische bilden eine geschlossene Wand."
+        },
+        {
+          "name": "Enger Stand",
+          "text": "Die Kolonie wächst schmal, weil die Mauer keinen Platz lässt."
+        }
+      ]
+    },
+    {
+      "id": "53",
+      "variety": "var. avae",
+      "varietyDescriptive": "var. lucifera",
+      "title": "Taucherblende",
+      "author": "Ava",
+      "venue": "Nils Oldebusch",
+      "summary": "Eine Kolonie, deren Lichter so hell leuchten, dass sogar Taucher geblendet werden.",
+      "scenario": {
+        "year": 4640,
+        "title": "Gegen die Taucher",
+        "story": "Die Abwehr richtete sich nicht mehr gegen Fressfeinde. Diese Kolonie gab Licht ab, das hell genug war, um Menschen zu blenden — und das war ausdrücklich der Zweck.",
+        "palette": [
+          "#4a5a63",
+          "#2e3d47"
+        ],
+        "drift": 0.24,
+        "set": {
+          "floor": "#64646a",
+          "fog": "#2e3d47",
+          "density": 0.062,
+          "light": "lamp",
+          "particles": "none",
+          "props": [
+            "rock",
+            "net"
+          ],
+          "ground": "rock",
+          "water": true
+        },
+        "world": {
+          "sea": 46,
+          "note": "Vor Neuseeland liegen die letzten unbeaufsichtigten Gründe.",
+          "marks": [
+            {
+              "lon": 176,
+              "lat": -44,
+              "name": "neuseeland"
+            },
+            {
+              "lon": -76,
+              "lat": -30,
+              "name": "chile"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Blendlichter",
+          "text": "Von jedem Ast gehen Strahlen in alle Richtungen."
+        },
+        {
+          "name": "Gegen Taucher",
+          "text": "Die Helligkeit ist ausdrücklich gegen Menschen gerichtet."
+        }
+      ]
+    },
+    {
+      "id": "54",
+      "variety": "var. avae",
+      "varietyDescriptive": "var. inviolata",
+      "title": "Die Blase, die nie kaputtgeht",
+      "author": "Ava",
+      "venue": "Nils Oldebusch",
+      "summary": "Eine Kolonie in einer violetten Blase, von der ausdrücklich gesagt wird, dass sie nicht platzen kann.",
+      "scenario": {
+        "year": 4780,
+        "title": "Die Hülle, die hält",
+        "story": "Der letzte Eintrag dieser Reihe verlangt nichts mehr vom Meer. Die Blase um diese Kolonie geht nicht kaputt — das ist keine Beobachtung, sondern eine Bedingung, unter der sie gezeichnet wurde.",
+        "palette": [
+          "#4a5763",
+          "#2e3a48"
+        ],
+        "drift": 0.22,
+        "set": {
+          "floor": "#63626a",
+          "fog": "#2e3a48",
+          "density": 0.068,
+          "light": "lamp",
+          "particles": "bubbles",
+          "props": [
+            "rock"
+          ],
+          "ground": "rock",
+          "water": true
+        },
+        "world": {
+          "sea": 48,
+          "note": "Was noch lebt, lebt hinter einer Grenze, die es selbst gezogen hat.",
+          "marks": [
+            {
+              "lon": 70,
+              "lat": 12,
+              "name": "indien"
+            },
+            {
+              "lon": 134,
+              "lat": -38,
+              "name": "suedaustralien"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Unzerstörbare Blase",
+          "text": "Eine geschlossene Hülle, deren Haltbarkeit Teil der Zeichnung ist."
+        },
+        {
+          "name": "Regenbogenäste",
+          "text": "Das Gewebe darunter ist in allen Farben angelegt."
+        }
+      ]
+    },
+    {
+      "id": "55",
+      "variety": "var. insidiosa",
+      "varietyDescriptive": "var. insidiosa",
+      "title": "Falle und Gas",
+      "author": null,
+      "venue": "Nils Oldebusch",
+      "summary": "Eine blasse Kolonie in einer Hülle, mit einer Falle am Rand und einem Gas, das sie ausstößt.",
+      "scenario": {
+        "year": 4680,
+        "title": "Die Falle",
+        "story": "Zuletzt wartete die Kolonie nicht mehr ab. Am Rand ihrer Hülle lag etwas, das zuschnappte, und in das Wasser um sie herum gab sie einen Stoff ab, der es für alle anderen unbrauchbar machte.",
+        "palette": [
+          "#47555d",
+          "#2c3941"
+        ],
+        "drift": 0.3,
+        "set": {
+          "floor": "#615f5a",
+          "fog": "#2c3941",
+          "density": 0.07,
+          "light": "dark",
+          "particles": "dust",
+          "props": [
+            "rubble",
+            "bones",
+            "rock"
+          ],
+          "ground": "rock",
+          "water": true
+        },
+        "world": {
+          "sea": 47,
+          "note": "Um die letzten Felder herum steht Wasser, in dem nichts mehr lebt.",
+          "marks": [
+            {
+              "lon": -61,
+              "lat": -47,
+              "name": "patagonien"
+            },
+            {
+              "lon": -76,
+              "lat": -30,
+              "name": "chile"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Falle",
+          "text": "Am unteren Rand liegt etwas, das zuschnappt."
+        },
+        {
+          "name": "Gas",
+          "text": "Die Kolonie gibt einen Stoff ab, der das Wasser um sie herum unbrauchbar macht."
+        },
+        {
+          "name": "Rote Spitzen",
+          "text": "Der Rand der Hülle ist mit Spitzen besetzt."
+        }
+      ]
+    },
+    {
+      "id": "56",
+      "variety": "var. hannahi",
+      "varietyDescriptive": "var. pellucida",
+      "title": "In der Blase",
+      "author": "Hannah",
+      "venue": "Nils Oldebusch",
+      "summary": "Eine Kolonie in Pastelltönen, die sich in eine Blase zurückgezogen hat und aus dem Plastik heraussieht.",
+      "scenario": {
+        "year": 3100,
+        "title": "Von innen nach draußen sehen",
+        "story": "Die Farben gingen zuerst. Was blieb, zog sich in eine durchsichtige Hülle zurück und sah von dort aus zu, wie das Wasser draußen dichter wurde.",
+        "palette": [
+          "#4f5d64",
+          "#343f47"
+        ],
+        "drift": 0.45,
+        "set": {
+          "floor": "#645f58",
+          "fog": "#343f47",
+          "density": 0.072,
+          "light": "dark",
+          "particles": "plastic",
+          "props": [
+            "plastic",
+            "rock"
+          ],
+          "ground": "sediment",
+          "water": true
+        },
+        "world": {
+          "sea": 43,
+          "note": "Die Randmeere sind breit und flach; darin bleibt alles liegen.",
+          "marks": [
+            {
+              "lon": 117,
+              "lat": 15,
+              "name": "suedchinasee"
+            },
+            {
+              "lon": 70,
+              "lat": 12,
+              "name": "indien"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Klare Hülle",
+          "text": "Eine durchsichtige Blase, durch die man hinaussieht."
+        },
+        {
+          "name": "Blasse Farben",
+          "text": "Das Gewebe hat seine kräftigen Töne verloren."
+        }
+      ]
+    },
+    {
+      "id": "57",
+      "variety": "var. muralis",
+      "varietyDescriptive": "var. muralis",
+      "title": "Zwischen zwei Mauern",
+      "author": null,
+      "venue": "Nils Oldebusch",
+      "summary": "Eine kräftig gefärbte Kolonie in einer Gasse zwischen zwei gemauerten Wänden.",
+      "scenario": {
+        "year": 4540,
+        "title": "Die Gasse",
+        "story": "Am Ende war zwischen den Mauern genau so viel Platz, wie eine Kolonie braucht. Ob die Wände sie schützten oder einschlossen, ließ sich von innen nicht mehr entscheiden.",
+        "palette": [
+          "#4b5b62",
+          "#303e46"
+        ],
+        "drift": 0.26,
+        "set": {
+          "floor": "#66655f",
+          "fog": "#303e46",
+          "density": 0.066,
+          "light": "dark",
+          "particles": "dust",
+          "props": [
+            "rubble",
+            "rock"
+          ],
+          "ground": "rock",
+          "water": true
+        },
+        "world": {
+          "sea": 44,
+          "note": "Die Kanäle zwischen den befestigten Feldern sind schmal geworden.",
+          "marks": [
+            {
+              "lon": 143,
+              "lat": 36,
+              "name": "japan"
+            },
+            {
+              "lon": 117,
+              "lat": 15,
+              "name": "suedchinasee"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Mauern",
+          "text": "Links und rechts steht Ziegelwerk bis über die Krone."
+        },
+        {
+          "name": "Gasse",
+          "text": "Zwischen den Wänden bleibt genau so viel Platz wie die Kolonie braucht."
+        }
+      ]
+    },
+    {
+      "id": "58",
+      "variety": "var. bullifera",
+      "varietyDescriptive": "var. bullifera",
+      "title": "Blase gegen alles",
+      "author": null,
+      "venue": "Nils Oldebusch",
+      "summary": "Eine bunte Kolonie in einer Blase, umgeben von Eiswürfeln, Zigaretten und Müll.",
+      "scenario": {
+        "year": 3020,
+        "title": "Die Hülle gegen den Rest",
+        "story": "Es war nicht mehr zu unterscheiden, was zuerst schadete. Also wurde alles ausgesperrt: eine Blase um die Kolonie, Eis dagegen von außen, und draußen trieb weiter, was das Wasser mitbrachte.",
+        "palette": [
+          "#4b5a62",
+          "#303c44"
+        ],
+        "drift": 0.5,
+        "set": {
+          "floor": "#615c56",
+          "fog": "#303c44",
+          "density": 0.075,
+          "light": "dark",
+          "particles": "plastic",
+          "props": [
+            "plastic",
+            "ice",
+            "rubble"
+          ],
+          "ground": "sediment",
+          "water": true
+        },
+        "world": {
+          "sea": 39,
+          "note": "In den neuen Randmeeren sammelt sich, was die alten Küsten hergaben.",
+          "marks": [
+            {
+              "lon": -72,
+              "lat": 19,
+              "name": "karibik"
+            },
+            {
+              "lon": -17,
+              "lat": 20,
+              "name": "westafrika"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Schutzblase",
+          "text": "Eine geschlossene Hülle um die ganze Kolonie."
+        },
+        {
+          "name": "Eiswürfel",
+          "text": "Blaue Würfel treiben rings um die Blase."
+        },
+        {
+          "name": "Treibgut",
+          "text": "Zigaretten und Müll bleiben draußen."
+        }
+      ]
+    },
+    {
+      "id": "59",
+      "variety": "var. observata",
+      "varietyDescriptive": "var. observata",
+      "title": "Unter Beobachtung",
+      "author": null,
+      "venue": "Nils Oldebusch",
+      "summary": "Eine Kolonie zwischen U-Booten und Bildschirmen, hell angestrahlt und von allen Seiten aufgezeichnet.",
+      "scenario": {
+        "year": 3350,
+        "title": "Rund um die Uhr",
+        "story": "Am Ende war die Kolonie besser dokumentiert als verstanden. Boote lagen daneben, Kameras liefen mit, das Licht ging nicht mehr aus. Ob ihr das half, ist nicht überliefert; dass sie beobachtet wurde, schon.",
+        "palette": [
+          "#4a5966",
+          "#2f3d4c"
+        ],
+        "drift": 0.28,
+        "set": {
+          "floor": "#616166",
+          "fog": "#2f3d4c",
+          "density": 0.055,
+          "light": "lamp",
+          "particles": "bubbles",
+          "props": [
+            "rock",
+            "net",
+            "rubble"
+          ],
+          "ground": "rock",
+          "water": true
+        },
+        "world": {
+          "sea": 53,
+          "note": "Über der größten Wasserfläche der Erdgeschichte steht ein Beobachtungsnetz.",
+          "marks": [
+            {
+              "lon": 159,
+              "lat": -41,
+              "name": "tasmansee"
+            },
+            {
+              "lon": 176,
+              "lat": -44,
+              "name": "neuseeland"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Tauchboote",
+          "text": "Farbige Rümpfe stehen rechts und links im Bild."
+        },
+        {
+          "name": "Bildschirme",
+          "text": "Am Grund laufen Aufnahmen der Kolonie."
+        },
+        {
+          "name": "Dauerlicht",
+          "text": "Gelbe Strahlen halten die Koralle rund um die Uhr im Licht."
+        }
+      ]
+    },
+    {
+      "id": "60",
+      "variety": "var. suuii",
+      "varietyDescriptive": "var. solaris",
+      "title": "Sonnenschutz",
+      "author": "Suui",
+      "venue": "Nils Oldebusch",
+      "summary": "Eine Kolonie mit Loch, Schirm, Ventilator, Sonnencreme und Brille — die vollständige Ausrüstung gegen zu viel Licht.",
+      "scenario": {
+        "year": 2600,
+        "title": "Zu viel Licht",
+        "story": "Die Deckschicht wurde klar, und mit ihr kam die Strahlung bis auf den Grund. Man rüstete die Kolonien aus wie Menschen an einem Strand: Schirm, Creme, Brille, ein Loch zum Hineinziehen.",
+        "palette": [
+          "#6a7a7e",
+          "#43585f"
+        ],
+        "drift": 0.15,
+        "set": {
+          "floor": "#807a6c",
+          "fog": "#43585f",
+          "density": 0.03,
+          "light": "dim",
+          "particles": "none",
+          "props": [
+            "rock",
+            "shells"
+          ],
+          "ground": "sediment",
+          "water": true
+        },
+        "world": {
+          "sea": 22,
+          "note": "Florida ist eine Kette von Inseln; die Warmschicht steht darüber.",
+          "marks": [
+            {
+              "lon": -79,
+              "lat": 30,
+              "name": "florida"
+            },
+            {
+              "lon": -72,
+              "lat": 19,
+              "name": "karibik"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Schattenloch",
+          "text": "Eine Öffnung im Stamm, in die sich das Gewebe zurückziehen kann."
+        },
+        {
+          "name": "Sonnencreme",
+          "text": "Eine aufgetragene Schicht, die das Licht zurückwirft."
+        },
+        {
+          "name": "Ventilator",
+          "text": "Bewegt das Wasser, wenn die Strömung ausbleibt."
+        }
+      ]
+    },
+    {
+      "id": "61",
+      "variety": "var. cosirnae",
+      "varietyDescriptive": "var. refrigerans",
+      "title": "Schutzblase mit Kühlung",
+      "author": "Cosirna",
+      "venue": "Nils Oldebusch",
+      "summary": "Eine Kolonie unter einer Schutzblase, mit Lüfter und einem Becken kalten Wassers für den Fall, dass die Meere zu warm werden.",
+      "scenario": {
+        "year": 2850,
+        "title": "Unter der eigenen Haut",
+        "story": "Die Kühlung von außen versagte, also wurde sie nach innen verlegt. Eine Hülle trennte das Wasser der Kolonie vom Wasser des Meeres, und darunter lag ein Vorrat kalten Wassers für den Fall, dass es doch nicht reichte.",
+        "palette": [
+          "#57696f",
+          "#3a4e57"
+        ],
+        "drift": 0.18,
+        "set": {
+          "floor": "#767063",
+          "fog": "#3a4e57",
+          "density": 0.044,
+          "light": "dim",
+          "particles": "bubbles",
+          "props": [
+            "ice",
+            "rock"
+          ],
+          "ground": "sediment",
+          "water": true
+        },
+        "world": {
+          "sea": 33,
+          "note": "Die großen Deltas sind fort; die Küste liegt weit landeinwärts.",
+          "marks": [
+            {
+              "lon": 70,
+              "lat": 12,
+              "name": "indien"
+            },
+            {
+              "lon": 117,
+              "lat": 15,
+              "name": "suedchinasee"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Schutzblase",
+          "text": "Eine Hülle, die das Wasser um die Kolonie herum trennt."
+        },
+        {
+          "name": "Lüfter",
+          "text": "Falls es zu warm wird."
+        },
+        {
+          "name": "Kaltwasserbecken",
+          "text": "Ein Vorrat kalten Wassers am Fuß der Kolonie."
+        }
+      ]
+    },
+    {
+      "id": "62",
+      "variety": "var. saeptata",
+      "varietyDescriptive": "var. saeptata",
+      "title": "Zaun und Nahrung",
+      "author": null,
+      "venue": "Nils Oldebusch",
+      "summary": "Eine Kolonie mit Lüfter, einem Zaun gegen die Fische und einem Vorrat, der sie am Leben hält.",
+      "scenario": {
+        "year": 2690,
+        "title": "Der eingezäunte Grund",
+        "story": "Es reichte nicht mehr, kühl zu bleiben — man musste auch fernhalten, was fraß, und heranschaffen, was fehlte. Um diese Kolonie stand ein Zaun, und am Fuß lag, was sie nicht mehr selbst aus dem Wasser bekam.",
+        "palette": [
+          "#5f7378",
+          "#3f545c"
+        ],
+        "drift": 0.2,
+        "set": {
+          "floor": "#787064",
+          "fog": "#3f545c",
+          "density": 0.038,
+          "light": "dim",
+          "particles": "snow",
+          "props": [
+            "rock",
+            "shells",
+            "fish"
+          ],
+          "ground": "sediment",
+          "water": true
+        },
+        "world": {
+          "sea": 26,
+          "note": "Vor Brasilien liegt das Wasser über dem, was Küstenebene war.",
+          "marks": [
+            {
+              "lon": -72,
+              "lat": 19,
+              "name": "karibik"
+            },
+            {
+              "lon": -37,
+              "lat": -14,
+              "name": "brasilien"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Zaunpfosten",
+          "text": "Ein Zaun hält, was fressen will, auf Abstand."
+        },
+        {
+          "name": "Lüfter",
+          "text": "Für den Fall, dass es zu heiß wird."
+        },
+        {
+          "name": "Nahrungsbett",
+          "text": "Bunte Körner am Fuß, damit die Kolonie leben kann."
+        }
+      ]
+    },
+    {
+      "id": "63",
+      "variety": "var. bipartita",
+      "varietyDescriptive": "var. bipartita",
+      "title": "Zwei Farben und Stacheln",
+      "author": null,
+      "venue": "NKM Frankfurt / Höfling",
+      "summary": "Eine Kolonie, in der Mitte geteilt: oben limettengrün, unten seegrün, und über beide Hälften kurze Stacheln.",
+      "scenario": {
+        "year": 3555,
+        "title": "Die Schichtgrenze",
+        "story": "Die Erwärmung legte das Meer in Schichten, die kaum noch Wasser miteinander tauschten: oben warm und trüb, unten kühl und klar. Wer hoch genug wuchs, stand in beiden zugleich und musste für jede Hälfte etwas anderes sein. Die Stacheln waren gegen das, was aus der oberen Schicht herabsank.",
+        "palette": [
+          "#54706a",
+          "#2f4a52"
+        ],
+        "drift": 0.3,
+        "set": {
+          "floor": "#6f7166",
+          "fog": "#2f4a52",
+          "density": 0.055,
+          "light": "dim",
+          "particles": "snow",
+          "props": [
+            "rock",
+            "rubble"
+          ],
+          "ground": "rock",
+          "water": true
+        },
+        "world": {
+          "sea": 60,
+          "note": "Das Meer steht sechzig Meter höher und liegt in zwei Schichten, die kaum noch tauschen.",
+          "marks": [
+            {
+              "lon": -9,
+              "lat": 45,
+              "name": "biskaya"
+            },
+            {
+              "lon": -14,
+              "lat": 57,
+              "name": "rockall"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Zwei Hälften",
+          "text": "Der Stamm wechselt auf halber Höhe die Farbe — oben limettengrün, unten seegrün."
+        },
+        {
+          "name": "Stacheln",
+          "text": "Kurze braune und rostfarbene Stacheln sitzen über die ganzen Äste verteilt."
+        },
+        {
+          "name": "Warme Polypen",
+          "text": "Orange, gelb und korallrot, in beiden Hälften dieselben."
+        }
+      ]
+    },
+    {
+      "id": "64",
+      "variety": "var. campanulata",
+      "varietyDescriptive": "var. campanulata",
+      "title": "Die Glocke mit kaltem Wasser",
+      "author": null,
+      "venue": "NKM Frankfurt / Höfling",
+      "summary": "Eine rosa Kolonie unter einer Glasglocke voll kaltem Wasser; draußen Sonne, Sand, ein Baum und Vögel.",
+      "scenario": {
+        "year": 4830,
+        "title": "Konna unter der Glocke",
+        "story": "Auf dem Blatt steht, wofür die Glocke da ist: kaltes Wasser, um sich vor der Erderwärmung zu schützen. Zu diesem Zeitpunkt war das keine Erfindung mehr, sondern Verwahrung — gekühlte Becken an Land, in denen aufbewahrt wurde, was das Meer nicht mehr trug. Draußen schien die Sonne, und genau das war das Problem.",
+        "palette": [
+          "#5e7d8b",
+          "#38536a"
+        ],
+        "drift": 0.1,
+        "set": {
+          "floor": "#6a6b70",
+          "fog": "#38536a",
+          "density": 0.03,
+          "light": "lamp",
+          "particles": "none",
+          "props": [
+            "rock"
+          ],
+          "ground": "rock",
+          "water": true
+        },
+        "world": {
+          "sea": 43,
+          "note": "Was noch gerettet wird, steht nicht mehr im Meer, sondern in Becken daneben.",
+          "marks": [
+            {
+              "lon": 143,
+              "lat": 36,
+              "name": "japan"
+            },
+            {
+              "lon": -125,
+              "lat": 36,
+              "name": "kalifornien"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Glasglocke",
+          "text": "Eine durchsichtige Glocke schließt die Kolonie vollständig ein."
+        },
+        {
+          "name": "Kaltes Wasser",
+          "text": "Auf dem Blatt steht, wozu: „um sich vor der Erderwärmung zu schützen“."
+        },
+        {
+          "name": "Die Welt draußen",
+          "text": "Sonne, gelber Sand, ein grüner Baum und zwei Vögel — alles außerhalb der Glocke."
+        }
+      ]
+    },
+    {
+      "id": "65",
+      "variety": "var. lucens",
+      "varietyDescriptive": "var. lucens",
+      "title": "Blasen und Leuchten",
+      "author": null,
+      "venue": "NKM Frankfurt / Höfling",
+      "summary": "Eine blasse Kolonie mit feinen roten Streifen, aus der grüne Blasen aufsteigen, umgeben von einem gelbgrünen Schein.",
+      "scenario": {
+        "year": 4200,
+        "title": "Das ausgeatmete Wasser",
+        "story": "Warmes Wasser fasst weniger Sauerstoff, und geschichtetes Wasser reicht keinen mehr nach unten weiter. In dieser Tiefe blieb kaum etwas übrig zum Atmen. Die Kolonie nahm Bakterien auf, die ihr an der Oberfläche welchen abgaben — das Leuchten war nur ein Nebenprodukt davon.",
+        "palette": [
+          "#4a6c68",
+          "#28454a"
+        ],
+        "drift": 0.35,
+        "set": {
+          "floor": "#6b6f60",
+          "fog": "#28454a",
+          "density": 0.062,
+          "light": "dark",
+          "particles": "bubbles",
+          "props": [
+            "rock",
+            "bones"
+          ],
+          "ground": "sediment",
+          "water": true
+        },
+        "world": {
+          "sea": 38,
+          "note": "Die sauerstoffarmen Zonen vor Südamerika und im Arabischen Meer reichen bis unter die Küsten.",
+          "marks": [
+            {
+              "lon": -76,
+              "lat": -30,
+              "name": "chile"
+            },
+            {
+              "lon": 70,
+              "lat": 12,
+              "name": "indien"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Blasenketten",
+          "text": "Grüne Blasen steigen an den Ästen entlang nach oben."
+        },
+        {
+          "name": "Schutzleuchten",
+          "text": "Gelbe und grüne Striche stehen wie ein Schein um die ganze Kolonie."
+        },
+        {
+          "name": "Rote Streifung",
+          "text": "Feine korallrote Striche liegen über dem hellen Gewebe."
+        }
+      ]
+    },
+    {
+      "id": "66",
+      "variety": "var. vittorioi",
+      "varietyDescriptive": "var. comitata",
+      "title": "Fünf Farben und drei Fische",
+      "author": "Vittorio",
+      "venue": "NKM Frankfurt / Höfling",
+      "summary": "Eine beige Kolonie mit Polypen in fünf Farben; rechts daneben stehen genau drei blaue Fische.",
+      "scenario": {
+        "year": 5415,
+        "title": "Die ersten drei",
+        "story": "Von hier an zählt das Archiv wieder, was dazukommt, statt was fehlt. Es waren drei Fische, und sie blieben. Dass ein Riff sich erholt, sieht man nicht zuerst an der Koralle, sondern daran, dass wieder etwas da ist, das sie braucht.",
+        "palette": [
+          "#4f7278",
+          "#2f4f52"
+        ],
+        "drift": 0.2,
+        "set": {
+          "floor": "#737165",
+          "fog": "#2f4f52",
+          "density": 0.042,
+          "light": "dim",
+          "particles": "snow",
+          "props": [
+            "fish",
+            "kelp",
+            "rock"
+          ],
+          "ground": "sediment",
+          "water": true
+        },
+        "world": {
+          "sea": -27,
+          "note": "Das Wasser kommt zurück, die Buchten füllen sich, und mit ihnen die Schwärme.",
+          "marks": [
+            {
+              "lon": 176,
+              "lat": -44,
+              "name": "neuseeland"
+            },
+            {
+              "lon": 159,
+              "lat": -41,
+              "name": "tasmansee"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Fünf Polypenfarben",
+          "text": "Gelb, blau, orange, rosa und eisblau an einem einzigen Stamm."
+        },
+        {
+          "name": "Drei Fische",
+          "text": "Genau drei blaue Fische, rechts neben der Kolonie, alle in dieselbe Richtung."
+        }
+      ]
+    },
+    {
+      "id": "67",
+      "variety": "var. vicinalis",
+      "varietyDescriptive": "var. vicinalis",
+      "title": "Kalmar, Fisch, Qualle, Muschel",
+      "author": null,
+      "venue": "NKM Frankfurt / Höfling",
+      "summary": "Eine ungefärbt gebliebene Kolonie, umgeben von vier Nachbarn: Kalmar, Rifffisch, Qualle und einer offenen Muschel.",
+      "scenario": {
+        "year": 5545,
+        "title": "Die Nachbarschaft",
+        "story": "Der vorletzte Eintrag zählt keine Fläche mehr, sondern Nachbarn: ein Kalmar, ein Fisch, eine Qualle, eine offene Muschel. Die Kolonie selbst blieb als einzige im Archiv ungefärbt — ausgemalt wurde, wer um sie herum stand.",
+        "palette": [
+          "#557a7d",
+          "#345659"
+        ],
+        "drift": 0.16,
+        "set": {
+          "floor": "#757466",
+          "fog": "#345659",
+          "density": 0.036,
+          "light": "dim",
+          "particles": "bubbles",
+          "props": [
+            "fish",
+            "shells",
+            "kelp",
+            "rock"
+          ],
+          "ground": "sediment",
+          "water": true
+        },
+        "world": {
+          "sea": -8,
+          "note": "Fast wieder die Küstenlinie vom Anfang des Archivs — diesmal nicht leer.",
+          "marks": [
+            {
+              "lon": -14,
+              "lat": 57,
+              "name": "rockall"
+            },
+            {
+              "lon": 6,
+              "lat": 65,
+              "name": "norwegenschelf"
+            }
+          ]
+        }
+      },
+      "features": [
+        {
+          "name": "Der Kalmar",
+          "text": "Links steht ein Kalmar aufrecht, fast so hoch wie die Kolonie selbst."
+        },
+        {
+          "name": "Vier Nachbarn",
+          "text": "Rechts ein Fisch, darunter eine kleine Qualle, am Boden eine offene Muschel."
+        },
+        {
+          "name": "Ohne Farbe",
+          "text": "Als einzige Zeichnung des Archivs blieb die Kolonie selbst unausgemalt."
+        }
+      ]
+    }
+  ]
+}
