@@ -486,6 +486,30 @@
   #about .credit{margin-top:22px;color:rgba(26,30,31,.38);font-size:12px}
   #about em{font-style:italic}
   #about p{font-size:13.5px;line-height:1.8;color:rgba(26,30,31,.58);margin-bottom:14px}
+  /* Documentation of the stations themselves. Uniform tiles rather than the
+     photographs' own proportions: three snapshots at three aspect ratios read
+     as an accident, and cropped to one ratio they read as a series. */
+  /* The strip counts its own columns rather than borrowing the header's
+     breakpoint: the panel is 640px wide at most whatever the window does, so
+     what decides how many tiles fit is the box, not the screen. */
+  #about .shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:10px;margin:2px 0 18px}
+  #about .shots[hidden]{display:none}
+  #about .shots figure{margin:0}
+  #about .shots img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;
+    border:1px solid rgba(26,30,31,.15);background:rgba(26,30,31,.05)}
+  #about .shots figcaption{margin-top:6px;font-size:11px;line-height:1.5;color:rgba(26,30,31,.38)}
+  /* The panel became a project text rather than a note, and the button at its
+     foot is now three thousand pixels down. On a phone there is no Escape key
+     to fall back on, so a second way out rides along at the top. */
+  #about .box{position:relative}
+  #about .closeX{
+    position:sticky;top:0;float:right;margin:-16px -28px 0 12px;
+    width:32px;height:32px;border:1px solid rgba(26,30,31,.15);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;font-size:19px;line-height:1;
+    color:rgba(26,30,31,.58);background:var(--paper-soft);transition:.25s;z-index:2;
+  }
+  #about .closeX:hover{background:#1a1e1f;color:var(--paper);border-color:#1a1e1f}
   #about .close2{margin-top:14px;border:1px solid rgba(26,30,31,.15);padding:11px 22px;
     font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,30,31,.58);transition:.25s}
   #about .close2:hover{background:#1a1e1f;color:var(--paper)}
@@ -637,6 +661,12 @@
     #inspect .kicker{padding-right:44px}      /* clear of the close button */
     #inspect #inspectMap{max-width:340px}
     #inspectClose{top:14px;right:18px}
+    /* Forty pixels of padding either side of a 375px screen left the project
+       text 235px wide — about four words to the line. */
+    #about{padding:14px}
+    #about .box{padding:26px 22px;max-height:calc(100vh - 28px)}
+    #about .closeX{margin:-12px -12px 0 10px}
+    #about h3{font-size:22px}
   }
   @media(prefers-reduced-motion:reduce){
     .mtrack{animation-play-state:paused!important}
@@ -719,6 +749,7 @@
 
 <div id="about">
   <div class="box">
+    <button class="closeX" id="aboutCloseTop" aria-label="Schließen">&#215;</button>
     <div id="aboutBody"></div>
     <button class="close2" id="aboutClose">Schließen</button>
   </div>
@@ -1761,7 +1792,9 @@ async function setLang(next){
   lang = next;
   document.documentElement.lang = next;
   try {
-    const data = await (await fetch(`data/lang/${next}.json`)).json();
+    // no-store like the specimen data: a cached locale file is why edited
+    // copy silently fails to appear for hours
+    const data = await (await fetch(`data/lang/${next}.json`, {cache: 'no-store'})).json();
     strings = data.ui || {};
     overlay = data.specimens || {};
     aboutBlocks = data.about || [];
@@ -1780,18 +1813,44 @@ async function setLang(next){
 /* The invitation the participants were given, then what the archive is and
    what its scenarios hold to — all of it out of the locale file, because the
    whole panel has to change language with the rest of the page. */
+/* The photographs of the stations live here rather than in the locale files:
+   the caption under each one is translated, the file it points at is not. A
+   figure whose file is missing removes itself, so an incomplete set shows a
+   shorter strip rather than three broken-image icons. */
+const AKTION_FOTOS = [
+  'assets/img/aktion/station-tiefsee.jpg',
+  'assets/img/aktion/station-foyer.jpg',
+  'assets/img/aktion/station-riffbecken.jpg',
+];
+
 function renderAbout(){
   const body = document.getElementById('aboutBody');
   if(!body) return;
+  // How many of the collected drawings actually stand in the archive is a
+  // number that moves as models are added, so the text asks for it instead of
+  // stating it.
+  const zahl = (text) => String(text).replace('{n}', DATA ? DATA.length : '');
   body.innerHTML = (aboutBlocks.length ? aboutBlocks : [{h: t('aboutTitle')}])
     .map((b, i) => {
       if(b.h)      return `<${i === 0 ? 'h3' : 'h4'}>${b.h}</${i === 0 ? 'h3' : 'h4'}>`;
-      if(b.lead)   return `<p class="lead">${b.lead}</p>`;
+      if(b.lead)   return `<p class="lead">${zahl(b.lead)}</p>`;
       if(b.step)   return `<p class="step"><b>${b.step[0]}</b>${
                              b.step[1] ? `<span>${b.step[1]}</span>` : ''}</p>`;
       if(b.credit) return `<p class="credit">${b.credit}</p>`;
-      return `<p>${b.p}</p>`;
+      if(b.figs)   return `<div class="shots">${b.figs.map((cap, k) => AKTION_FOTOS[k]
+                     ? `<figure><img src="${AKTION_FOTOS[k]}" alt="${cap}" loading="lazy">
+                        <figcaption>${cap}</figcaption></figure>` : '').join('')}</div>`;
+      return `<p>${zahl(b.p)}</p>`;
     }).join('');
+
+  // A photograph that is not there yet takes its caption with it, and the last
+  // one to go takes the strip — otherwise the section keeps a band of empty
+  // space under its heading for pictures nobody can see.
+  body.querySelectorAll('.shots img').forEach(img => img.addEventListener('error', () => {
+    img.closest('figure').hidden = true;
+    const streifen = img.closest('.shots');
+    if(!streifen.querySelector('figure:not([hidden])')) streifen.hidden = true;
+  }));
 }
 
 function applyStrings(){
@@ -1808,6 +1867,7 @@ function applyStrings(){
   set('#aboutBtn', t('aboutTitle'), 'aria-label');   // the glyph names nothing
   renderAbout();
   set('#aboutClose', t('close'));
+  set('#aboutCloseTop', t('close'), 'aria-label');
   set('#langSwitch', t('langLabel'), 'title');
   document.getElementById('hint').textContent =
     t(mode === 'draw' ? 'hintDraw' : 'hint3d');
@@ -1900,6 +1960,9 @@ const about = document.getElementById('about');
 document.getElementById('aboutBtn').addEventListener('click', () => about.classList.add('on'));
 function closeAbout(){ about.classList.remove('on'); }
 document.getElementById('aboutClose').addEventListener('click', closeAbout);
+document.getElementById('aboutCloseTop').addEventListener('click', closeAbout);
+// the dark ground around the panel is not part of it — clicking it closes
+about.addEventListener('click', (e) => { if(e.target === about) closeAbout(); });
 about.addEventListener('click', (e) => { if(e.target === about) closeAbout(); });
 
 document.getElementById('mode3d').addEventListener('click', () => setMode('3d'));
@@ -2091,6 +2154,7 @@ addEventListener('resize', () => {
   env = new Environment(scene, {spacing: SPACING, specimens: DATA});
   buildTimeline();
   updateCaption();
+  renderAbout();            // the project text counts the specimens it now has
   buildIntroGrid();
 
   bootTxt.textContent = t('bootFirst');

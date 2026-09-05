@@ -1,0 +1,19 @@
+Fotos der Mitmachstationen für die Info-Seite
+=============================================
+
+Die Info-Seite (das "?" oben links) zeigt unter "Der partizipative Prozess"
+einen Streifen aus drei Fotos. Erwartet werden genau diese drei Dateinamen:
+
+  station-tiefsee.jpg     Station am dunklen Tiefseebecken, blauer Tisch,
+                          Aufsteller "Moin!", Vorlage, Stifte, orange Box
+  station-foyer.jpg       Heller Tisch mit Stühlen, Kiste "STIFTE",
+                          Karton "fertige Zeichnungen"
+  station-riffbecken.jpg  Riffaquarium mit der Holzbox daneben
+
+Die Pfade stehen in index.html in AKTION_FOTOS, die Bildunterschriften in
+data/lang/*.json im Block "figs" (eine Zeile je Foto, in Reihenfolge).
+
+Fehlt eine Datei, blendet sich ihr Platz von selbst aus — die Seite zeigt dann
+einen kürzeren Streifen statt eines kaputten Bildes. Es lohnt sich, die Fotos
+vorher auf etwa 1200 px Breite zu verkleinern; als Kacheln werden sie im
+Seitenverhältnis 4:3 beschnitten (auf dem Handy 3:2).

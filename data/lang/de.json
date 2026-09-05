@@ -26,31 +26,86 @@
   "specimens": {},
   "about": [
     {
-      "h": "Eine Reise in die Zukunft …"
+      "h": "Reefresh, Maybe Next Time"
     },
     {
-      "p": "Gemeinsam reisen wir in die Zukunft — hinunter in die dunkle Tiefsee."
+      "p": "<em>Reefresh, Maybe Next Time</em> ist ein partizipatives Kunst- und Bildungsprojekt über die Zukunft der Korallenriffe. Ausgangspunkt ist eine spekulative Zukunft, in der Korallen, wie wir sie heute kennen, nicht mehr existieren. Die hier versammelten Korallen haben sich über viele Generationen weiterentwickelt: neue Farben, Formen, Organe, Schutzmechanismen und Verhaltensweisen, um unter veränderten Umweltbedingungen überleben zu können."
     },
     {
-      "p": "Der Klimawandel hat auch dort den Lebensraum verändert. Viele Tiefseekorallen kämpfen unter den neuen Bedingungen ums Überleben."
+      "p": "Das Projekt verbindet Klimaschutz, Wissenschaft, Gestaltung und gemeinschaftliches Erzählen. Es macht auf die Bedeutung der Korallenriffe und ihre Bedrohung durch den Klimawandel aufmerksam — und zeigt zugleich, dass Zukunft nicht nur vorhergesagt, sondern gemeinsam gedacht und gestaltet werden kann."
     },
     {
-      "p": "Doch dann wird eine neue Art von Tiefseekoralle entdeckt. Sie hat einen besonderen Schutzmechanismus entwickelt, der ihr hilft, mit den Folgen des Klimawandels zurechtzukommen."
+      "h": "Die Idee"
     },
     {
-      "p": "Wie könnte diese Tiefseekoralle aussehen? Wie schützt sie sich?"
+      "lead": "Welche Eigenschaften müsste eine Koralle entwickeln, um in einem durch Klimawandel und menschliche Einflüsse veränderten Meer weiterleben zu können?"
+    },
+    {
+      "p": "Auf Grundlage einer gemeinsamen Korallenvorlage entwarfen die Teilnehmenden ihre eigenen Zukunftskorallen. Sie entschieden, wie sich ihre Koralle verändert hat, welche besonderen Fähigkeiten sie besitzt und warum diese Anpassungen für ihr Überleben notwendig geworden sind. So entstanden Korallen mit Schutzpanzern, neuen Organen, technischen Erweiterungen, Symbiosen mit anderen Lebewesen und ganz eigenen Überlebensstrategien."
+    },
+    {
+      "h": "Der partizipative Prozess"
+    },
+    {
+      "figs": [
+        "Station am Tiefseebecken: Vorlage, Anleitung und die Box für die fertigen Zeichnungen.",
+        "Station im Foyer — zum Hinsetzen, mit Stiften und Ablage.",
+        "Neben dem Riffbecken steht das lebende Vorbild direkt neben der Station."
+      ]
+    },
+    {
+      "p": "Für die Umsetzung nahm ich Kontakt zu zahlreichen Institutionen auf, stellte die Idee vor und trat mit unterschiedlichen Menschen in den Austausch. Einige Einrichtungen besuchte ich persönlich, um das Projekt vor Ort zu vermitteln und die Teilnehmenden beim Gestalten zu begleiten."
+    },
+    {
+      "p": "An verschiedenen Orten wurden Mitmachstationen eingerichtet. Dort lagen die Vorlage, Zeichenmaterial und Informationen zum Projekt bereit. Wer wollte, gestaltete seine eigene Koralle und brachte seine Vorstellung davon ein, wie ein Lebewesen auf die Folgen des Klimawandels reagieren könnte."
+    },
+    {
+      "p": "Ein wichtiger Teil des Projekts war die Zusammenarbeit mit einer dritten Grundschulklasse. Dort wurde interdisziplinär gearbeitet: naturwissenschaftliche Themen rund um Korallenriffe und Klimawandel wurden mit Kunst, Sprache, Fantasie und Erzählen verbunden. Die Kinder eigneten sich nicht nur Wissen an, sondern brachten ihre eigenen Zukunftsvorstellungen aktiv in das Projekt ein."
+    },
+    {
+      "h": "Von der Zeichnung zum Korallenarchiv"
+    },
+    {
+      "p": "Mit dem Sammeln der Zeichnungen begann der zweite, umfangreiche Teil der Arbeit. Jeder Entwurf wurde gesichtet, geordnet und digital aufbereitet: die handgezeichneten Korallen wurden als cleane zweidimensionale Zeichnungen rekonstruiert und anschließend in naturrealistische dreidimensionale Darstellungen übersetzt."
+    },
+    {
+      "p": "Dabei wurden die ursprünglichen Ideen, handschriftlichen Hinweise und besonderen Merkmale der Teilnehmenden sorgfältig aufgegriffen. Zu jeder Koralle entstanden eigene Charakteristika und eine fiktive Entwicklungsgeschichte, die erklärt, weshalb sie ihr Aussehen oder ihre Fähigkeiten entwickelt hat. Ergänzend entstanden wissenschaftlich anmutende Detailzeichnungen im Stil historischer biologischer Archive."
+    },
+    {
+      "p": "Aus vielen einzelnen Beiträgen wurde so ein zusammenhängendes spekulatives Archiv mit 147 Zukunftskorallen. Jede trägt die Idee und Handschrift einer teilnehmenden Person, wurde aber durch denselben künstlerischen Prozess in eine gemeinsame visuelle Welt überführt. {n} davon stehen bislang hier; die übrigen kommen nach und nach dazu."
+    },
+    {
+      "h": "Ziel des Projekts"
+    },
+    {
+      "p": "<em>Reefresh, Maybe Next Time</em> behauptet nicht, dass Korallen sich problemlos an die Folgen des Klimawandels anpassen können. Die fantastischen Veränderungen zeigen im Gegenteil, wie außergewöhnlich und teilweise drastisch ihre Entwicklung sein müsste, um unter immer schwierigeren Bedingungen weiterzuleben."
+    },
+    {
+      "p": "Das Projekt lädt dazu ein, über die Folgen menschlichen Handelns nachzudenken, macht die Bedeutung gesunder Korallenriffe sichtbar und stärkt den Gedanken des Mitgestaltens. Die Teilnehmenden werden nicht nur mit einer möglichen Zukunft konfrontiert, sondern entwickeln selbst Ideen für sie. So entsteht aus vielen Zeichnungen, Geschichten und Perspektiven eine gemeinsame Erzählung über Anpassung, Verantwortung und die Frage, welche Zukunft wir für unsere Umwelt gestalten möchten."
+    },
+    {
+      "h": "Zu den Angaben im Archiv"
+    },
+    {
+      "p": "Alle Exemplare gehen auf dieselbe Vorlage zurück: <em>Desmophyllum pertusum</em>, eine Kaltwasser-Steinkoralle, die in kalten, dunklen Tiefen bis weit unter 1000 Meter Riffe bildet."
+    },
+    {
+      "p": "Jedes Exemplar hat hier eine erfundene Umgebung bekommen: das Meer, das es gebraucht hätte, damit genau diese Anpassung sinnvoll wird. Die Jahreszahlen ordnen diese Szenarien zu einer möglichen Abfolge — sie sind Erzählung, keine Prognose."
+    },
+    {
+      "p": "Auch die Varietätsnamen sind erfunden. Wo die Zeichnerin oder der Zeichner bekannt ist, trägt die Koralle den eigenen Namen; sonst beschreibt der Name die auffälligste Anpassung."
+    },
+    {
+      "h": "Der Aufruf an den Stationen"
+    },
+    {
+      "p": "Gemeinsam reisen wir in die Zukunft — hinunter in die dunkle Tiefsee. Der Klimawandel hat auch dort den Lebensraum verändert, und viele Tiefseekorallen kämpfen unter den neuen Bedingungen ums Überleben. Doch dann wird eine neue Art entdeckt: Sie hat einen besonderen Schutzmechanismus entwickelt, der ihr hilft, mit den Folgen zurechtzukommen."
     },
     {
       "lead": "Zeichne deine Tiefseekoralle der Zukunft und zeig, welchen Schutz sie entwickelt hat."
     },
     {
-      "p": "Ob biologisch korrekt, frei erfunden, ungewöhnlich oder völlig verrückt — alles ist erlaubt. Lass deiner Fantasie freien Lauf."
-    },
-    {
-      "lead": "Es gibt keine richtigen oder falschen Antworten!"
-    },
-    {
-      "h": "So machst du mit"
+      "p": "Ob biologisch korrekt, frei erfunden, ungewöhnlich oder völlig verrückt — alles ist erlaubt. Es gibt keine richtigen oder falschen Antworten."
     },
     {
       "step": [
@@ -61,7 +116,7 @@
     {
       "step": [
         "2. Zeichne deine Idee.",
-        "Zeichne, wie sich eine Koralle vor den Folgen des Klimawandels schützen könnte. Lass deiner Fantasie freien Lauf!"
+        "Zeichne, wie sich eine Koralle vor den Folgen des Klimawandels schützen könnte."
       ]
     },
     {
@@ -75,21 +130,6 @@
         "4. Wirf das fertige Blatt in die Box.",
         ""
       ]
-    },
-    {
-      "h": "Was dieses Archiv ist"
-    },
-    {
-      "p": "Alle Exemplare gehen auf dieselbe Vorlage zurück: <em>Desmophyllum pertusum</em>, eine Kaltwasser-Steinkoralle, die in kalten, dunklen Tiefen bis weit unter 1000 Meter Riffe bildet."
-    },
-    {
-      "p": "Teilnehmende haben diese Vorlage ausgemalt und weitergedacht — sie haben der Koralle Schutzhüllen, Kühlsysteme, Waffen, Beine oder schlicht neue Farben gegeben. Jede Zeichnung wurde anschließend in ein 3D-Modell überführt."
-    },
-    {
-      "p": "Jedes Exemplar hat hier eine erfundene Umgebung bekommen: das Meer, das es gebraucht hätte, damit genau diese Anpassung sinnvoll wird. Die Jahreszahlen ordnen diese Szenarien zu einer möglichen Abfolge — sie sind Erzählung, keine Prognose."
-    },
-    {
-      "p": "Auch die Varietätsnamen sind erfunden. Wo die Zeichnerin oder der Zeichner bekannt ist, trägt die Koralle den eigenen Namen; sonst beschreibt der Name die auffälligste Anpassung."
     },
     {
       "credit": "Mitmachaktion Tiefwasserkorallen · Leon Albers"

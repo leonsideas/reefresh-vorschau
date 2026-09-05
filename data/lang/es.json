@@ -26,73 +26,113 @@
   "specimens": {},
   "about": [
     {
-      "h": "Un viaje al futuro …"
+      "h": "Reefresh, Maybe Next Time"
     },
     {
-      "p": "Viajamos juntos al futuro — hacia abajo, a las profundidades oscuras del océano."
+      "p": "<em>Reefresh, Maybe Next Time</em> es un proyecto participativo de arte y educación sobre el futuro de los arrecifes de coral. Parte de un futuro especulativo en el que los corales, tal como los conocemos hoy, ya no existen. Los corales reunidos aquí han seguido evolucionando durante muchas generaciones: colores, formas, órganos, defensas y comportamientos nuevos, para poder sobrevivir en condiciones que han cambiado a su alrededor."
     },
     {
-      "p": "El cambio climático también ha transformado el hábitat de allí. Muchos corales de aguas profundas luchan por sobrevivir bajo las nuevas condiciones."
+      "p": "El proyecto une protección del clima, ciencia, diseño y narración colectiva. Llama la atención sobre lo que significan los arrecifes y sobre la amenaza que supone el cambio climático — y muestra a la vez que el futuro no solo se predice, sino que puede pensarse y construirse en común."
     },
     {
-      "p": "Pero entonces se descubre una nueva especie de coral de profundidad. Ha desarrollado un mecanismo de defensa especial que le ayuda a afrontar los efectos del cambio climático."
+      "h": "La idea"
     },
     {
-      "p": "¿Cómo podría ser este coral de profundidad? ¿Cómo se protege?"
+      "lead": "¿Qué tendría que desarrollar un coral para seguir viviendo en un mar transformado por el cambio climático y por nosotros?"
+    },
+    {
+      "p": "A partir de una misma plantilla, las personas participantes diseñaron sus propios corales del futuro. Decidieron cómo había cambiado su coral, qué capacidades especiales tenía y por qué esas adaptaciones se habían vuelto necesarias para sobrevivir. Así aparecieron corales con corazas, órganos nuevos, extensiones técnicas, simbiosis con otros seres vivos y estrategias de supervivencia propias."
+    },
+    {
+      "h": "El proceso participativo"
+    },
+    {
+      "figs": [
+        "Estación junto al acuario de aguas frías: plantilla, instrucciones y la caja para los dibujos terminados.",
+        "Estación en el vestíbulo — para sentarse, con lápices y sitio donde dejar las cosas.",
+        "Junto al acuario de arrecife, el modelo vivo está al lado mismo de la estación."
+      ]
+    },
+    {
+      "p": "Para llevarlo a cabo me puse en contacto con numerosas instituciones, presenté la idea y conversé con gente muy distinta. Algunos lugares los visité en persona, para explicar el proyecto allí mismo y acompañar a quienes dibujaban."
+    },
+    {
+      "p": "En varios sitios se instalaron estaciones participativas. Allí estaban listas la plantilla, el material de dibujo y la información sobre el proyecto. Quien quería diseñaba su propio coral y aportaba su idea de cómo un ser vivo podría responder a las consecuencias del cambio climático."
+    },
+    {
+      "p": "Una parte importante del proyecto fue el trabajo con una clase de tercero de primaria. Allí se trabajó de forma interdisciplinar: los temas científicos sobre arrecifes y cambio climático se unieron al arte, la lengua, la imaginación y la narración. Los niños no solo adquirieron conocimientos, sino que aportaron activamente sus propias visiones del futuro."
+    },
+    {
+      "h": "Del dibujo al archivo"
+    },
+    {
+      "p": "Con la recogida de los dibujos empezó la segunda parte, la más extensa. Cada propuesta se revisó, se ordenó y se preparó digitalmente: los corales dibujados a mano se reconstruyeron como dibujos bidimensionales limpios y después se tradujeron a representaciones tridimensionales naturalistas."
+    },
+    {
+      "p": "Las ideas originales, las anotaciones a mano y los rasgos particulares de cada participante se recogieron con cuidado. Cada coral recibió características propias y una historia evolutiva ficticia que explica por qué tiene ese aspecto o esas capacidades. A ello se sumaron láminas de detalle de apariencia científica, al estilo de los archivos biológicos históricos."
+    },
+    {
+      "p": "De muchas aportaciones individuales surgió así un archivo especulativo coherente con 147 corales del futuro. Cada uno lleva la idea y la letra de una persona, pero todos pasaron por el mismo proceso artístico hacia un mundo visual común. {n} de ellos están aquí por ahora; los demás irán llegando."
+    },
+    {
+      "h": "El objetivo del proyecto"
+    },
+    {
+      "p": "<em>Reefresh, Maybe Next Time</em> no afirma que los corales puedan adaptarse sin más a las consecuencias del cambio climático. Los cambios fantásticos muestran lo contrario: hasta qué punto su evolución tendría que ser extraordinaria, y a veces drástica, para seguir viviendo en condiciones cada vez más difíciles."
+    },
+    {
+      "p": "El proyecto invita a pensar en las consecuencias de la acción humana, hace visible la importancia de unos arrecifes sanos y refuerza la idea de que el futuro se puede configurar. Quienes participan no solo se enfrentan a un futuro posible: desarrollan ideas para él. De muchos dibujos, historias y perspectivas nace un relato común sobre adaptación, responsabilidad y la pregunta de qué futuro queremos para nuestro entorno."
+    },
+    {
+      "h": "Sobre los datos del archivo"
+    },
+    {
+      "p": "Todos los ejemplares parten de la misma plantilla: <em>Desmophyllum pertusum</em>, un coral pétreo de aguas frías que forma arrecifes en profundidades oscuras muy por debajo de los 1000 metros."
+    },
+    {
+      "p": "Cada ejemplar ha recibido aquí un entorno inventado: el mar que habría necesitado para que justamente esa adaptación tuviera sentido. Los años ordenan esos escenarios en una secuencia posible — son relato, no pronóstico."
+    },
+    {
+      "p": "Los nombres de variedad también son inventados. Cuando se conoce a quien lo dibujó, el coral lleva su nombre; si no, el nombre describe su adaptación más llamativa."
+    },
+    {
+      "h": "La invitación en las estaciones"
+    },
+    {
+      "p": "Viajamos juntos al futuro — hacia abajo, a las profundidades oscuras del océano. El cambio climático también ha transformado ese hábitat, y muchos corales de profundidad luchan por sobrevivir en las nuevas condiciones. Pero entonces se descubre una especie nueva: ha desarrollado un mecanismo de protección particular que la ayuda a arreglárselas."
     },
     {
       "lead": "Dibuja tu coral de profundidad del futuro y muestra qué protección ha desarrollado."
     },
     {
-      "p": "Ya sea biológicamente exacto, completamente inventado, insólito o del todo extravagante — todo vale. Deja volar tu imaginación."
-    },
-    {
-      "lead": "¡No hay respuestas correctas ni incorrectas!"
-    },
-    {
-      "h": "Cómo participar"
+      "p": "Biológicamente correcto, inventado, insólito o completamente disparatado — todo vale. No hay respuestas correctas ni incorrectas."
     },
     {
       "step": [
-        "1. Coge una hoja de papel y un bolígrafo.",
+        "1. Coge una hoja de papel y un lápiz.",
         ""
       ]
     },
     {
       "step": [
         "2. Dibuja tu idea.",
-        "Dibuja cómo un coral podría protegerse de los efectos del cambio climático. ¡Deja volar tu imaginación!"
+        "Dibuja cómo podría protegerse un coral de las consecuencias del cambio climático."
       ]
     },
     {
       "step": [
-        "3. El nombre no es obligatorio.",
-        "Tú decides si quieres escribir tu nombre en la hoja. Si lo escribes, se convertirá en el nombre científico de tu coral imaginario."
+        "3. No hace falta un nombre.",
+        "Tú decides si escribes tu nombre en la hoja. Si lo haces, se convierte en el nombre científico del coral que has inventado."
       ]
     },
     {
       "step": [
-        "4. Deposita la hoja terminada en la caja.",
+        "4. Echa la hoja terminada en la caja.",
         ""
       ]
     },
     {
-      "h": "Qué es este archivo"
-    },
-    {
-      "p": "Todos los ejemplares parten de la misma plantilla: <em>Desmophyllum pertusum</em>, un coral pétreo de aguas frías que forma arrecifes en profundidades frías y oscuras, muy por debajo de los 1000 metros."
-    },
-    {
-      "p": "Las personas participantes colorearon esa plantilla y la llevaron más lejos — dieron al coral cubiertas protectoras, sistemas de refrigeración, armas, patas o simplemente colores nuevos. Cada dibujo se convirtió después en un modelo 3D."
-    },
-    {
-      "p": "Aquí cada ejemplar ha recibido un entorno inventado: el mar que habría necesitado para que justamente esa adaptación tuviera sentido. Los años ordenan estos escenarios en una secuencia posible — son relato, no pronóstico."
-    },
-    {
-      "p": "Los nombres de variedad también son inventados. Cuando se conoce a quien dibujó, el coral lleva su nombre; si no, el nombre describe la adaptación más llamativa."
-    },
-    {
-      "credit": "Mitmachaktion Tiefwasserkorallen · Leon Albers"
+      "credit": "Acción participativa corales de profundidad · Leon Albers"
     }
   ]
 }
