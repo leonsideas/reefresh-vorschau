@@ -588,8 +588,11 @@
     body.menu-open .topbar{
       background:var(--chip);backdrop-filter:blur(18px);
       -webkit-backdrop-filter:blur(18px);
-      border-bottom:1px solid var(--line);padding-bottom:16px;row-gap:9px;
+      border-bottom:1px solid var(--line);padding-bottom:14px;row-gap:8px;
     }
+    /* the mark wants distance from the first switch, or the card reads as one
+       dense block with a logo stuck on top of it */
+    body.menu-open .marke-archiv{margin-bottom:6px}
     /* Segmented switches rather than pairs of words: on a touch screen the
        choice should look like a control and the current state should be
        obvious without reading carefully. Each takes a full row — side by side
@@ -602,7 +605,7 @@
     body.menu-open .topbar .tools:nth-of-type(1) .toggle:last-child{grid-row:3}
     body.menu-open #langSwitch{grid-row:4}
     body.menu-open .topbar .toggle button{
-      flex:1;padding:13px 4px;font-size:12px;letter-spacing:.1em;
+      flex:1;padding:10px 4px;font-size:11px;letter-spacing:.08em;
       border-radius:0;box-shadow:none;color:var(--ink-soft);
     }
     /* --paper does not flip with the dark grade, so on the sea the active half
@@ -612,7 +615,12 @@
       background:var(--ink);color:var(--paper);box-shadow:none;
     }
     body.on-dark.menu-open .topbar .toggle button.on{color:#14232a}
-    #timeline{left:20px;right:20px}
+    /* The marker carries a year of its own, and in the middle of the axis it
+       sits directly under the centred species name — 49px apart, less once a
+       phone's own bars have taken their share. The axis drops toward the edge
+       and the name rises a little toward its coral; between them that is about
+       thirty pixels of air won back. */
+    #timeline{left:20px;right:20px;bottom:16px}
     .hint{display:none}
     /* The binomial plus a variety runs to 395px at the desktop grade, and the
        screen is 375 — fifteen of the sixty-seven did not fit. Down a step, and
@@ -1960,13 +1968,26 @@ function placeCaption(){
 
   // Under the specimen, not over it: the coral stands from y = 0 upward, so
   // the name hangs just below its foot — and below the sheet in drawing mode.
-  const foot = (mode === 'draw') ? CAM_HIGH - DRAW_FIT / 2 - 0.3 : -0.28;
+  const eng = innerWidth <= 900;
+  const foot = (mode === 'draw')
+    ? CAM_HIGH - DRAW_FIT / 2 - (eng ? 0.18 : 0.3)
+    : (eng ? -0.14 : -0.28);
   let [nx, ny] = toScreen(foot);
   // The name follows the specimen, and on a narrow screen the specimen leaves
   // the frame long before the name should. Hold it inside the viewport by its
   // own half-width — it stays centred under the coral until the coral runs out
   // of room, and then stops at the edge instead of sliding off it.
-  const halb = capEl.getBoundingClientRect().width / 2;
+  // The name hangs under the specimen, and the specimen sits lower in the frame
+  // the shorter the window is — on a 1200x700 desktop it came within eight
+  // pixels of the axis's own year. It stops above the axis instead, which is a
+  // limit every format needs, not only a phone.
+  const strahl = document.getElementById('timeline').getBoundingClientRect();
+  const kasten = capEl.getBoundingClientRect();
+  // the name hangs downward from ny, so it is its lower edge that has to clear
+  // the axis — clamping the upper one left it eight pixels short
+  ny = Math.min(ny, strahl.top - kasten.height - 26);
+
+  const halb = kasten.width / 2;
   const rand = 12;
   // On a screen too narrow even for the shortened name there is no honest
   // clamp, so it simply centres rather than pinning itself to one edge.
