@@ -168,8 +168,7 @@
           "light": "dark",
           "particles": "dust",
           "props": [
-            "kelp",
-            "fish"
+            "kelp"
           ],
           "ground": "sediment",
           "water": true
@@ -227,7 +226,6 @@
           "particles": "snow",
           "props": [
             "rock",
-            "fish",
             "kelp"
           ],
           "ground": "sediment",
@@ -482,7 +480,6 @@
           "particles": "bubbles",
           "props": [
             "kelp",
-            "fish",
             "shells"
           ],
           "ground": "sediment",
@@ -1156,7 +1153,6 @@
           "particles": "bubbles",
           "props": [
             "kelp",
-            "fish",
             "shells",
             "rock"
           ],
@@ -1545,7 +1541,6 @@
           "particles": "bubbles",
           "props": [
             "kelp",
-            "fish",
             "shells",
             "rock"
           ],
@@ -1608,8 +1603,7 @@
           "light": "dim",
           "particles": "snow",
           "props": [
-            "kelp",
-            "fish"
+            "kelp"
           ],
           "ground": "sediment",
           "water": true
@@ -1671,7 +1665,6 @@
           "particles": "snow",
           "props": [
             "kelp",
-            "fish",
             "shells"
           ],
           "ground": "sediment",
@@ -2837,7 +2830,6 @@
           "particles": "dust",
           "props": [
             "kelp",
-            "fish",
             "rock"
           ],
           "ground": "sediment",
@@ -2895,7 +2887,6 @@
           "light": "dark",
           "particles": "snow",
           "props": [
-            "fish",
             "kelp",
             "rock"
           ],
@@ -3137,7 +3128,6 @@
           "light": "dim",
           "particles": "snow",
           "props": [
-            "fish",
             "rock",
             "kelp"
           ],
@@ -3259,7 +3249,6 @@
           "light": "dim",
           "particles": "snow",
           "props": [
-            "fish",
             "shells",
             "rock"
           ],
@@ -3322,7 +3311,6 @@
           "light": "dark",
           "particles": "snow",
           "props": [
-            "fish",
             "rock"
           ],
           "ground": "sediment",
@@ -3925,8 +3913,7 @@
           "particles": "snow",
           "props": [
             "rock",
-            "shells",
-            "fish"
+            "shells"
           ],
           "ground": "sediment",
           "water": true
@@ -4172,7 +4159,6 @@
           "light": "dim",
           "particles": "snow",
           "props": [
-            "fish",
             "kelp",
             "rock"
           ],
@@ -4231,7 +4217,6 @@
           "light": "dim",
           "particles": "bubbles",
           "props": [
-            "fish",
             "shells",
             "kelp",
             "rock"

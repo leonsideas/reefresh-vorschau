@@ -7,7 +7,7 @@
  * lighting rig that cross-fades as you travel, drifting matter, and small
  * procedural objects scattered around each specimen.
  *
- * The props that carry a scene — boulder, kelp, fish, shell — are generated
+ * The props that carry a scene — boulder, kelp, shell — are generated
  * models loaded from assets/props/. Everything else is still built from
  * primitives here, so changing a colour in the table changes the world. If a
  * model is missing or has not arrived yet, the primitive version of that prop
@@ -149,41 +149,6 @@ function makeBones(rand){
   return group;
 }
 
-function makeFish(rand, alive = true){
-  const group = new THREE.Group();
-  const palette = [0xb9c6c8, 0xc9bd93, 0x8fa6ad, 0xa9b7ba, 0x9ab0a0];
-  const colour = palette[Math.floor(rand() * palette.length)];
-  const skin = new THREE.MeshStandardMaterial({color: colour, roughness: .5, metalness: .2});
-  const fin = new THREE.MeshStandardMaterial({
-    color: colour, roughness: .7, transparent: true, opacity: .8, side: THREE.DoubleSide
-  });
-
-  const profile = [[0.004,0],[0.05,0.14],[0.11,0.36],[0.17,0.64],[0.2,0.95],
-                   [0.18,1.26],[0.11,1.62],[0.04,1.9],[0.008,2.0]];
-  const bodyGeo = new THREE.LatheGeometry(profile.map(p => new THREE.Vector2(p[0], p[1])), 14);
-  bodyGeo.translate(0, -1, 0);
-  const body = new THREE.Mesh(bodyGeo, skin);
-  // Head on -x: the orbit in update() turns the model by -angle + 90°, and only
-  // a fish facing -x ends up pointing along its own direction of travel.
-  body.rotation.z = -Math.PI / 2;
-  body.scale.set(1, 1, 0.5);
-  group.add(body);
-
-  const tailShape = new THREE.Shape();
-  tailShape.moveTo(0,0); tailShape.lineTo(-0.5,0.38); tailShape.lineTo(-0.36,0);
-  tailShape.lineTo(-0.5,-0.38); tailShape.closePath();
-  const tail = new THREE.Mesh(new THREE.ShapeGeometry(tailShape), fin);
-  tail.position.x = 1;
-  tail.rotation.y = Math.PI;
-  group.add(tail);
-
-  group.scale.setScalar(0.11 + rand() * 0.09);
-  group.userData.alive = alive;
-  group.userData.phase = rand() * TAU;
-  group.userData.speed = 0.15 + rand() * 0.25;
-  return group;
-}
-
 function makePlastic(rand){
   const group = new THREE.Group();
   const cols = [0xef6f8e, 0x64c9c2, 0xf4c65a, 0x7d9bf0, 0xef9d5a, 0xe8e8e8];
@@ -252,7 +217,7 @@ function makeShells(rand){
 
 const PROP_BUILDERS = {
   rock: makeRock, rubble: makeRubble, kelp: makeKelp, bones: makeBones,
-  fish: makeFish, plastic: makePlastic, ice: makeIce, net: makeNet, shells: makeShells,
+  plastic: makePlastic, ice: makeIce, net: makeNet, shells: makeShells,
 };
 
 /* ------------------------------------------------------------------
@@ -271,7 +236,6 @@ const PROP_BUILDERS = {
 const PROP_ASSETS = {
   rock:   {url: 'assets/props/fels.glb',    span: [0.55, 1.35]},
   kelp:   {url: 'assets/props/tang.glb',    span: [1.05, 2.00]},
-  fish:   {url: 'assets/props/fisch.glb',   span: [0.30, 0.52], swims: true, turn: -Math.PI / 2},
   shells: {url: 'assets/props/muschel.glb', span: [0.13, 0.26]},
 };
 
@@ -300,10 +264,6 @@ export function loadPropAssets(){
       assetLoader.load(spec.url, (gltf) => {
         const holder = new THREE.Group();
         holder.add(normalise(gltf.scene, spec.swims));
-        // The generated fish came out of its render facing the camera, along
-        // +z. The orbit expects a head on -x, so it is turned once here rather
-        // than on every fish in the archive.
-        if(spec.turn) holder.rotation.y = spec.turn;
         loadedAssets.set(kind, holder);
         resolve(kind);
       }, undefined, () => resolve(null));   // missing file: the primitive stays
@@ -326,10 +286,6 @@ function assetProp(kind, rand){
   if(kind === 'kelp'){
     item.userData.sway = 0.05 + rand() * 0.08;
     item.userData.phase = rand() * TAU;
-  } else if(kind === 'fish'){
-    item.userData.alive = true;
-    item.userData.phase = rand() * TAU;
-    item.userData.speed = 0.15 + rand() * 0.25;
   } else {
     item.rotation.z = (rand() - 0.5) * 0.12;   // nothing lies perfectly flat
   }
@@ -347,7 +303,6 @@ export class Environment {
     this.sets = specimens.map(s => (s.scenario && s.scenario.set) || {});
     this.props = new Map();          // index -> THREE.Group
     this.kelp = [];
-    this.fish = [];
     this.ice = [];
     this.clock = 0;
 
@@ -508,7 +463,7 @@ export class Environment {
     for(const kind of list){
       const build = PROP_BUILDERS[kind];
       if(!build) continue;
-      const count = kind === 'net' ? 1 : (kind === 'fish' ? 3 : 2 + Math.floor(rand() * 3));
+      const count = kind === 'net' ? 1 : 2 + Math.floor(rand() * 3);
       for(let i = 0; i < count; i++){
         const item = assetProp(kind, rand)
                   ?? (kind === 'rock' ? build(rand, floorTone) : build(rand));
@@ -525,13 +480,7 @@ export class Environment {
         item.position.z += pz;
 
         const ground = this.heightAt(px, pz);
-        if(kind === 'fish'){
-          item.position.y = ground + 0.8 + rand() * 1.6;
-          item.userData.orbit = radius;
-          item.userData.angle = angle;
-          item.userData.baseZ = pz - Math.sin(angle) * radius;
-          this.fish.push(item);
-        } else if(kind === 'ice'){
+        if(kind === 'ice'){
           item.position.y = ground + 0.5 + rand() * 2.0;
           this.ice.push(item);
         } else if(kind === 'net'){
@@ -560,7 +509,6 @@ export class Environment {
       }
     });
     this.kelp = this.kelp.filter(k => k.parent);
-    this.fish = this.fish.filter(f => f.parent);
     this.ice = this.ice.filter(i => i.parent);
     this.props.delete(index);
   }
@@ -649,13 +597,6 @@ export class Environment {
     // living things keep moving
     const t = this.clock;
     for(const k of this.kelp) k.rotation.z = Math.sin(t * 0.8 + k.userData.phase) * k.userData.sway;
-    for(const fsh of this.fish){
-      const ang = fsh.userData.angle + t * fsh.userData.speed * 0.25;
-      const r = fsh.userData.orbit;
-      fsh.position.x = Math.cos(ang) * r;
-      fsh.position.z = Math.sin(ang) * r - 1.2;
-      fsh.rotation.y = -ang + Math.PI / 2;
-    }
     for(const cube of this.ice){
       cube.position.y += Math.sin(t * 0.7 + cube.userData.phase) * 0.0016;
       cube.rotation.y += dt * 0.15;

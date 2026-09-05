@@ -50,22 +50,23 @@
       "p": "Für die Umsetzung nahm ich Kontakt zu zahlreichen Institutionen auf, stellte die Idee vor und trat mit unterschiedlichen Menschen in den Austausch. Einige Einrichtungen besuchte ich persönlich, um das Projekt vor Ort zu vermitteln und die Teilnehmenden beim Gestalten zu begleiten."
     },
     {
-      "fig": [
-        "riffbecken",
-        "Station in einer Einrichtung: das lebende Vorbild steht direkt neben dem Tisch."
-      ]
-    },
-    {
       "p": "An verschiedenen Orten wurden Mitmachstationen eingerichtet. Dort lagen die Vorlage, Zeichenmaterial und Informationen zum Projekt bereit. Wer wollte, gestaltete seine eigene Koralle und brachte seine Vorstellung davon ein, wie ein Lebewesen auf die Folgen des Klimawandels reagieren könnte."
     },
     {
-      "fig": [
-        "foyer",
-        "Eine Mitmachstation, wie sie auslag — Vorlage, Stifte, Infoblätter und die Box für die fertigen Zeichnungen."
+      "figs": [
+        [
+          "tiefsee",
+          "Station am Tiefseebecken: Vorlage, Anleitung und die Box für die fertigen Zeichnungen."
+        ],
+        [
+          "foyer",
+          "Station im Foyer — zum Hinsetzen, mit Stiften und Ablage."
+        ],
+        [
+          "riffbecken",
+          "Neben dem Riffbecken steht das lebende Vorbild direkt neben der Station."
+        ]
       ]
-    },
-    {
-      "p": "Ein wichtiger Teil des Projekts war die Zusammenarbeit mit einer dritten Grundschulklasse. Dort wurde interdisziplinär gearbeitet: naturwissenschaftliche Themen rund um Korallenriffe und Klimawandel wurden mit Kunst, Sprache, Fantasie und Erzählen verbunden. Die Kinder eigneten sich nicht nur Wissen an, sondern brachten ihre eigenen Zukunftsvorstellungen aktiv in das Projekt ein."
     },
     {
       "h": "Von der Zeichnung zum Korallenarchiv"
@@ -75,9 +76,6 @@
     },
     {
       "p": "Dabei wurden die ursprünglichen Ideen, handschriftlichen Hinweise und besonderen Merkmale der Teilnehmenden sorgfältig aufgegriffen. Zu jeder Koralle entstanden eigene Charakteristika und eine fiktive Entwicklungsgeschichte, die erklärt, weshalb sie ihr Aussehen oder ihre Fähigkeiten entwickelt hat. Ergänzend entstanden wissenschaftlich anmutende Detailzeichnungen im Stil historischer biologischer Archive."
-    },
-    {
-      "p": "Aus vielen einzelnen Beiträgen wurde so ein zusammenhängendes spekulatives Archiv mit 147 Zukunftskorallen. Jede trägt die Idee und Handschrift einer teilnehmenden Person, wurde aber durch denselben künstlerischen Prozess in eine gemeinsame visuelle Welt überführt. {n} davon stehen bislang hier; die übrigen kommen nach und nach dazu."
     },
     {
       "h": "Ziel des Projekts"
@@ -105,12 +103,6 @@
     },
     {
       "p": "Gemeinsam reisen wir in die Zukunft — hinunter in die dunkle Tiefsee. Der Klimawandel hat auch dort den Lebensraum verändert, und viele Tiefseekorallen kämpfen unter den neuen Bedingungen ums Überleben. Doch dann wird eine neue Art entdeckt: Sie hat einen besonderen Schutzmechanismus entwickelt, der ihr hilft, mit den Folgen zurechtzukommen."
-    },
-    {
-      "fig": [
-        "tiefsee",
-        "Der Aufruf am Tiefseebecken: dieselben zwei Blätter, die hier abgedruckt sind."
-      ]
     },
     {
       "lead": "Zeichne deine Tiefseekoralle der Zukunft und zeig, welchen Schutz sie entwickelt hat."

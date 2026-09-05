@@ -486,15 +486,20 @@
   #about .credit{margin-top:22px;color:rgba(26,30,31,.38);font-size:12px}
   #about em{font-style:italic}
   #about p{font-size:13.5px;line-height:1.8;color:rgba(26,30,31,.58);margin-bottom:14px}
-  /* Each photograph stands with the paragraph that describes it rather than in
-     a gallery of its own — a station beside the sentence about the stations,
-     the printed call beside the call itself. One ratio across all three: the
-     snapshots are portrait and landscape, and left at their own proportions a
-     page of them reads as an accident rather than as a series. */
-  #about .shot{margin:0 0 18px}
-  #about .shot img{display:block;width:100%;aspect-ratio:3/2;object-fit:cover;
+  /* The three photographs stand together behind the paragraph that describes
+     the stations. Side by side rather than stacked: full width they would be
+     a thousand pixels of scrolling in the middle of a text. One ratio across
+     all three, because the snapshots are portrait and landscape and left at
+     their own proportions they read as an accident rather than as a series.
+     The strip counts its own columns — the panel is 640px wide at most
+     whatever the window does — so on a phone it becomes one column. */
+  #about .shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:10px;margin:2px 0 18px}
+  #about .shots[hidden]{display:none}
+  #about .shots figure{margin:0}
+  #about .shots img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;
     border:1px solid rgba(26,30,31,.15);background:rgba(26,30,31,.05)}
-  #about .shot figcaption{margin-top:7px;font-size:11.5px;line-height:1.6;color:rgba(26,30,31,.38)}
+  #about .shots figcaption{margin-top:6px;font-size:11px;line-height:1.5;color:rgba(26,30,31,.38)}
   /* The panel became a project text rather than a note, and the button at its
      foot is now three thousand pixels down. On a phone there is no Escape key
      to fall back on, so a second way out rides along at the top. */
@@ -662,7 +667,6 @@
     #about{padding:14px}
     #about .box{padding:26px 22px;max-height:calc(100vh - 28px)}
     #about .closeX{margin:-12px -12px 0 10px}
-    #about .shot img{aspect-ratio:4/3}
     #about h3{font-size:22px}
   }
   @media(prefers-reduced-motion:reduce){
@@ -771,8 +775,8 @@ import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
 // The version marker defeats the browser's module cache, which otherwise
 // serves yesterday's copy of an edited module for hours. Bump it when either
 // file changes; it can go once the no-cache dev server is what serves this.
-import { Environment, deepenWater } from './js/environment.js?v=5';
-import { worldMapSVG, seaLabel } from './js/worldmap.js?v=5';
+import { Environment, deepenWater } from './js/environment.js?v=6';
+import { worldMapSVG, seaLabel } from './js/worldmap.js?v=6';
 
 /* ============================================================
    Layout constants
@@ -1118,10 +1122,16 @@ function updateStreaming(){
 let target = 0, current = 0, maxIndex = 0;
 let inputLocked = true;
 
+/* With the project text open it is the only thing that scrolls. The archive
+   browses on wheel events collected at the window and the overview behind the
+   panel is a real scroll container, so both would otherwise move under a
+   reader who is only scrolling the text. */
+const liestProjekt = () => document.body.classList.contains('about-open');
+
 function clampTarget(){ target = Math.max(0, Math.min(maxIndex, target)); }
 
 addEventListener('wheel', (e) => {
-  if(gridOpen || inputLocked || introOpen) return;
+  if(gridOpen || inputLocked || introOpen || liestProjekt()) return;
   const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
   target += delta * 0.0026;
   clampTarget();
@@ -1258,7 +1268,9 @@ addEventListener('pointerup', (e) => {
 
 addEventListener('keydown', (e) => {
   if(e.key === 'Escape'){ setMenu(false); closeAbout(); closeInspect(); if(gridOpen) setView('line'); }
-  if(gridOpen || introOpen) return;
+  // Escape above still closes the panel; the arrows below must not walk the
+  // archive along underneath somebody who is reading
+  if(gridOpen || introOpen || liestProjekt()) return;
   // with a record open the arrows walk it along, so the panel follows the
   // specimen instead of being left behind on the wrong one
   if(e.key === 'ArrowRight'){
@@ -1843,26 +1855,27 @@ const AKTION_FOTOS = {
 function renderAbout(){
   const body = document.getElementById('aboutBody');
   if(!body) return;
-  // How many of the collected drawings actually stand in the archive is a
-  // number that moves as models are added, so the text asks for it instead of
-  // stating it.
-  const zahl = (text) => String(text).replace('{n}', DATA ? DATA.length : '');
   body.innerHTML = (aboutBlocks.length ? aboutBlocks : [{h: t('aboutTitle')}])
     .map((b, i) => {
       if(b.h)      return `<${i === 0 ? 'h3' : 'h4'}>${b.h}</${i === 0 ? 'h3' : 'h4'}>`;
-      if(b.lead)   return `<p class="lead">${zahl(b.lead)}</p>`;
+      if(b.lead)   return `<p class="lead">${b.lead}</p>`;
       if(b.step)   return `<p class="step"><b>${b.step[0]}</b>${
                              b.step[1] ? `<span>${b.step[1]}</span>` : ''}</p>`;
       if(b.credit) return `<p class="credit">${b.credit}</p>`;
-      if(b.fig)    return AKTION_FOTOS[b.fig[0]]
-                     ? `<figure class="shot"><img src="${AKTION_FOTOS[b.fig[0]]}"
-                          alt="${b.fig[1]}" loading="lazy">
-                        <figcaption>${b.fig[1]}</figcaption></figure>` : '';
-      return `<p>${zahl(b.p)}</p>`;
+      if(b.figs)   return `<div class="shots">${b.figs.map(([key, cap]) => AKTION_FOTOS[key]
+                     ? `<figure><img src="${AKTION_FOTOS[key]}" alt="${cap}" loading="lazy">
+                        <figcaption>${cap}</figcaption></figure>` : '').join('')}</div>`;
+      return `<p>${b.p}</p>`;
     }).join('');
 
-  body.querySelectorAll('.shot img').forEach(img =>
-    img.addEventListener('error', () => { img.closest('figure').hidden = true; }));
+  // A photograph that is not there yet takes its caption with it, and the last
+  // one to go takes the strip — otherwise the paragraph is followed by a band
+  // of empty space held for pictures nobody can see.
+  body.querySelectorAll('.shots img').forEach(img => img.addEventListener('error', () => {
+    img.closest('figure').hidden = true;
+    const streifen = img.closest('.shots');
+    if(!streifen.querySelector('figure:not([hidden])')) streifen.hidden = true;
+  }));
 }
 
 function applyStrings(){
@@ -1970,13 +1983,29 @@ function closeInspect(){
    About
    ============================================================ */
 const about = document.getElementById('about');
-document.getElementById('aboutBtn').addEventListener('click', () => about.classList.add('on'));
-function closeAbout(){ about.classList.remove('on'); }
+function openAbout(){
+  about.classList.add('on');
+  document.body.classList.add('about-open');
+}
+function closeAbout(){
+  about.classList.remove('on');
+  document.body.classList.remove('about-open');
+}
+document.getElementById('aboutBtn').addEventListener('click', openAbout);
 document.getElementById('aboutClose').addEventListener('click', closeAbout);
 document.getElementById('aboutCloseTop').addEventListener('click', closeAbout);
 // the dark ground around the panel is not part of it — clicking it closes
 about.addEventListener('click', (e) => { if(e.target === about) closeAbout(); });
-about.addEventListener('click', (e) => { if(e.target === about) closeAbout(); });
+
+/* The panel's own text scrolls; a wheel turned anywhere else while it is open
+   does nothing. Without this the overview behind the panel scrolls away under
+   it — it is a real scroll container, and the dark ground is not, so the event
+   simply passes through to whatever is underneath. */
+addEventListener('wheel', (e) => {
+  if(!liestProjekt()) return;
+  const imText = e.target instanceof Element && e.target.closest('#about .box');
+  if(!imText) e.preventDefault();
+}, {passive: false});
 
 document.getElementById('mode3d').addEventListener('click', () => setMode('3d'));
 document.getElementById('modeDraw').addEventListener('click', () => setMode('draw'));
@@ -2167,7 +2196,6 @@ addEventListener('resize', () => {
   env = new Environment(scene, {spacing: SPACING, specimens: DATA});
   buildTimeline();
   updateCaption();
-  renderAbout();            // the project text counts the specimens it now has
   buildIntroGrid();
 
   bootTxt.textContent = t('bootFirst');

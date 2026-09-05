@@ -1,31 +1,28 @@
 Fotos der Mitmachstationen für die Info-Seite
 =============================================
 
-Auf der Info-Seite (das "?" oben links) steht jedes Foto hinter dem Absatz,
-der es beschreibt — nicht als Block gesammelt. Erwartet werden genau diese
-drei Dateinamen:
-
-  station-riffbecken.jpg  Riffaquarium mit der Holzbox daneben
-                          -> steht bei "Einige Einrichtungen besuchte ich
-                             persönlich"
-
-  station-foyer.jpg       Heller Tisch mit Stühlen, Kiste "STIFTE",
-                          Karton "fertige Zeichnungen"
-                          -> steht bei "An verschiedenen Orten wurden
-                             Mitmachstationen eingerichtet"
+Auf der Info-Seite (das "?" oben links) stehen die drei Fotos als Streifen
+hinter dem Absatz "An verschiedenen Orten wurden Mitmachstationen
+eingerichtet ..." im Abschnitt "Der partizipative Prozess".
 
   station-tiefsee.jpg     Station am dunklen Tiefseebecken, blauer Tisch,
                           Aufsteller "Moin!", Vorlage, Stifte, orange Box
-                          -> steht bei "Der Aufruf an den Stationen", weil
-                             darauf genau die beiden gedruckten Blätter
-                             stehen, deren Text dort abgedruckt ist
+  station-foyer.jpg       Heller Tisch mit Stühlen, Kiste "STIFTE",
+                          Karton "fertige Zeichnungen"
+  station-riffbecken.jpg  Riffaquarium mit der Holzbox daneben
 
-Die Pfade stehen in index.html in AKTION_FOTOS. Die Bildunterschriften und die
-Stelle im Text stehen in data/lang/*.json: ein Block {"fig": ["schlüssel",
-"Bildunterschrift"]} direkt hinter dem zugehörigen Absatz, in allen drei
-Sprachen an derselben Stelle.
+Die Originale liegen unverkleinert oben im Projektordner; hier stehen sie auf
+1600 px lange Kante heruntergerechnet, mit angewandter EXIF-Drehung — das
+Foyer-Foto liegt in der Originaldatei quer.
 
-Fehlt eine Datei, verschwindet sie samt Bildunterschrift — der Text läuft
-durch, statt ein kaputtes Bild zu zeigen. Es lohnt sich, die Fotos vorher auf
-etwa 1200 px Breite zu verkleinern; sie werden im Seitenverhältnis 3:2
-beschnitten (auf dem Handy 4:3).
+Die Pfade stehen in index.html in AKTION_FOTOS. Reihenfolge und
+Bildunterschriften stehen in data/lang/*.json im Block "figs": je ein Paar
+["schlüssel", "Bildunterschrift"], in allen drei Sprachen gleich sortiert.
+
+Fehlt eine Datei, verschwindet sie samt Bildunterschrift; fehlen alle drei,
+verschwindet der Streifen. Beschnitten wird auf 4:3, auf dem Handy steht der
+Streifen einspaltig.
+
+station-riffbecken.jpg ist nur 300x400 px groß — auf einem Retina-Display
+sichtbar weicher als die beiden anderen. Falls das Original noch existiert,
+lohnt es sich, es zu ersetzen.

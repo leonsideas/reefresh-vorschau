@@ -50,22 +50,23 @@
       "p": "Para llevarlo a cabo me puse en contacto con numerosas instituciones, presenté la idea y conversé con gente muy distinta. Algunos lugares los visité en persona, para explicar el proyecto allí mismo y acompañar a quienes dibujaban."
     },
     {
-      "fig": [
-        "riffbecken",
-        "Estación dentro de una institución: el modelo vivo está justo al lado de la mesa."
-      ]
-    },
-    {
       "p": "En varios sitios se instalaron estaciones participativas. Allí estaban listas la plantilla, el material de dibujo y la información sobre el proyecto. Quien quería diseñaba su propio coral y aportaba su idea de cómo un ser vivo podría responder a las consecuencias del cambio climático."
     },
     {
-      "fig": [
-        "foyer",
-        "Una estación tal como se montaba: plantilla, lápices, hojas informativas y la caja para los dibujos terminados."
+      "figs": [
+        [
+          "tiefsee",
+          "Estación junto al acuario de profundidad: plantilla, instrucciones y la caja para los dibujos terminados."
+        ],
+        [
+          "foyer",
+          "Estación en el vestíbulo — para sentarse, con lápices y sitio donde dejar las cosas."
+        ],
+        [
+          "riffbecken",
+          "Junto al acuario de arrecife, el modelo vivo está al lado mismo de la estación."
+        ]
       ]
-    },
-    {
-      "p": "Una parte importante del proyecto fue el trabajo con una clase de tercero de primaria. Allí se trabajó de forma interdisciplinar: los temas científicos sobre arrecifes y cambio climático se unieron al arte, la lengua, la imaginación y la narración. Los niños no solo adquirieron conocimientos, sino que aportaron activamente sus propias visiones del futuro."
     },
     {
       "h": "Del dibujo al archivo"
@@ -75,9 +76,6 @@
     },
     {
       "p": "Las ideas originales, las anotaciones a mano y los rasgos particulares de cada participante se recogieron con cuidado. Cada coral recibió características propias y una historia evolutiva ficticia que explica por qué tiene ese aspecto o esas capacidades. A ello se sumaron láminas de detalle de apariencia científica, al estilo de los archivos biológicos históricos."
-    },
-    {
-      "p": "De muchas aportaciones individuales surgió así un archivo especulativo coherente con 147 corales del futuro. Cada uno lleva la idea y la letra de una persona, pero todos pasaron por el mismo proceso artístico hacia un mundo visual común. {n} de ellos están aquí por ahora; los demás irán llegando."
     },
     {
       "h": "El objetivo del proyecto"
@@ -105,12 +103,6 @@
     },
     {
       "p": "Viajamos juntos al futuro — hacia abajo, a las profundidades oscuras del océano. El cambio climático también ha transformado ese hábitat, y muchos corales de profundidad luchan por sobrevivir en las nuevas condiciones. Pero entonces se descubre una especie nueva: ha desarrollado un mecanismo de protección particular que la ayuda a arreglárselas."
-    },
-    {
-      "fig": [
-        "tiefsee",
-        "La invitación junto al acuario de profundidad: las mismas dos hojas que se reproducen aquí."
-      ]
     },
     {
       "lead": "Dibuja tu coral de profundidad del futuro y muestra qué protección ha desarrollado."
