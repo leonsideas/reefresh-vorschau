@@ -1270,15 +1270,15 @@
     {
       "id": "19",
       "variety": "var. stephani",
-      "varietyDescriptive": "var. reticulata",
-      "title": "Koralle in der Leine",
+      "varietyDescriptive": "var. umbraculata",
+      "title": "Regen- und Sonnenschirmkoralle",
       "author": "Stephan",
       "venue": "Family",
-      "summary": "Ein grüntürkises Exemplar, durch das eine gespannte Leine verläuft.",
+      "summary": "Eine grüntürkise Kolonie unter einem großen kombinierten Regen- und Sonnenschirm.",
       "scenario": {
         "year": 2230,
-        "title": "Im Schleppnetzgrund",
-        "story": "Über diesem Grund wurde gefischt, solange es sich lohnte. Grundleinen zogen in regelmäßigen Abständen durch das Riff und rissen ab, was hervorstand. Was blieb, wuchs flach und zäh — und trug die Leine mit sich.",
+        "title": "Unter dem großen Schirm",
+        "story": "Als die schützenden Wasserschichten dünner wurden, erreichten grelles Licht und erwärmte Oberflächenströme selbst die Tiefe. Nach Stürmen sank zugleich belastetes Wasser von oben herab. Die Kolonie suchte Schutz unter einem großen Schirm; im Laufe der Zeit verwuchs dessen Stiel mit dem Rifffuß, und die Membran wurde zu einem kombinierten Regen- und Sonnenschutz.",
         "palette": [
           "#546e76",
           "#274246"
@@ -1321,12 +1321,12 @@
       },
       "features": [
         {
-          "name": "Fangleine",
-          "text": "Eine diagonale Leine zieht sich quer durch die Kolonie."
+          "name": "Regen- und Sonnenschirm",
+          "text": "Eine große aufgespannte Membran schützt die gesamte Kolonie zugleich vor starker Strahlung, Hitze und belastetem Niederschlag."
         },
         {
-          "name": "Strömungskante",
-          "text": "Links deutet eine blaue Fläche die anströmende Wassermasse an."
+          "name": "Verankerter Schirmstiel",
+          "text": "Der lange Stiel ist im Rifffuß befestigt und hält die Schutzfläche über den empfindlichen Ästen."
         }
       ]
     },

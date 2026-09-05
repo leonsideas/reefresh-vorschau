@@ -11,7 +11,21 @@
      to something else mid-word. Of the characters the archive actually sets in
      headings only the ellipsis is missing; that one drops to Satoshi.
      Satoshi carries the running text, and its weight axis still separates
-     emphasis (600) from body (400) inside it. */
+     emphasis (600) from body (400) inside it.
+
+     These two are the only faces left in the repository. The four the archive
+     tried and dropped — Dirtyline, Mixed Up, Sound Distortion, Yavome — were
+     licensed for personal use only and are gone: Yavome even carries fsType 4,
+     which forbids embedding beyond preview and print. Satoshi is cleared for
+     commercial use and self-hosting (ITF Free Font License, kept beside it).
+     Hello Mixed is licensed twice over, and the two cover different halves of
+     this project: the webfont licence permits the embedded woff2 the browser
+     loads, the desktop licence covers the logo, whose lettering travels as
+     paths rather than as a font. Both were bought on 2026-09-03; the note
+     beside them in assets/font/licence/ says which applies where, and what the
+     pageview limit means for an exhibition terminal. What ships is the
+     TrueType build, indistinguishable from the purchased OTF in an overlay at
+     180px and a third of its weight. */
   @font-face{
     font-family:"Hello Mixed";
     src:url("assets/font/hello-mixed.woff2") format("woff2"),
@@ -84,7 +98,12 @@
     background:radial-gradient(120% 70% at 50% -10%,rgba(255,255,255,.5),transparent 62%);
     opacity:var(--glare,.5);transition:opacity 1s ease;
   }
-  #stage{position:fixed;inset:0;z-index:1}
+  /* touch-action:none hands the gesture to the page instead of the browser.
+     Without it the browser keeps the swipe for its own panning and zooming,
+     delays the pointer events and cancels the stream mid-drag — which is what
+     made browsing on a phone feel like it was fighting back. */
+  #stage{position:fixed;inset:0;z-index:1;touch-action:none}
+  #stage canvas{touch-action:none;-webkit-user-select:none;user-select:none}
 
   /* ---------- top bar ---------- */
   /* ---------- intro: a drifting grid of every specimen ---------- */
@@ -190,6 +209,7 @@
      than by a filled chip. */
   .tools{pointer-events:auto;display:flex;align-items:center;gap:26px}
   .toggle{display:flex;align-items:center;gap:16px}
+  #menuBtn{display:none}          /* only narrow screens fold the header away */
   .toggle button{
     font-family:var(--display);
     padding:4px 0 5px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;
@@ -202,11 +222,18 @@
   body.inspecting .topbar{padding-right:calc(var(--panel-w) + 34px)}
   #langSwitch{gap:12px}
   #langSwitch button{letter-spacing:.12em}
+  /* A mark, not a word. The ring is what makes it read as an icon rather than
+     as punctuation left over at the end of a line — and it gives the glyph a
+     shape to sit in, since a question mark alone hangs off-centre. */
   .iconbtn{
     font-family:var(--display);
-    width:auto;height:auto;padding:4px 0 5px;font-size:10px;letter-spacing:.18em;
-    text-transform:uppercase;color:var(--ink-faint);transition:color .25s;flex:none;
+    display:flex;align-items:center;justify-content:center;
+    width:24px;height:24px;padding:0;font-size:13px;line-height:1;letter-spacing:0;
+    border:1px solid var(--line);border-radius:50%;
+    text-transform:uppercase;color:var(--ink-faint);flex:none;
+    transition:color .25s,border-color .25s;
   }
+  .iconbtn:hover{color:var(--ink);border-color:var(--ink-soft)}
   .iconbtn:hover{color:var(--ink)}
 
   /* ---------- specimen label ---------- */
@@ -525,15 +552,75 @@
     .hint{display:none}
   }
   @media(max-width:900px){
-    .topbar{padding:18px 20px;flex-direction:column;gap:12px}
-    .marke-archiv{display:none}   /* the header stacks here; no middle left */
-    .tools{flex-wrap:wrap}
+    /* The header cannot hold these controls. Their labels alone want 362px of
+       a 375px screen, and shrinking them to fit made them unreadable and too
+       small to hit. So the header keeps only what is needed at a glance — the
+       mark, and info — and everything that switches something moves into a
+       menu that the header itself unfolds into. No second panel: the bar
+       grows, the scene stays where it is. */
+    .topbar{
+      display:grid;grid-template-columns:1fr auto 1fr;align-items:center;
+      padding:14px 18px;column-gap:10px;row-gap:0;
+    }
+    .marke-archiv{
+      display:block;position:static;transform:none;
+      width:128px;grid-column:2;grid-row:1;
+    }
+    .topbar .tools{display:contents}
+    #aboutBtn{
+      grid-column:1;grid-row:1;justify-self:start;
+      width:32px;height:32px;font-size:16px;
+    }
+    #menuBtn{
+      display:flex;flex-direction:column;justify-content:center;align-items:flex-end;
+      gap:4px;width:34px;height:34px;grid-column:3;grid-row:1;justify-self:end;
+      pointer-events:auto;
+    }
+    #menuBtn i{display:block;height:1.5px;width:22px;background:var(--ink);border-radius:1px;
+      transition:transform .3s cubic-bezier(.3,.8,.25,1),opacity .2s,width .3s}
+    #menuBtn i:nth-child(2){width:16px}
+    body.menu-open #menuBtn i:nth-child(1){transform:translateY(5.5px) rotate(45deg)}
+    body.menu-open #menuBtn i:nth-child(2){opacity:0;width:0}
+    body.menu-open #menuBtn i:nth-child(3){width:22px;transform:translateY(-5.5px) rotate(-45deg)}
+
+    /* Closed, the switches are simply not there. */
+    .topbar .toggle{display:none}
+    body.menu-open .topbar{
+      background:var(--chip);backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
+      border-bottom:1px solid var(--line);padding-bottom:16px;row-gap:9px;
+    }
+    /* Segmented switches rather than pairs of words: on a touch screen the
+       choice should look like a control and the current state should be
+       obvious without reading carefully. Each takes a full row — side by side
+       they overflow even 375px, and a menu has the height to spare. */
+    body.menu-open .topbar .toggle{
+      display:flex;gap:0;grid-column:1 / -1;
+      border:1px solid var(--line);border-radius:999px;overflow:hidden;
+    }
+    body.menu-open .topbar .tools:nth-of-type(1) .toggle:first-child{grid-row:2}
+    body.menu-open .topbar .tools:nth-of-type(1) .toggle:last-child{grid-row:3}
+    body.menu-open #langSwitch{grid-row:4}
+    body.menu-open .topbar .toggle button{
+      flex:1;padding:13px 4px;font-size:12px;letter-spacing:.1em;
+      border-radius:0;box-shadow:none;color:var(--ink-soft);
+    }
+    /* --paper does not flip with the dark grade, so on the sea the active half
+       was light ink on a light field and the label vanished. The counterpart
+       has to be named for each ground. */
+    body.menu-open .topbar .toggle button.on{
+      background:var(--ink);color:var(--paper);box-shadow:none;
+    }
+    body.on-dark.menu-open .topbar .toggle button.on{color:#14232a}
     #timeline{left:20px;right:20px}
-    #caption{max-width:min(340px,72vw)}
     .hint{display:none}
+    /* The binomial plus a variety runs to 395px at the desktop grade, and the
+       screen is 375 — fifteen of the sixty-seven did not fit. Down a step, and
+       with the tracking eased, the longest lands near 340. */
+    #caption .sci{font-size:14px;letter-spacing:.03em}
     /* no room to stand the specimen beside its record: the panel takes the
        lower half of the screen and the coral keeps the upper */
-    #inspect{top:auto;left:0;width:auto;height:62vh;padding:22px 20px 24px;
+    #inspect{top:auto;left:0;width:auto;height:54vh;padding:22px 20px 24px;
       border-left:none;border-top:1px solid var(--line);
       transform:translateY(102%);gap:14px}
     body.inspecting .topbar{padding-right:20px}
@@ -590,9 +677,11 @@
       <button data-lang="en">EN</button>
       <button data-lang="es">ES</button>
     </div>
-    <button class="iconbtn" id="aboutBtn" title="Über dieses Archiv">Info</button>
+    <button class="iconbtn" id="aboutBtn" title="Über dieses Archiv">?</button>
   </div>
   <div class="marke marke-archiv" aria-hidden="true"></div>
+  <!-- only ever visible on narrow screens; the header becomes the menu -->
+  <button id="menuBtn" aria-expanded="false" aria-label="Menü"><i></i><i></i><i></i></button>
 </div>
 
 <div id="yearBack"><span></span></div>
@@ -653,7 +742,17 @@ import { worldMapSVG, seaLabel } from './js/worldmap.js?v=5';
    Layout constants
    ============================================================ */
 const SPACING   = 5.6;
-const CAM_DIST  = 7.8;
+/* One camera carries both the models and the drawings, so its distance is the
+   single place their size is decided. A phone stands closer to the eye and its
+   frame is narrow: at the desktop distance the specimen filled well over half
+   the height. Further back it takes about half, and the sea around it comes
+   back into view. */
+const CAM_DIST_WEIT = 7.8;
+let CAM_DIST = CAM_DIST_WEIT;
+function passeAbstandAn(){
+  CAM_DIST = innerWidth <= 900 ? 9.5 : CAM_DIST_WEIT;
+}
+passeAbstandAn();
 const CAM_HIGH  = 1.62;
 const FIT       = 3.5;
 // The sheet has margins the model does not, so matching the two by their
@@ -990,16 +1089,57 @@ function slotUnderPointer(e){
   return hits.length ? hits[0].object.userData.slot : null;
 }
 
+/* A finger is not a mouse. On a phone the specimen fills the middle of the
+   screen, so nearly every swipe starts on it — and turning the coral would
+   then swallow almost every attempt to browse. Dragging therefore always
+   browses on a touch screen; turning stays a mouse gesture, and the record
+   puts the specimen on a turntable anyway. */
+let zugX = 0, zugZeit = 0, wucht = 0;
+
+/* Turning on a touch screen needs a gesture of its own. One finger has to stay
+   with browsing — on a phone the specimen fills the middle, so a drag that
+   started on it would otherwise almost always turn instead of move. Two
+   fingers turn: unambiguous, and nothing else in the archive claims them. */
+const zeiger = new Map();          // pointerId -> clientX
+let zweiFinger = false, zweiStart = 0, zweiSpin = 0, zweiSlot = null;
+
+function mitteDerZeiger(){
+  let summe = 0;
+  for(const x of zeiger.values()) summe += x;
+  return summe / zeiger.size;
+}
+function beendeZweiFinger(){
+  zweiFinger = false; zweiSlot = null;
+}
+
 renderer.domElement.addEventListener('pointerdown', (e) => {
   if(gridOpen || inputLocked || introOpen) return;
   const slot = slotUnderPointer(e);
   dragging = true; dragX = e.clientX; moved = 0;
+  zugX = e.clientX; zugZeit = e.timeStamp; wucht = 0;
   pressedSlot = slot;
-  if(mode === '3d' && slot && slot.model){
+  zeiger.set(e.pointerId, e.clientX);
+  if(zeiger.size === 2 && mode === '3d'){
+    // the specimen the archive is standing at, not whatever a finger landed on
+    const mitte = slots[Math.max(0, Math.min(maxIndex, Math.round(current)))];
+    if(mitte && mitte.model){
+      zweiFinger = true; zweiSlot = mitte;
+      zweiStart = mitteDerZeiger(); zweiSpin = mitte.spin;
+      target = dragStart;              // give up the browse the first finger began
+      clampTarget();
+    }
+  }
+  // The event says what it was, and that is more reliable than asking the
+  // media query: a laptop with a touchscreen reports a coarse pointer even
+  // while its owner is using the mouse, and would lose turning for no reason.
+  const dreht = mode === '3d' && slot && slot.model && e.pointerType !== 'touch';
+  if(dreht){
     rotatingSlot = slot; spinStart = slot.spin;
   } else {
     rotatingSlot = null; dragStart = target;
   }
+  // keep the stream even when the finger leaves the canvas mid-swipe
+  try { renderer.domElement.setPointerCapture(e.pointerId); } catch {}
   renderer.domElement.style.cursor = rotatingSlot ? 'grabbing' : 'ew-resize';
 });
 
@@ -1011,6 +1151,15 @@ addEventListener('pointermove', (e) => {
     }
     return;
   }
+  if(zeiger.has(e.pointerId)) zeiger.set(e.pointerId, e.clientX);
+  if(zweiFinger && zweiSlot){
+    const spin = zweiSpin + (mitteDerZeiger() - zweiStart) * 0.014;
+    zweiSlot.spin = spin;
+    if(zweiSlot.model) zweiSlot.model.rotation.y = zweiSlot.baseYaw + spin;
+    moved = CLICK_SLOP + 1;            // a turn is never a tap
+    hideHint();
+    return;
+  }
   const dx = e.clientX - dragX;
   moved = Math.max(moved, Math.abs(dx));
   if(rotatingSlot){
@@ -1019,12 +1168,30 @@ addEventListener('pointermove', (e) => {
   } else {
     target = dragStart - dx * 0.0055;
     clampTarget();
+    // running velocity, for the flick below
+    const dt = e.timeStamp - zugZeit;
+    if(dt > 0){ wucht = (e.clientX - zugX) / dt; zugX = e.clientX; zugZeit = e.timeStamp; }
   }
   if(moved > 6) hideHint();
 });
 
-addEventListener('pointerup', () => {
-  if(dragging && !rotatingSlot){ target = Math.round(target); clampTarget(); }
+function zeigerWeg(e){
+  if(e && zeiger.has(e.pointerId)) zeiger.delete(e.pointerId);
+  if(zeiger.size < 2) beendeZweiFinger();
+}
+addEventListener('pointercancel', (e) => { zeigerWeg(e); dragging = false; });
+
+addEventListener('pointerup', (e) => {
+  zeigerWeg(e);
+  if(dragging && zweiFinger){ dragging = false; rotatingSlot = null; pressedSlot = null; return; }
+  if(dragging && !rotatingSlot){
+    // Without this a quick flick moves half a specimen and snaps back, which
+    // is what makes browsing feel stuck on a phone: the throw carries on for
+    // as far as the speed of the gesture warrants, up to three specimens.
+    const schwung = Math.max(-3, Math.min(3, -wucht * 1.1));
+    target = Math.round(target + schwung);
+    clampTarget();
+  }
   // A press that did not travel is a click. On a specimen it opens that
   // specimen's record; on open water it puts the record away again.
   if(dragging && moved <= CLICK_SLOP){
@@ -1036,7 +1203,7 @@ addEventListener('pointerup', () => {
 });
 
 addEventListener('keydown', (e) => {
-  if(e.key === 'Escape'){ closeAbout(); closeInspect(); if(gridOpen) setView('line'); }
+  if(e.key === 'Escape'){ setMenu(false); closeAbout(); closeInspect(); if(gridOpen) setView('line'); }
   if(gridOpen || introOpen) return;
   // with a record open the arrows walk it along, so the panel follows the
   // specimen instead of being left behind on the wrong one
@@ -1520,6 +1687,23 @@ async function setView(next){
   shuffleEl.innerHTML = '';
   switching = false;
 }
+/* The header folds open on narrow screens. Anything chosen inside it closes
+   it again, so the scene is never left behind a card nobody dismissed. */
+const menuBtn = document.getElementById('menuBtn');
+function setMenu(open){
+  document.body.classList.toggle('menu-open', open);
+  menuBtn.setAttribute('aria-expanded', String(open));
+}
+menuBtn.addEventListener('click', () => setMenu(!document.body.classList.contains('menu-open')));
+document.querySelectorAll('.topbar .tools').forEach(g =>
+  g.addEventListener('click', (e) => { if(e.target.closest('button')) setMenu(false); }));
+addEventListener('pointerdown', (e) => {
+  if(!document.body.classList.contains('menu-open')) return;
+  // not every event target is an element — guard before asking it for an ancestor
+  const im = e.target instanceof Element && e.target.closest('.topbar');
+  if(!im) setMenu(false);
+});
+
 document.getElementById('viewGrid').addEventListener('click', () => setView('grid'));
 document.getElementById('viewLine').addEventListener('click', () => setView('line'));
 
@@ -1612,6 +1796,7 @@ function applyStrings(){
   set('#viewLine', t('viewLine'));
   set('#viewGrid', t('viewGrid'));
   set('#aboutBtn', t('aboutTitle'), 'title');
+  set('#aboutBtn', t('aboutTitle'), 'aria-label');   // the glyph names nothing
   renderAbout();
   set('#aboutClose', t('close'));
   set('#langSwitch', t('langLabel'), 'title');
@@ -1726,14 +1911,35 @@ const clock = new THREE.Clock();
    Returns the row position it is looking at. */
 function placeCamera(){
   const x = current * SPACING;
-  const halfWidth = CAM_DIST * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2)) * camera.aspect;
-  // At rest the specimen stands in the middle of the frame; the label sits
-  // above it and the year behind it, so nothing needs the space beside it.
-  const resting = 0;
-  const held = -halfWidth * 0.3;
-  const offset = resting + (held - resting) * inspectAmount;
-  camera.position.set(x - offset, CAM_HIGH, CAM_DIST);
-  camera.lookAt(x - offset, CAM_HIGH, 0);
+  const tan = Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
+  let camX = x, camY = CAM_HIGH, camZ = CAM_DIST;
+
+  if(inspectAmount > 0.001){
+    if(innerWidth <= 900){
+      /* On a phone the record is a sheet along the bottom, so there is no side
+         to step aside to — the specimen has to move up instead, into the strip
+         between the header and the top of the sheet.
+
+         Fitting it there exactly would mean pulling the camera back to more
+         than twice its distance and dropping it below the seabed, which buys a
+         whole coral the size of a thumbnail seen from underneath. Both are
+         capped instead: the specimen ends up nearly whole and still large, and
+         the camera stays above the floor. */
+      const oben = 104, unten = innerHeight * 0.46 - 12;
+      const spanne = Math.max(0.16, (unten - oben) / innerHeight);
+      const sicht = Math.min(CAM_DIST * 1.55 * 2 * tan, FIT * 1.1 / spanne);
+      const zielZ = sicht / (2 * tan);
+      const zielY = Math.max(0.35, (unten / innerHeight) * sicht - sicht / 2);
+      camZ = CAM_DIST + (zielZ - CAM_DIST) * inspectAmount;
+      camY = CAM_HIGH + (zielY - CAM_HIGH) * inspectAmount;
+    } else {
+      // At rest the specimen stands in the middle of the frame; with the record
+      // open the camera steps right so the coral holds the left of the frame.
+      camX = x + CAM_DIST * tan * camera.aspect * 0.3 * inspectAmount;
+    }
+  }
+  camera.position.set(camX, camY, camZ);
+  camera.lookAt(camX, camY, 0);
   camera.updateMatrixWorld();
   return x;
 }
@@ -1755,7 +1961,18 @@ function placeCaption(){
   // Under the specimen, not over it: the coral stands from y = 0 upward, so
   // the name hangs just below its foot — and below the sheet in drawing mode.
   const foot = (mode === 'draw') ? CAM_HIGH - DRAW_FIT / 2 - 0.3 : -0.28;
-  const [nx, ny] = toScreen(foot);
+  let [nx, ny] = toScreen(foot);
+  // The name follows the specimen, and on a narrow screen the specimen leaves
+  // the frame long before the name should. Hold it inside the viewport by its
+  // own half-width — it stays centred under the coral until the coral runs out
+  // of room, and then stops at the edge instead of sliding off it.
+  const halb = capEl.getBoundingClientRect().width / 2;
+  const rand = 12;
+  // On a screen too narrow even for the shortened name there is no honest
+  // clamp, so it simply centres rather than pinning itself to one edge.
+  nx = (halb * 2 + rand * 2 >= innerWidth)
+     ? innerWidth / 2
+     : Math.max(halb + rand, Math.min(innerWidth - halb - rand, nx));
   capEl.style.transform = `translate(${nx}px, ${ny}px) translate(-50%, 0)`;
   // fades out before it can run into the axis along the bottom
   capEl.style.opacity = ny > innerHeight - 92 ? '0' : '1';
@@ -1810,6 +2027,7 @@ function frame(){
 }
 
 addEventListener('resize', () => {
+  passeAbstandAn();
   camera.aspect = innerWidth/innerHeight;
   camera.updateProjectionMatrix();
   renderer.setSize(innerWidth, innerHeight);
