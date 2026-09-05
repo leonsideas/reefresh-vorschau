@@ -47,17 +47,22 @@
       "h": "The participatory process"
     },
     {
-      "figs": [
-        "A station at the cold-water tank: template, instructions and the box for finished drawings.",
-        "A station in the foyer — somewhere to sit, with pencils and a place to put things.",
-        "Beside the reef tank, the living model stands right next to the station."
-      ]
-    },
-    {
       "p": "To make it happen I approached a great many institutions, presented the idea and got into conversation with all kinds of people. Some places I visited myself, to explain the project on site and to keep the participants company while they drew."
     },
     {
+      "fig": [
+        "riffbecken",
+        "A station inside an institution: the living model stands right beside the table."
+      ]
+    },
+    {
       "p": "Stations were set up in several places. The template, drawing materials and information about the project lay ready, and anyone who wanted to could design their own coral and add their own idea of how a living thing might answer the consequences of climate change."
+    },
+    {
+      "fig": [
+        "foyer",
+        "A station as it was laid out — template, pencils, information sheets and the box for finished drawings."
+      ]
     },
     {
       "p": "An important part of the project was the work with a third-year primary school class. There it ran across subjects: the science of coral reefs and climate change met art, language, imagination and storytelling. The children did not only take in knowledge — they put their own visions of the future into the project."
@@ -100,6 +105,12 @@
     },
     {
       "p": "Together, we travel into the future — down into the dark deep sea. Climate change has altered that habitat too, and many deep-sea corals are struggling under the new conditions. But then a new species is discovered: it has developed a particular defence that helps it cope with the consequences."
+    },
+    {
+      "fig": [
+        "tiefsee",
+        "The invitation at the deep-sea tank: the same two sheets printed here."
+      ]
     },
     {
       "lead": "Draw your deep-sea coral of the future, and show what protection it has developed."

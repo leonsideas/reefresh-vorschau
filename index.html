@@ -486,19 +486,15 @@
   #about .credit{margin-top:22px;color:rgba(26,30,31,.38);font-size:12px}
   #about em{font-style:italic}
   #about p{font-size:13.5px;line-height:1.8;color:rgba(26,30,31,.58);margin-bottom:14px}
-  /* Documentation of the stations themselves. Uniform tiles rather than the
-     photographs' own proportions: three snapshots at three aspect ratios read
-     as an accident, and cropped to one ratio they read as a series. */
-  /* The strip counts its own columns rather than borrowing the header's
-     breakpoint: the panel is 640px wide at most whatever the window does, so
-     what decides how many tiles fit is the box, not the screen. */
-  #about .shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-    gap:10px;margin:2px 0 18px}
-  #about .shots[hidden]{display:none}
-  #about .shots figure{margin:0}
-  #about .shots img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;
+  /* Each photograph stands with the paragraph that describes it rather than in
+     a gallery of its own — a station beside the sentence about the stations,
+     the printed call beside the call itself. One ratio across all three: the
+     snapshots are portrait and landscape, and left at their own proportions a
+     page of them reads as an accident rather than as a series. */
+  #about .shot{margin:0 0 18px}
+  #about .shot img{display:block;width:100%;aspect-ratio:3/2;object-fit:cover;
     border:1px solid rgba(26,30,31,.15);background:rgba(26,30,31,.05)}
-  #about .shots figcaption{margin-top:6px;font-size:11px;line-height:1.5;color:rgba(26,30,31,.38)}
+  #about .shot figcaption{margin-top:7px;font-size:11.5px;line-height:1.6;color:rgba(26,30,31,.38)}
   /* The panel became a project text rather than a note, and the button at its
      foot is now three thousand pixels down. On a phone there is no Escape key
      to fall back on, so a second way out rides along at the top. */
@@ -666,6 +662,7 @@
     #about{padding:14px}
     #about .box{padding:26px 22px;max-height:calc(100vh - 28px)}
     #about .closeX{margin:-12px -12px 0 10px}
+    #about .shot img{aspect-ratio:4/3}
     #about h3{font-size:22px}
   }
   @media(prefers-reduced-motion:reduce){
@@ -790,6 +787,24 @@ const CAM_DIST_WEIT = 7.8;
 let CAM_DIST = CAM_DIST_WEIT;
 function passeAbstandAn(){
   CAM_DIST = innerWidth <= 900 ? 9.5 : CAM_DIST_WEIT;
+  messeBand();
+}
+
+/* The strip a phone has left for the specimen once the record is open: below
+   the header, above the sheet.
+
+   Both edges are measured rather than computed. The sheet is 54vh tall, and on
+   a phone a vh is not a hundredth of innerHeight — the address bar counts
+   against innerHeight and not against vh — so the sheet is taller than the
+   arithmetic says and its top edge sits higher. Deriving it put the coral's
+   foot behind the panel on exactly the devices this is for. */
+let bandOben = 96, bandUnten = 360;
+function messeBand(){
+  const kopf  = document.querySelector('.topbar');
+  const blatt = document.getElementById('inspect');
+  bandOben  = (kopf ? kopf.getBoundingClientRect().bottom : 65) + 30;
+  const hoch = blatt ? blatt.getBoundingClientRect().height : innerHeight * 0.54;
+  bandUnten = innerHeight - hoch - 14;
 }
 passeAbstandAn();
 const CAM_HIGH  = 1.62;
@@ -1815,13 +1830,15 @@ async function setLang(next){
    whole panel has to change language with the rest of the page. */
 /* The photographs of the stations live here rather than in the locale files:
    the caption under each one is translated, the file it points at is not. A
-   figure whose file is missing removes itself, so an incomplete set shows a
-   shorter strip rather than three broken-image icons. */
-const AKTION_FOTOS = [
-  'assets/img/aktion/station-tiefsee.jpg',
-  'assets/img/aktion/station-foyer.jpg',
-  'assets/img/aktion/station-riffbecken.jpg',
-];
+   block names its photograph by key, so the same picture keeps its place in
+   the text in every language, and a photograph whose file is missing takes its
+   caption with it rather than leaving a broken image in the middle of a
+   paragraph. */
+const AKTION_FOTOS = {
+  tiefsee:    'assets/img/aktion/station-tiefsee.jpg',
+  foyer:      'assets/img/aktion/station-foyer.jpg',
+  riffbecken: 'assets/img/aktion/station-riffbecken.jpg',
+};
 
 function renderAbout(){
   const body = document.getElementById('aboutBody');
@@ -1837,20 +1854,15 @@ function renderAbout(){
       if(b.step)   return `<p class="step"><b>${b.step[0]}</b>${
                              b.step[1] ? `<span>${b.step[1]}</span>` : ''}</p>`;
       if(b.credit) return `<p class="credit">${b.credit}</p>`;
-      if(b.figs)   return `<div class="shots">${b.figs.map((cap, k) => AKTION_FOTOS[k]
-                     ? `<figure><img src="${AKTION_FOTOS[k]}" alt="${cap}" loading="lazy">
-                        <figcaption>${cap}</figcaption></figure>` : '').join('')}</div>`;
+      if(b.fig)    return AKTION_FOTOS[b.fig[0]]
+                     ? `<figure class="shot"><img src="${AKTION_FOTOS[b.fig[0]]}"
+                          alt="${b.fig[1]}" loading="lazy">
+                        <figcaption>${b.fig[1]}</figcaption></figure>` : '';
       return `<p>${zahl(b.p)}</p>`;
     }).join('');
 
-  // A photograph that is not there yet takes its caption with it, and the last
-  // one to go takes the strip — otherwise the section keeps a band of empty
-  // space under its heading for pictures nobody can see.
-  body.querySelectorAll('.shots img').forEach(img => img.addEventListener('error', () => {
-    img.closest('figure').hidden = true;
-    const streifen = img.closest('.shots');
-    if(!streifen.querySelector('figure:not([hidden])')) streifen.hidden = true;
-  }));
+  body.querySelectorAll('.shot img').forEach(img =>
+    img.addEventListener('error', () => { img.closest('figure').hidden = true; }));
 }
 
 function applyStrings(){
@@ -1942,6 +1954,7 @@ function openInspect(index){
   inspectEl.classList.add('on');
   inspectEl.setAttribute('aria-hidden', 'false');
   document.body.classList.add('inspecting');
+  messeBand();          // the sheet's real edge, not 54 % of anything
   hideHint();
 }
 
@@ -1999,7 +2012,7 @@ function placeCamera(){
          which is why this used to cap the move and leave the foot behind the
          sheet. So the camera keeps its own height and tilts down instead, far
          enough back that foot and crown land exactly on the strip's edges. */
-      const oben = 96, unten = innerHeight * 0.46 - 14;
+      const oben = bandOben, unten = bandUnten;
       const hoch = (mode === 'draw') ? CAM_HIGH + DRAW_FIT / 2 : FIT;
       const tief = (mode === 'draw') ? CAM_HIGH - DRAW_FIT / 2 : 0;
       // the angles the strip's own edges make with the camera's axis

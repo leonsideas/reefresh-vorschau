@@ -1,19 +1,31 @@
 Fotos der Mitmachstationen für die Info-Seite
 =============================================
 
-Die Info-Seite (das "?" oben links) zeigt unter "Der partizipative Prozess"
-einen Streifen aus drei Fotos. Erwartet werden genau diese drei Dateinamen:
+Auf der Info-Seite (das "?" oben links) steht jedes Foto hinter dem Absatz,
+der es beschreibt — nicht als Block gesammelt. Erwartet werden genau diese
+drei Dateinamen:
+
+  station-riffbecken.jpg  Riffaquarium mit der Holzbox daneben
+                          -> steht bei "Einige Einrichtungen besuchte ich
+                             persönlich"
+
+  station-foyer.jpg       Heller Tisch mit Stühlen, Kiste "STIFTE",
+                          Karton "fertige Zeichnungen"
+                          -> steht bei "An verschiedenen Orten wurden
+                             Mitmachstationen eingerichtet"
 
   station-tiefsee.jpg     Station am dunklen Tiefseebecken, blauer Tisch,
                           Aufsteller "Moin!", Vorlage, Stifte, orange Box
-  station-foyer.jpg       Heller Tisch mit Stühlen, Kiste "STIFTE",
-                          Karton "fertige Zeichnungen"
-  station-riffbecken.jpg  Riffaquarium mit der Holzbox daneben
+                          -> steht bei "Der Aufruf an den Stationen", weil
+                             darauf genau die beiden gedruckten Blätter
+                             stehen, deren Text dort abgedruckt ist
 
-Die Pfade stehen in index.html in AKTION_FOTOS, die Bildunterschriften in
-data/lang/*.json im Block "figs" (eine Zeile je Foto, in Reihenfolge).
+Die Pfade stehen in index.html in AKTION_FOTOS. Die Bildunterschriften und die
+Stelle im Text stehen in data/lang/*.json: ein Block {"fig": ["schlüssel",
+"Bildunterschrift"]} direkt hinter dem zugehörigen Absatz, in allen drei
+Sprachen an derselben Stelle.
 
-Fehlt eine Datei, blendet sich ihr Platz von selbst aus — die Seite zeigt dann
-einen kürzeren Streifen statt eines kaputten Bildes. Es lohnt sich, die Fotos
-vorher auf etwa 1200 px Breite zu verkleinern; als Kacheln werden sie im
-Seitenverhältnis 4:3 beschnitten (auf dem Handy 3:2).
+Fehlt eine Datei, verschwindet sie samt Bildunterschrift — der Text läuft
+durch, statt ein kaputtes Bild zu zeigen. Es lohnt sich, die Fotos vorher auf
+etwa 1200 px Breite zu verkleinern; sie werden im Seitenverhältnis 3:2
+beschnitten (auf dem Handy 4:3).

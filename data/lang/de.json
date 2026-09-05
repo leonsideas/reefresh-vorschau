@@ -47,17 +47,22 @@
       "h": "Der partizipative Prozess"
     },
     {
-      "figs": [
-        "Station am Tiefseebecken: Vorlage, Anleitung und die Box für die fertigen Zeichnungen.",
-        "Station im Foyer — zum Hinsetzen, mit Stiften und Ablage.",
-        "Neben dem Riffbecken steht das lebende Vorbild direkt neben der Station."
-      ]
-    },
-    {
       "p": "Für die Umsetzung nahm ich Kontakt zu zahlreichen Institutionen auf, stellte die Idee vor und trat mit unterschiedlichen Menschen in den Austausch. Einige Einrichtungen besuchte ich persönlich, um das Projekt vor Ort zu vermitteln und die Teilnehmenden beim Gestalten zu begleiten."
     },
     {
+      "fig": [
+        "riffbecken",
+        "Station in einer Einrichtung: das lebende Vorbild steht direkt neben dem Tisch."
+      ]
+    },
+    {
       "p": "An verschiedenen Orten wurden Mitmachstationen eingerichtet. Dort lagen die Vorlage, Zeichenmaterial und Informationen zum Projekt bereit. Wer wollte, gestaltete seine eigene Koralle und brachte seine Vorstellung davon ein, wie ein Lebewesen auf die Folgen des Klimawandels reagieren könnte."
+    },
+    {
+      "fig": [
+        "foyer",
+        "Eine Mitmachstation, wie sie auslag — Vorlage, Stifte, Infoblätter und die Box für die fertigen Zeichnungen."
+      ]
     },
     {
       "p": "Ein wichtiger Teil des Projekts war die Zusammenarbeit mit einer dritten Grundschulklasse. Dort wurde interdisziplinär gearbeitet: naturwissenschaftliche Themen rund um Korallenriffe und Klimawandel wurden mit Kunst, Sprache, Fantasie und Erzählen verbunden. Die Kinder eigneten sich nicht nur Wissen an, sondern brachten ihre eigenen Zukunftsvorstellungen aktiv in das Projekt ein."
@@ -100,6 +105,12 @@
     },
     {
       "p": "Gemeinsam reisen wir in die Zukunft — hinunter in die dunkle Tiefsee. Der Klimawandel hat auch dort den Lebensraum verändert, und viele Tiefseekorallen kämpfen unter den neuen Bedingungen ums Überleben. Doch dann wird eine neue Art entdeckt: Sie hat einen besonderen Schutzmechanismus entwickelt, der ihr hilft, mit den Folgen zurechtzukommen."
+    },
+    {
+      "fig": [
+        "tiefsee",
+        "Der Aufruf am Tiefseebecken: dieselben zwei Blätter, die hier abgedruckt sind."
+      ]
     },
     {
       "lead": "Zeichne deine Tiefseekoralle der Zukunft und zeig, welchen Schutz sie entwickelt hat."
