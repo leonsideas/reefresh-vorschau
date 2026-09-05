@@ -1704,7 +1704,8 @@ function setMenu(open){
 }
 menuBtn.addEventListener('click', () => setMenu(!document.body.classList.contains('menu-open')));
 document.querySelectorAll('.topbar .tools').forEach(g =>
-  g.addEventListener('click', (e) => { if(e.target.closest('button')) setMenu(false); }));
+  g.addEventListener('click', (e) => {
+    if(e.target instanceof Element && e.target.closest('button')) setMenu(false); }));
 addEventListener('pointerdown', (e) => {
   if(!document.body.classList.contains('menu-open')) return;
   // not every event target is an element — guard before asking it for an ancestor
@@ -1813,7 +1814,7 @@ function applyStrings(){
 }
 
 document.getElementById('langSwitch').addEventListener('click', (e) => {
-  const b = e.target.closest('button[data-lang]');
+  const b = e.target instanceof Element && e.target.closest('button[data-lang]');
   if(b) setLang(b.dataset.lang);
 });
 
@@ -1912,15 +1913,17 @@ const clock = new THREE.Clock();
 
 /* Where the camera stands for the current position and record state.
    Stand the specimen right of centre so the label has the left third to
-   itself. The camera stays level and looks straight down -z; sliding it left
-   is what moves the subject right, without tilting anything. Opening a record
-   swings that offset through zero and out the other side, so the specimen
-   crosses the frame to the left and the panel takes the right.
+   itself. On a wide screen the camera stays level and looks straight down -z;
+   sliding it left is what moves the subject right, without tilting anything.
+   Opening a record swings that offset through zero and out the other side, so
+   the specimen crosses the frame to the left and the panel takes the right.
+   A phone has no room beside the record, so there the camera tilts instead —
+   see below.
    Returns the row position it is looking at. */
 function placeCamera(){
   const x = current * SPACING;
   const tan = Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
-  let camX = x, camY = CAM_HIGH, camZ = CAM_DIST;
+  let camX = x, camY = CAM_HIGH, camZ = CAM_DIST, blickY = CAM_HIGH;
 
   if(inspectAmount > 0.001){
     if(innerWidth <= 900){
@@ -1928,18 +1931,25 @@ function placeCamera(){
          to step aside to — the specimen has to move up instead, into the strip
          between the header and the top of the sheet.
 
-         Fitting it there exactly would mean pulling the camera back to more
-         than twice its distance and dropping it below the seabed, which buys a
-         whole coral the size of a thumbnail seen from underneath. Both are
-         capped instead: the specimen ends up nearly whole and still large, and
-         the camera stays above the floor. */
-      const oben = 104, unten = innerHeight * 0.46 - 12;
-      const spanne = Math.max(0.16, (unten - oben) / innerHeight);
-      const sicht = Math.min(CAM_DIST * 1.55 * 2 * tan, FIT * 1.1 / spanne);
-      const zielZ = sicht / (2 * tan);
-      const zielY = Math.max(0.35, (unten / innerHeight) * sicht - sicht / 2);
+         A level camera cannot put it there. Standing the whole coral above the
+         middle of the frame would mean lowering the camera below the seabed,
+         which is why this used to cap the move and leave the foot behind the
+         sheet. So the camera keeps its own height and tilts down instead, far
+         enough back that foot and crown land exactly on the strip's edges. */
+      const oben = 96, unten = innerHeight * 0.46 - 14;
+      const hoch = (mode === 'draw') ? CAM_HIGH + DRAW_FIT / 2 : FIT;
+      const tief = (mode === 'draw') ? CAM_HIGH - DRAW_FIT / 2 : 0;
+      // the angles the strip's own edges make with the camera's axis
+      const unterKante = Math.atan(tan * (1 - 2 * unten / innerHeight));
+      const oberKante  = Math.atan(tan * (1 - 2 * oben  / innerHeight));
+      const spanne = Math.tan(Math.max(0.02, oberKante - unterKante));
+      // the distance at which foot and crown subtend exactly that angle
+      const p = hoch - CAM_HIGH, q = tief - CAM_HIGH, s = p - q;
+      const zielZ = (s + Math.sqrt(s * s - 4 * spanne * spanne * p * q)) / (2 * spanne);
+      // and the pitch that then drops the foot onto the strip's lower edge
+      const neigung = Math.atan(q / zielZ) - unterKante;
       camZ = CAM_DIST + (zielZ - CAM_DIST) * inspectAmount;
-      camY = CAM_HIGH + (zielY - CAM_HIGH) * inspectAmount;
+      blickY = CAM_HIGH + camZ * Math.tan(neigung) * inspectAmount;
     } else {
       // At rest the specimen stands in the middle of the frame; with the record
       // open the camera steps right so the coral holds the left of the frame.
@@ -1947,7 +1957,7 @@ function placeCamera(){
     }
   }
   camera.position.set(camX, camY, camZ);
-  camera.lookAt(camX, camY, 0);
+  camera.lookAt(camX, blickY, 0);
   camera.updateMatrixWorld();
   return x;
 }
@@ -1968,10 +1978,13 @@ function placeCaption(){
 
   // Under the specimen, not over it: the coral stands from y = 0 upward, so
   // the name hangs just below its foot — and below the sheet in drawing mode.
+  // On a phone it hangs a little further down than the arithmetic needs: the
+  // axis was moved to the very bottom edge, and the gap it gave up belongs to
+  // the coral rather than to the name.
   const eng = innerWidth <= 900;
   const foot = (mode === 'draw')
     ? CAM_HIGH - DRAW_FIT / 2 - (eng ? 0.18 : 0.3)
-    : (eng ? -0.14 : -0.28);
+    : (eng ? -0.30 : -0.28);
   let [nx, ny] = toScreen(foot);
   // The name follows the specimen, and on a narrow screen the specimen leaves
   // the frame long before the name should. Hold it inside the viewport by its
