@@ -115,7 +115,8 @@
     --ink-faint:rgba(26,30,31,.38);
     --line:rgba(26,30,31,.15);
     position:fixed;inset:0;z-index:60;background:var(--paper);color:var(--ink);
-    overflow:hidden;transition:opacity .55s ease,visibility .55s,background-color .5s ease;
+    overflow:hidden;transition:opacity .55s ease,visibility .55s,
+    background-color 1.3s cubic-bezier(.4,0,.3,1);
   }
   #intro.gone{opacity:0;visibility:hidden;pointer-events:none}
   #intro.handoff{background-color:rgba(244,242,238,0)}
@@ -141,29 +142,50 @@
   @keyframes driftL{from{transform:translateX(0)}to{transform:translateX(-50%)}}
   @keyframes driftR{from{transform:translateX(-50%)}to{transform:translateX(0)}}
 
+  /* ---- leaving: the field clears, and the thanks are read on the empty page ----
+     The rows leave the way they arrived — each one out of the side it was
+     drifting towards — and the mark goes with them, so what is left is the
+     paper the intro started from. */
+  #intro.raeumt .mtrack{animation-play-state:paused}
+  #intro.raeumt .mrow[data-dir="l"]{transform:translateX(-112%)}
+  #intro.raeumt .mrow[data-dir="r"]{transform:translateX(112%)}
+  #intro.raeumt .mcentre{opacity:0;transform:translate(-50%,-50%) scale(.97)}
+  #intro.raeumt .mscrim{opacity:0}
+
+  .dank{
+    position:absolute;inset:0;z-index:6;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;gap:clamp(24px,4.5vh,44px);
+    padding:40px;text-align:center;
+    opacity:0;pointer-events:none;transition:opacity .7s ease;
+  }
+  .dank.on{opacity:1}
+  .dank p{
+    max-width:36ch;margin:0;font-size:clamp(13px,1.5vw,15px);line-height:1.85;
+    color:var(--ink-soft);text-wrap:balance;
+  }
+  /* Institution marks come in every proportion there is, so they are set to a
+     common height and left in their own colours — a supporter's mark is not
+     ours to recolour. */
+  .dank-logos{
+    display:flex;flex-wrap:wrap;align-items:center;justify-content:center;
+    gap:clamp(26px,4vw,60px);max-width:min(900px,86vw);
+  }
+  .dank-logos img{height:clamp(32px,5.2vh,56px);width:auto;object-fit:contain}
+
   /* On entry, the moving field resolves into the archive's chronological axis. */
   #intro.assembling .mtrack{animation-play-state:paused}
   #intro.assembling .mrows{opacity:.06;filter:blur(5px);transform:scale(.985)}
   #intro.assembling .mcentre{opacity:0;transform:translate(-50%,-50%) scale(.97)}
 
   .archive-assembly{position:absolute;inset:0;z-index:5;pointer-events:none}
-  .archive-assembly::after{
-    content:"";position:absolute;z-index:0;left:var(--axis-inset,34px);right:var(--axis-inset,34px);
-    top:var(--row-y,52vh);height:1px;background:rgba(26,30,31,.18);
-    transform:scaleX(0);transform-origin:left center;opacity:0;
-    transition:transform .78s cubic-bezier(.2,.7,.2,1) .18s,opacity .25s ease;
-  }
-  .archive-assembly.ready::after{transform:scaleX(1);opacity:1}
-  .archive-assembly.handoff::after{
-    transform:translateY(calc(var(--axis-y) - var(--row-y))) scaleX(1);opacity:0;
-    transition:transform .5s cubic-bezier(.4,0,.2,1),opacity .3s ease .16s;
-  }
+  /* No drop-shadow here. A blurred filter is re-rasterised every frame it
+     moves, and this is dozens of them moving at once — it was the single
+     most expensive thing in the formation, for a shadow that is only ever
+     seen in flight and dissolves at the handoff. */
   .archive-piece{
     position:absolute;z-index:1;display:block;max-width:none;object-fit:contain;
-    transform-origin:50% 100%;filter:drop-shadow(0 12px 18px rgba(26,30,31,.12));
-    will-change:transform,opacity;
+    transform-origin:50% 100%;will-change:transform,opacity;
   }
-  .archive-assembly.releasing{opacity:0;transition:opacity .42s ease}
 
   /* a soft veil so the title always sits clear of the specimens behind it */
   .mscrim{
@@ -692,6 +714,10 @@
 <section id="intro">
   <div class="mrows" id="mrows"></div>
   <div class="mscrim"></div>
+  <div class="dank" id="dank" aria-hidden="true">
+    <p id="dankText"></p>
+    <div class="dank-logos" id="dankLogos"></div>
+  </div>
   <div class="mcentre">
     <h1><span class="nurVorleser">Reefresh — Maybe Next Time</span>
       <span class="marke" aria-hidden="true"></span></h1>
@@ -775,8 +801,8 @@ import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
 // The version marker defeats the browser's module cache, which otherwise
 // serves yesterday's copy of an edited module for hours. Bump it when either
 // file changes; it can go once the no-cache dev server is what serves this.
-import { Environment, deepenWater } from './js/environment.js?v=6';
-import { worldMapSVG, seaLabel } from './js/worldmap.js?v=6';
+import { Environment, deepenWater } from './js/environment.js?v=7';
+import { worldMapSVG, seaLabel } from './js/worldmap.js?v=7';
 
 /* ============================================================
    Layout constants
@@ -1307,29 +1333,72 @@ function buildIntroGrid(){
             data-specimen="${spec.id}" data-copy="${i < bucket.length ? 0 : 1}"
             src="assets/img/render/${spec.id}.webp" alt="" aria-hidden="true">`).join('');
     const dir = r % 2 === 0 ? 'l' : 'r';
-    const dur = 58 + r * 9;          // rows drift at their own pace
+    /* Seconds for the whole loop, counted per specimen rather than per row.
+       A row slides one image-width every seven seconds whatever the archive
+       holds — at a fixed duration the drift got faster with every drawing
+       added, and at a hundred and forty-seven it was racing. The offset per
+       row keeps the five from marching in step. */
+    const dur = Math.round(bucket.length * 7 + r * 10);
     return `<div class="mrow" data-dir="${dir}" style="--dur:${dur}s"><div class="mtrack">${imgs}</div></div>`;
   }).join('');
 }
 
-/* Pick the on-screen copy of a specimen. Every marquee track contains two
-   copies for its seamless loop; using the nearest visible one makes the
-   archive formation begin exactly where the visitor last saw it. */
-function introSourceFor(spec){
-  const candidates = [...document.querySelectorAll(`#mrows img[data-specimen="${spec.id}"]`)];
-  let best = null, bestScore = -Infinity;
-  for(const image of candidates){
-    const rect = image.getBoundingClientRect();
-    const visibleX = Math.max(0, Math.min(innerWidth, rect.right) - Math.max(0, rect.left));
-    const visibleY = Math.max(0, Math.min(innerHeight, rect.bottom) - Math.max(0, rect.top));
-    const distance = Math.abs(rect.left + rect.width / 2 - innerWidth / 2);
-    const score = visibleX * visibleY * 1000 - distance;
-    if(score > bestScore){ best = {image, rect}; bestScore = score; }
-  }
-  return best;
-}
-
 const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+/* ---- the thanks, between the drifting field and the archive ----
+   Marks of the institutions that carried the project. They are named here
+   rather than in the locale files: a mark is the same in every language. Add
+   an entry per institution — the file goes in assets/img/dank/, the name is
+   the alt text a screen reader and a missing file both fall back to.
+   A file that will not load drops out; when none load the board still runs,
+   with the sentence that does not need a list after it. */
+const DANK_LOGOS = [
+  // {src: 'assets/img/dank/name.svg', name: 'Name der Einrichtung'},
+];
+const dankEl = document.getElementById('dank');
+
+/* Load them once, up front: the board has to know before it opens whether it
+   is introducing a row of marks or standing on its own. */
+const dankBereit = Promise.all(DANK_LOGOS.map(logo => new Promise(fertig => {
+  const bild = new Image();
+  bild.onload = () => fertig(logo);
+  bild.onerror = () => fertig(null);
+  bild.src = logo.src;
+}))).then(liste => liste.filter(Boolean));
+
+async function zeigeDank(ohneBewegung){
+  const marken = await dankBereit;
+  document.getElementById('dankText').textContent =
+    t(marken.length ? 'thanks' : 'thanksAlone');
+  document.getElementById('dankLogos').innerHTML = marken
+    .map(m => `<img src="${m.src}" alt="${m.name}">`).join('');
+
+  // A visitor who has read it once should not have to read it again: any
+  // gesture cuts to the archive.
+  let ueberspringen;
+  const abbruch = new Promise(r => { ueberspringen = r; });
+  // ...but not with the flick that entered: a trackpad's momentum keeps firing
+  // wheel events for a while after the gesture that opened the archive.
+  const seit = performance.now();
+  const merker = () => { if(performance.now() - seit > 800) ueberspringen(); };
+  addEventListener('pointerdown', merker);
+  addEventListener('keydown', merker);
+  addEventListener('wheel', merker, {passive: true});
+  const takt = ohneBewegung ? 0.5 : 1;
+  const pause = (ms) => Promise.race([wait(ms * takt), abbruch]);
+
+  introEl.classList.add('raeumt');   // rows out to the sides, mark and veil away
+  await pause(420);                  // they are well on their way before it reads
+  dankEl.classList.add('on');
+  await pause(2900);                 // fade in, then long enough to read
+  dankEl.classList.remove('on');
+  await pause(640);
+
+  removeEventListener('pointerdown', merker);
+  removeEventListener('keydown', merker);
+  removeEventListener('wheel', merker);
+  dankEl.classList.remove('on');     // a skip may have cut the fade short
+}
 const nextPaint = () => new Promise(resolve =>
   requestAnimationFrame(() => requestAnimationFrame(resolve)));
 let introLeaving = false;
@@ -1338,9 +1407,12 @@ async function leaveIntro(){
   if(!introOpen || introLeaving) return;
   introLeaving = true;
   target = current = 0;            // the archive opens on the reference specimen
-  introEl.classList.add('assembling');
 
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  await zeigeDank(reducedMotion);
+
+  introEl.classList.add('assembling');
   if(reducedMotion){
     introOpen = false;
     document.body.classList.remove('introing');
@@ -1350,113 +1422,58 @@ async function leaveIntro(){
     return;
   }
 
-  // Where the archive will actually put each specimen. The row the grid folds
-  // into is the archive's own row — same size, same spacing, same ground line —
-  // so the final frame of the intro is already the first frame of the archive.
+  /* Where the archive stands the specimen it opens on. The camera has not
+     moved, so this is the same rectangle the renderer is already drawing the
+     coral into behind the paper — which is what lets the still be handed over
+     without anything shifting. */
   const halfHeight = CAM_DIST * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
-  const halfWidth = halfHeight * camera.aspect;
-  const camOffset = 0;                       // the archive rests centred
-  const pxPerUnitX = innerWidth / (2 * halfWidth);
   const pxPerUnitY = innerHeight / (2 * halfHeight);
-  const groundY = innerHeight * (0.5 + CAM_HIGH / (2 * halfHeight));
-  const rowY = groundY;                      // specimens stand on this line
-  const rowHeight = FIT * pxPerUnitY;        // exactly the archive's size
-  const archiveX = (i) => innerWidth * 0.5 + (i * SPACING + camOffset) * pxPerUnitX;
+  const rowY = innerHeight * (0.5 + CAM_HIGH / (2 * halfHeight));  // the ground line
+  const rowHeight = FIT * pxPerUnitY;
 
-  // the intermediate row: small enough that a handful are visible together
-  const lineHeight = Math.min(170, Math.max(96, innerHeight * 0.19));
-  const lineGap = lineHeight * 0.82;
-  const lineY = innerHeight * 0.56;
-  const lineX = (i) => innerWidth * 0.26 + i * lineGap;
   const assembly = document.createElement('div');
   assembly.className = 'archive-assembly';
   assembly.setAttribute('aria-hidden', 'true');
-  const timelineRect = document.getElementById('timeline').getBoundingClientRect();
-  const axisY = document.querySelector('#timeline .axis').getBoundingClientRect().top;
-  assembly.style.setProperty('--axis-y', `${axisY}px`);
-  assembly.style.setProperty('--row-y', `${rowY}px`);
-  assembly.style.setProperty('--axis-inset', `${timelineRect.left}px`);
   introEl.appendChild(assembly);
 
-  const pieces = DATA.map((spec, index) => {
-    const source = introSourceFor(spec);
-    const fallbackHeight = Math.min(170, Math.max(88, innerHeight * 0.15));
-    const naturalRatio = source && source.image.naturalHeight
-      ? source.image.naturalWidth / source.image.naturalHeight : 0.5625;
-    const rect = source ? source.rect : {
-      left: innerWidth / 2, top: innerHeight / 2,
-      width: fallbackHeight * naturalRatio, height: fallbackHeight
-    };
-    const startWidth = Math.max(1, rect.width || fallbackHeight * naturalRatio);
-    const startHeight = Math.max(1, rect.height || fallbackHeight);
-    const startLeft = rect.left - (rect.width ? 0 : startWidth / 2);
-    const startTop = rect.top - (rect.height ? 0 : startHeight / 2);
-
-    const piece = document.createElement('img');
-    piece.className = 'archive-piece';
-    piece.src = `assets/img/render/${spec.id}.webp`;
-    piece.alt = '';
-    piece.style.left = `${startLeft}px`;
-    piece.style.top = `${startTop}px`;
-    piece.style.width = `${startWidth}px`;
-    piece.style.height = `${startHeight}px`;
-    piece.style.zIndex = String(index + 1);
-    assembly.appendChild(piece);
-
-    // Two stops. First the specimen joins a legible row — small enough that
-    // several are on screen at once, so the grid is visibly becoming the
-    // timeline. Then that row is dollied into, until the first specimen fills
-    // the frame at exactly the size the archive draws it.
-    const transformTo = (centreX, baseline, height) => {
-      const scale = height / startHeight;
-      const dx = centreX - (startLeft + startWidth / 2);
-      const dy = baseline - (startTop + startHeight);
-      return `translate3d(${dx}px,${dy}px,0) scale(${scale})`;
-    };
-    const lineTransform = transformTo(lineX(index), lineY, lineHeight);
-    const archiveTransform = transformTo(archiveX(index), rowY, rowHeight);
-    return {piece, lineTransform, archiveTransform};
-  });
-
+  /* One specimen, in its place from the first frame. Nothing gathers, nothing
+     flies: the coral simply comes up out of the paper, the sea comes up behind
+     it, and the archive's own furniture follows. */
+  const piece = document.createElement('img');
+  piece.className = 'archive-piece';
+  piece.src = `assets/img/render/${DATA[0].id}.webp`;
+  piece.alt = '';
+  await piece.decode().catch(() => {});
+  const ratio = piece.naturalHeight ? piece.naturalWidth / piece.naturalHeight : 0.5625;
+  const width = rowHeight * ratio;
+  piece.style.left = `${innerWidth * 0.5 - width / 2}px`;
+  piece.style.top = `${rowY - rowHeight}px`;
+  piece.style.width = `${width}px`;
+  piece.style.height = `${rowHeight}px`;
+  piece.style.opacity = '0';
+  assembly.appendChild(piece);
   await nextPaint();
-  assembly.classList.add('ready');
 
-  // stage 1 — the scattered grid resolves into one chronological row
-  const gatherAnimations = pieces.map(({piece, lineTransform}, index) => piece.animate([
-      {transform:'translate3d(0,0,0) scale(1)', opacity:.92},
-      {transform:lineTransform, opacity:1}
-    ], {
-      duration:700, delay:index * 5, fill:'forwards',
-      easing:'cubic-bezier(.22,.72,.18,1)'
-    }));
-  await Promise.all(gatherAnimations.map(animation => animation.finished.catch(() => {})));
-  pieces.forEach(({piece, lineTransform}, index) => {
-    piece.style.transform = lineTransform;
-    piece.style.opacity = '1';
-    gatherAnimations[index].cancel();
-  });
+  // 1 — the coral, alone on the paper
+  await piece.animate(
+    [{opacity: 0, transform: 'scale(1.02)'}, {opacity: 1, transform: 'scale(1)'}],
+    {duration: 1200, fill: 'forwards', easing: 'cubic-bezier(.25,.7,.2,1)'}
+  ).finished.catch(() => {});
+  await wait(520);
 
-  await wait(200);                 // hold on the finished row for a beat
-
-  // stage 2 — dolly into the head of the row until it is the archive's frame
-  const approach = pieces.map(({piece, lineTransform, archiveTransform}, index) =>
-    piece.animate([
-      {transform:lineTransform, opacity:1},
-      {transform:archiveTransform, opacity: index === 0 ? 1 : 0.9}
-    ], {duration:760, fill:'forwards', easing:'cubic-bezier(.5,0,.2,1)'}));
-  await Promise.all(approach.map(animation => animation.finished.catch(() => {})));
-
-  document.body.classList.remove('introing');
+  // 2 — the paper drains away and the sea is behind it
   introEl.classList.add('handoff');
-  assembly.classList.add('handoff');
 
-  // the leading specimen now sits exactly where the 3D one stands: dissolve
-  const handoffAnimations = pieces.map(({piece, archiveTransform}) =>
-    piece.animate([
-      {transform:archiveTransform, opacity:1},
-      {transform:archiveTransform, opacity:0}
-    ], {duration:320, fill:'forwards', easing:'cubic-bezier(.4,0,.2,1)'}));
-  await Promise.all(handoffAnimations.map(animation => animation.finished.catch(() => {})));
+  /* 3 — the still gives way to the model. It starts while the water is still
+     coming up, so the two are never both fully there: the cut-out is lit for
+     paper and the model for the deep sea, and cutting between them cleanly
+     would show as a jump in brightness. */
+  await wait(560);
+  await piece.animate([{opacity: 1}, {opacity: 0}],
+    {duration: 900, fill: 'forwards', easing: 'ease-in-out'}).finished.catch(() => {});
+
+  // 4 — last of all the archive's own furniture
+  document.body.classList.remove('introing');
 
   introOpen = false;
   introEl.classList.add('gone');
