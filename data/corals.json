@@ -13,6 +13,55 @@
   },
   "specimens": [
     {
+      "id": "00",
+      "variety": "",
+      "varietyDescriptive": "",
+      "title": "Die Koralle, wie sie heute ist",
+      "author": null,
+      "venue": null,
+      "summary": "Die unveränderte Kaltwasser-Steinkoralle: kein Panzer, keine Membran, keine Symbionten, kein Filter. Sie ist die Vorlage, die an den Mitmachstationen auslag — alles, was in diesem Archiv folgt, ist an ihr weitergedacht.",
+      "scenario": {
+        "year": 2026,
+        "title": "Heute",
+        "story": "Noch ist nichts geschehen. Die Kolonie steht in kaltem, dunklem Wasser weit unter tausend Metern, filtert heraus, was die Strömung vorbeiträgt, und wächst ein paar Millimeter im Jahr. Sie hat keine Eigenschaft, die sie gegen irgendetwas schützen müsste. Von hier aus geht alles Weitere.",
+        "palette": [
+          "#5f7883",
+          "#3a525f"
+        ],
+        "drift": 0.18,
+        "set": {
+          "floor": "#7d7668",
+          "fog": "#3a525f",
+          "density": 0.034,
+          "light": "dim",
+          "particles": "snow",
+          "props": [
+            "rock",
+            "shells"
+          ],
+          "ground": "sediment",
+          "water": true
+        },
+        "world": {
+          "sea": 0,
+          "note": "Die Küstenlinie ist die von heute; noch steht nichts anders als jetzt.",
+          "marks": [
+            {
+              "lon": -14,
+              "lat": 57,
+              "name": "rockall"
+            },
+            {
+              "lon": 6,
+              "lat": 65,
+              "name": "norwegenschelf"
+            }
+          ]
+        }
+      },
+      "features": []
+    },
+    {
       "id": "23",
       "variety": "var. festiva",
       "varietyDescriptive": "var. festiva",

@@ -3,6 +3,8 @@
     "boot": "Cargando el archivo",
     "bootFirst": "Cargando el primer ejemplar",
     "enter": "Entrar al archivo",
+    "thanks": "Un agradecimiento especial por apoyar este proyecto a",
+    "thanksAlone": "Un agradecimiento especial por apoyar este proyecto a todas las instituciones participantes.",
     "mode3d": "Modelo 3D",
     "modeDraw": "Dibujo",
     "viewLine": "Cronología",

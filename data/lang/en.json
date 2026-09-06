@@ -3,6 +3,8 @@
     "boot": "Loading the archive",
     "bootFirst": "Loading the first specimen",
     "enter": "Enter the archive",
+    "thanks": "Special thanks for supporting this project go to",
+    "thanksAlone": "Special thanks for supporting this project go to every institution that took part.",
     "mode3d": "3D model",
     "modeDraw": "Drawing",
     "viewLine": "Timeline",

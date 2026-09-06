@@ -971,7 +971,7 @@ let DATA = null, META = null;
 const slots = [];
 const pickTargets = [];
 let mode = '3d';
-let minYear = 2025, maxYear = 2200;
+let minYear = 2026, maxYear = 2200;
 
 function yearOf(spec){ return (spec.scenario && spec.scenario.year) || minYear; }
 function sciName(spec){ return spec.variety ? `${META.baseSpecies} ${spec.variety}` : META.baseSpecies; }
@@ -1422,65 +1422,81 @@ async function leaveIntro(){
     return;
   }
 
-  /* Where the archive stands the specimen it opens on. The camera has not
-     moved, so this is the same rectangle the renderer is already drawing the
-     coral into behind the paper — which is what lets the still be handed over
-     without anything shifting. */
-  const halfHeight = CAM_DIST * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
-  const pxPerUnitY = innerHeight / (2 * halfHeight);
-  const rowY = innerHeight * (0.5 + CAM_HIGH / (2 * halfHeight));  // the ground line
-  const rowHeight = FIT * pxPerUnitY;
+  /* The specimen the archive opens on is the template itself — the coral as it
+     stands today, with nothing added to it. It is already loaded, already in
+     its place and already the one the row is centred on, so the intro does not
+     have to put anything anywhere: it only has to uncover it. */
+  const opener = slots[0];
+  for(let i = 0; i < 60 && !opener.model; i++){
+    loadModel(opener);
+    await wait(100);
+  }
 
-  const assembly = document.createElement('div');
-  assembly.className = 'archive-assembly';
-  assembly.setAttribute('aria-hidden', 'true');
-  introEl.appendChild(assembly);
-
-  /* One specimen, in its place from the first frame. Nothing gathers, nothing
-     flies: the coral simply comes up out of the paper, the sea comes up behind
-     it, and the archive's own furniture follows. */
-  const piece = document.createElement('img');
-  piece.className = 'archive-piece';
-  piece.src = `assets/img/render/${DATA[0].id}.webp`;
-  piece.alt = '';
-  await piece.decode().catch(() => {});
-  const ratio = piece.naturalHeight ? piece.naturalWidth / piece.naturalHeight : 0.5625;
-  const width = rowHeight * ratio;
-  piece.style.left = `${innerWidth * 0.5 - width / 2}px`;
-  piece.style.top = `${rowY - rowHeight}px`;
-  piece.style.width = `${width}px`;
-  piece.style.height = `${rowHeight}px`;
-  piece.style.opacity = '0';
-  assembly.appendChild(piece);
+  /* Take the sea away before the paper: no seabed, no fog, no drifting matter,
+     and the page's own colour behind. What is left in the frame is the model
+     and nothing else. */
+  if(env) env.setSubmerged(false);
+  backdrop.style.transition = 'none';
+  backdrop.style.opacity = '0';
   await nextPaint();
 
-  // 1 — the coral, alone on the paper
-  await piece.animate(
-    [{opacity: 0, transform: 'scale(1.02)'}, {opacity: 1, transform: 'scale(1)'}],
-    {duration: 1200, fill: 'forwards', easing: 'cubic-bezier(.25,.7,.2,1)'}
-  ).finished.catch(() => {});
-  await wait(520);
+  const skins = [];
+  if(opener.model){
+    opener.model.traverse(o => {
+      if(!o.isMesh) return;
+      for(const material of (Array.isArray(o.material) ? o.material : [o.material])){
+        skins.push({material, transparent: material.transparent, depthWrite: material.depthWrite});
+        material.transparent = true;
+        material.depthWrite = false;
+        material.opacity = 0;
+      }
+    });
+  }
 
-  // 2 — the paper drains away and the sea is behind it
+  // the paper goes first, but there is nothing under it yet
   introEl.classList.add('handoff');
-
-  /* 3 — the still gives way to the model. It starts while the water is still
-     coming up, so the two are never both fully there: the cut-out is lit for
-     paper and the model for the deep sea, and cutting between them cleanly
-     would show as a jump in brightness. */
-  await wait(560);
-  await piece.animate([{opacity: 1}, {opacity: 0}],
-    {duration: 900, fill: 'forwards', easing: 'ease-in-out'}).finished.catch(() => {});
-
-  // 4 — last of all the archive's own furniture
-  document.body.classList.remove('introing');
-
-  introOpen = false;
   introEl.classList.add('gone');
-  await wait(560);
-  assembly.remove();
+  await wait(420);
   introEl.style.display = 'none';
   introEl.setAttribute('aria-hidden', 'true');
+  introOpen = false;
+
+  // 1 — the model itself comes up, alone
+  await blende(skins, 0, 1, 1300);
+  for(const skin of skins){
+    skin.material.transparent = skin.transparent;
+    skin.material.depthWrite = skin.depthWrite;
+    skin.material.opacity = 1;
+  }
+  await wait(480);
+
+  // 2 — and the sea comes up behind it
+  backdrop.style.transition = 'opacity 1.4s cubic-bezier(.4,0,.3,1)';
+  backdrop.style.opacity = '1';
+  await wait(640);              // by now the ground is dark enough to put a floor on
+  if(env) env.setSubmerged(true);
+  await wait(900);
+  backdrop.style.transition = '';
+
+  // 3 — last of all the archive's own furniture
+  document.body.classList.remove('introing');
+}
+
+/* Ramp a set of materials, one animation frame at a time. WAAPI cannot reach
+   into a WebGL material, so the fade is driven here rather than declared. */
+function blende(skins, from, to, ms){
+  if(!skins.length) return wait(ms);
+  return new Promise(done => {
+    const t0 = performance.now();
+    const step = (now) => {
+      const t = Math.min(1, (now - t0) / ms);
+      const eased = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+      const v = from + (to - from) * eased;
+      for(const skin of skins) skin.material.opacity = v;
+      if(t < 1) requestAnimationFrame(step); else done();
+    };
+    requestAnimationFrame(step);
+  });
 }
 
 document.getElementById('enterBtn').addEventListener('click', leaveIntro);
