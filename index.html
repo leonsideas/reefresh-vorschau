@@ -160,8 +160,12 @@
   }
   .dank.on{opacity:1}
   .dank p{
-    max-width:36ch;margin:0;font-size:clamp(13px,1.5vw,15px);line-height:1.85;
-    color:var(--ink-soft);text-wrap:balance;
+    /* The display face, like everything else the intro says out loud. It sets
+       wider and lower-contrast than the text face, so it needs a little more
+       size and a little less line to hold together. */
+    font-family:var(--display);font-weight:400;
+    max-width:30ch;margin:0;font-size:clamp(15px,1.9vw,19px);line-height:1.6;
+    letter-spacing:.02em;color:var(--ink-soft);text-wrap:balance;
   }
   /* Institution marks come in every proportion there is, so they are set to a
      common height and left in their own colours — a supporter's mark is not
@@ -374,9 +378,15 @@
   /* The overview is always the light plate wall, even in a dark environment —
      and so is the toolbar while it stands over it. Without this the bare
      labels are light ink on light paper and simply vanish. */
+  /* The whole light set, not only the ink: the folded-out menu paints itself
+     with --chip and draws its switches with --line, and a dark chip and a
+     light hairline over the plate wall gave a grey card with switches that
+     could not be read. */
   body.on-dark #grid,
   body.on-dark.gridding .topbar{
     --ink:#1a1e1f;--ink-soft:rgba(26,30,31,.58);--ink-faint:rgba(26,30,31,.42);
+    --line:rgba(26,30,31,.15);--line-soft:rgba(26,30,31,.08);
+    --chip:rgba(255,255,255,.78);
   }
 
   /* ---------- inspect: the specimen steps left, its record steps in ----------
@@ -662,6 +672,9 @@
       background:var(--ink);color:var(--paper);box-shadow:none;
     }
     body.on-dark.menu-open .topbar .toggle button.on{color:#14232a}
+    /* ...but over the plate wall the ink is dark again, so the counterpart is
+       the paper once more — otherwise the active half is dark on dark. */
+    body.on-dark.gridding.menu-open .topbar .toggle button.on{color:var(--paper)}
     /* The marker carries a year of its own, and in the middle of the axis it
        sits directly under the centred species name — 49px apart, less once a
        phone's own bars have taken their share. The axis drops toward the edge
@@ -1397,8 +1410,10 @@ async function zeigeDank(ohneBewegung){
   await pause(420);                  // they are well on their way before it reads
   dankEl.classList.add('on');
   await pause(2900);                 // fade in, then long enough to read
+  /* The board is left fading rather than waited out: the paper lifts under it
+     and the descent is already running by the time the last of it is gone. */
   dankEl.classList.remove('on');
-  await pause(640);
+  await pause(140);
 
   removeEventListener('pointerdown', merker);
   removeEventListener('keydown', merker);
@@ -1414,37 +1429,34 @@ async function leaveIntro(){
   introLeaving = true;
   target = current = 0;            // the archive opens on the reference specimen
 
-  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  await zeigeDank(reducedMotion);
-
-  introEl.classList.add('assembling');
-  if(reducedMotion){
-    introOpen = false;
-    document.body.classList.remove('introing');
-    introEl.classList.add('gone');
-    await wait(250);
-    introEl.style.display = 'none';
-    return;
-  }
+  /* Whether the visitor gets the whole descent or only the water clearing.
+     A phone in low-power mode reports reduced motion too, so this must not be
+     a cut to the archive — it is the same arrival, without the camera move. */
+  const sanft = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* The specimen the archive opens on is the template itself — the coral as it
-     stands today, with nothing added to it. It is already loaded, already in
-     its place and already the one the row is centred on, so the intro does not
-     have to put anything anywhere: it only has to uncover it. */
+     stands today, with nothing added to it. Fetching it is started here rather
+     than after the thanks, so it has the whole board to arrive in and the
+     handoff does not have to wait for the network. */
   const opener = slots[0];
-  for(let i = 0; i < 60 && !opener.model; i++){
-    loadModel(opener);
-    await wait(100);
-  }
+  const bereit = (async () => {
+    for(let i = 0; i < 60 && !opener.model; i++){
+      loadModel(opener);
+      await wait(100);
+    }
+  })();
+
+  await zeigeDank(sanft);
+  introEl.classList.add('assembling');
+  await bereit;
 
   /* Set the dive up while the paper still covers it. The sea is not taken
      away and brought back — it is there the whole time; the camera simply
      starts high up in it, where the light is still daylight and there is so
      much water in the way that nothing below is visible yet. */
   if(env){ env.setSubmerged(true); env.setDive(1); }
-  anflugHoch = 11.4;
-  anflugWeit = innerWidth <= 900 ? 3.6 : 2.8;
+  anflugHoch = sanft ? 0 : 11.4;
+  anflugWeit = sanft ? 0 : (innerWidth <= 900 ? 3.6 : 2.8);
   backdrop.style.transition = 'none';
   backdrop.style.opacity = '1';
   backdrop.style.filter = 'brightness(1.9) saturate(.62)';
@@ -1454,14 +1466,14 @@ async function leaveIntro(){
      it yet but the light coming down from above. */
   introEl.classList.add('handoff');
   introEl.classList.add('gone');
-  await wait(420);
+  await wait(sanft ? 240 : 420);
   introEl.style.display = 'none';
   introEl.setAttribute('aria-hidden', 'true');
   introOpen = false;
 
   // and then it sinks: the drift streams up past the lens, the water goes out
   // of the light and into the blue, and the seabed comes up out of the murk
-  await tauchgang(3600);
+  await tauchgang(sanft ? 1500 : 3600);
 
   backdrop.style.transition = '';
   backdrop.style.filter = '';
@@ -1610,7 +1622,9 @@ function refreshPlates(){
 }
 
 function buildPlates(){
-  platesEl.innerHTML = DATA.map((spec, i) => `
+  /* Only the drawings. The template is what they were all drawn over, not one
+     of them, so it has no place in a sheet of a hundred and forty-seven. */
+  platesEl.innerHTML = DATA.map((spec, i) => spec.reference ? '' : `
     <div class="plate" data-i="${i}" role="button" tabindex="0"
          title="${sciName(L(spec))} · ${yearOf(spec)}">
       <div class="imgwrap">
