@@ -65,6 +65,14 @@ const DEPTH = {
   fill:    34,      // a little light from the visitor's side
 };
 
+/* Daylight water, for the top of the intro's descent — the colour the haze
+   takes on where the sun still reaches it. */
+const SURFACE = '#bcdfe8';
+
+/* How far up the drifting matter reaches. The archive itself only ever sees
+   the bottom few metres of it. */
+const DRIFT_HIGH = 28;
+
 /* The CSS water column above the horizon has to be graded with the scene, or
    the two stop meeting at the seabed. index.html tints the page with this. */
 export function deepenWater(hex, amount = DEPTH.water){
@@ -322,7 +330,18 @@ export class Environment {
     });
     this.fog = new THREE.FogExp2(0x9fc0d4, 0.03);
     this.submerged = true;
+    this.tauchen = 0;
     this.scene.fog = this.fog;
+  }
+
+  /* How far up the water column the camera still is: 1 just under the surface,
+     0 down on the seabed where the archive lives. The intro rides this from 1
+     to 0 while it lowers the camera, and everything the water does to the view
+     — how bright it is, how blue, how far you can see through it — follows
+     from this one number, so the descent reads as depth rather than as a fade.
+     At rest it is 0 and none of it applies. */
+  setDive(amount){
+    this.tauchen = Math.max(0, Math.min(1, amount));
   }
 
   /* Drawing mode shows the sheets themselves and nothing else — no seabed, no
@@ -433,12 +452,17 @@ export class Environment {
 
   /* ---- drifting matter around the camera, recoloured per scenario ---- */
   _buildDrift(){
-    const N = 700;
+    /* The column is far taller than the archive needs, because the intro
+       descends through it from well above: matter has to be there the whole
+       way down or the fall has nothing to be measured against. The count
+       scales with the height, so at rest the water is exactly as busy as it
+       was when the field only reached the top of a specimen. */
+    const N = 1600;
     const positions = new Float32Array(N * 3);
     const rand = rng(99);
     for(let i = 0; i < N; i++){
       positions[i*3]   = (rand() - .5) * 34;
-      positions[i*3+1] = rand() * 12;
+      positions[i*3+1] = rand() * DRIFT_HIGH;
       positions[i*3+2] = (rand() - .5) * 30;
     }
     const geo = new THREE.BufferGeometry();
@@ -567,6 +591,20 @@ export class Environment {
     this.fog.density = Math.max(DEPTH.haze,
       mix(a.density ?? 0.03, b.density ?? 0.03));
 
+    /* Up in the water column the light is still daylight and the water has not
+       taken the colour out of it yet — but there is a great deal more water in
+       the way, so almost nothing is visible through it. Sinking through that is
+       what uncovers the seabed. */
+    if(this.tauchen > 0){
+      const d = this.tauchen;
+      this.fog.color.lerp(new THREE.Color(SURFACE), d * 0.88);
+      this.fog.density *= 1 + d * 5.0;
+      this.hemi.intensity *= 1 + d * 3.4;
+      this.key.intensity *= 1 + d * 2.6;
+      this.shafts.intensity *= 1 + d * 4.5;
+      this.lamp.intensity *= 1 - d * 0.7;   // the survey lamp only matters below
+    }
+
     // drifting matter takes on the character of the water
     const kind = f < 0.5 ? a.particles : b.particles;
     const mat = this.drift.material;
@@ -581,6 +619,14 @@ export class Environment {
     } else {
       mat.opacity = 0.46; mat.size = 0.042; mat.color.set(0xe6eff2);
     }
+    /* Sinking past it is the whole of how the descent is felt, so while the
+       intro is falling the matter is made much larger and brighter — motes
+       right in front of the lens rather than the far-off specks the archive
+       shows at rest. It shrinks back as the camera settles. */
+    if(this.tauchen > 0){
+      mat.opacity = Math.min(1, mat.opacity * (1 + this.tauchen * 1.1));
+      mat.size *= 1 + this.tauchen * 3.2;
+    }
 
     // bubbles rise, everything else sinks
     const rising = kind === 'bubbles';
@@ -588,7 +634,7 @@ export class Environment {
     const step = (rising ? 0.55 : -0.30) * dt;
     for(let i = 0; i < pos.count; i++){
       let y = pos.getY(i) + step;
-      if(y > 12) y -= 12; else if(y < 0) y += 12;
+      if(y > DRIFT_HIGH) y -= DRIFT_HIGH; else if(y < 0) y += DRIFT_HIGH;
       pos.setY(i, y);
     }
     pos.needsUpdate = true;

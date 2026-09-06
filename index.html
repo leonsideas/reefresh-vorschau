@@ -270,7 +270,7 @@
     position:fixed;left:0;top:0;z-index:20;pointer-events:none;text-align:center;
     width:max-content;white-space:nowrap;
     transform:translate(-50%,0);
-    transition:opacity .3s ease;
+    transition:opacity .7s ease;
   }
   #caption .sci{font-family:var(--display);font-weight:400;
     font-size:clamp(1rem,1.6vw,1.35rem);letter-spacing:.05em;line-height:1.3}
@@ -801,8 +801,8 @@ import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
 // The version marker defeats the browser's module cache, which otherwise
 // serves yesterday's copy of an edited module for hours. Bump it when either
 // file changes; it can go once the no-cache dev server is what serves this.
-import { Environment, deepenWater } from './js/environment.js?v=7';
-import { worldMapSVG, seaLabel } from './js/worldmap.js?v=7';
+import { Environment, deepenWater } from './js/environment.js?v=10';
+import { worldMapSVG, seaLabel } from './js/worldmap.js?v=10';
 
 /* ============================================================
    Layout constants
@@ -838,6 +838,12 @@ function messeBand(){
 }
 passeAbstandAn();
 const CAM_HIGH  = 1.62;
+/* The intro does not cut to the archive, it arrives at it: the camera starts
+   above and behind its resting place, in the pale light near the surface, and
+   sinks onto the specimen while the sea closes over it. Both offsets ride on
+   top of whatever placeCamera() works out, so the row, the record and the
+   phone's tilt all keep working untouched — at rest they are simply zero. */
+let anflugHoch = 0, anflugWeit = 0;
 const FIT       = 3.5;
 // The sheet has margins the model does not, so matching the two by their
 // outlines would print a much smaller coral. It is sized instead so that the
@@ -1432,28 +1438,20 @@ async function leaveIntro(){
     await wait(100);
   }
 
-  /* Take the sea away before the paper: no seabed, no fog, no drifting matter,
-     and the page's own colour behind. What is left in the frame is the model
-     and nothing else. */
-  if(env) env.setSubmerged(false);
+  /* Set the dive up while the paper still covers it. The sea is not taken
+     away and brought back — it is there the whole time; the camera simply
+     starts high up in it, where the light is still daylight and there is so
+     much water in the way that nothing below is visible yet. */
+  if(env){ env.setSubmerged(true); env.setDive(1); }
+  anflugHoch = 11.4;
+  anflugWeit = innerWidth <= 900 ? 3.6 : 2.8;
   backdrop.style.transition = 'none';
-  backdrop.style.opacity = '0';
+  backdrop.style.opacity = '1';
+  backdrop.style.filter = 'brightness(1.9) saturate(.62)';
   await nextPaint();
 
-  const skins = [];
-  if(opener.model){
-    opener.model.traverse(o => {
-      if(!o.isMesh) return;
-      for(const material of (Array.isArray(o.material) ? o.material : [o.material])){
-        skins.push({material, transparent: material.transparent, depthWrite: material.depthWrite});
-        material.transparent = true;
-        material.depthWrite = false;
-        material.opacity = 0;
-      }
-    });
-  }
-
-  // the paper goes first, but there is nothing under it yet
+  /* The paper lifts onto bright, blank water — no cut, and nothing to see in
+     it yet but the light coming down from above. */
   introEl.classList.add('handoff');
   introEl.classList.add('gone');
   await wait(420);
@@ -1461,43 +1459,49 @@ async function leaveIntro(){
   introEl.setAttribute('aria-hidden', 'true');
   introOpen = false;
 
-  // 1 — the model itself comes up, alone
-  await blende(skins, 0, 1, 1300);
-  for(const skin of skins){
-    skin.material.transparent = skin.transparent;
-    skin.material.depthWrite = skin.depthWrite;
-    skin.material.opacity = 1;
-  }
-  await wait(480);
+  // and then it sinks: the drift streams up past the lens, the water goes out
+  // of the light and into the blue, and the seabed comes up out of the murk
+  await tauchgang(3600);
 
-  // 2 — and the sea comes up behind it
-  backdrop.style.transition = 'opacity 1.4s cubic-bezier(.4,0,.3,1)';
-  backdrop.style.opacity = '1';
-  await wait(640);              // by now the ground is dark enough to put a floor on
-  if(env) env.setSubmerged(true);
-  await wait(900);
   backdrop.style.transition = '';
-
-  // 3 — last of all the archive's own furniture
+  backdrop.style.filter = '';
   document.body.classList.remove('introing');
 }
 
-/* Ramp a set of materials, one animation frame at a time. WAAPI cannot reach
-   into a WebGL material, so the fade is driven here rather than declared. */
-function blende(skins, from, to, ms){
-  if(!skins.length) return wait(ms);
+/* The descent. One frame loop drives all three things that make it read as
+   depth rather than as a move: the camera falls, the water clears, and the
+   page's own gradient loses its daylight. They are deliberately not on the
+   same curve — the camera pushes off and coasts down, while the water holds
+   its murk a moment longer and only opens in the second half, so the seabed
+   arrives out of the haze instead of being there from the start. */
+function tauchgang(ms){
+  const hoch = anflugHoch, weit = anflugWeit;
   return new Promise(done => {
     const t0 = performance.now();
     const step = (now) => {
       const t = Math.min(1, (now - t0) / ms);
-      const eased = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
-      const v = from + (to - from) * eased;
-      for(const skin of skins) skin.material.opacity = v;
-      if(t < 1) requestAnimationFrame(step); else done();
+      // ease in and out: it takes a moment to start sinking, and it settles
+      const fall = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+      anflugHoch = hoch * (1 - fall);
+      anflugWeit = weit * (1 - fall);
+
+      const k = Math.min(1, Math.max(0, (t - 0.06) / 0.86));
+      const klar = k * k * (3 - 2 * k);       // how far the water has opened
+      if(env) env.setDive(1 - klar);
+      backdrop.style.filter =
+        `brightness(${(1 + 0.9 * (1 - klar)).toFixed(3)}) saturate(${(1 - 0.38 * (1 - klar)).toFixed(3)})`;
+
+      if(t < 1) requestAnimationFrame(step);
+      else {
+        anflugHoch = 0; anflugWeit = 0;
+        if(env) env.setDive(0);
+        done();
+      }
     };
     requestAnimationFrame(step);
   });
 }
+
 
 document.getElementById('enterBtn').addEventListener('click', leaveIntro);
 document.querySelector('.mcentre h1').addEventListener('click', leaveIntro);
@@ -1955,11 +1959,11 @@ function inspectHTML(rawSpec, index){
     <div class="block">
       <div class="sec">${env.title || 'Umgebung'}</div>
       <div class="source">
-        <figure>
+        ${spec.reference ? '' : `<figure>
           <img loading="lazy" src="assets/img/drawing/${spec.id}.webp"
                alt="Zeichnung, auf die dieses Exemplar zurückgeht">
           <figcaption>${t('source')}${spec.author ? ' · ' + spec.author : ''}</figcaption>
-        </figure>
+        </figure>`}
         <div class="story">${env.story || spec.summary || ''}</div>
       </div>
     </div>
@@ -2094,7 +2098,8 @@ function placeCamera(){
       camX = x + CAM_DIST * tan * camera.aspect * 0.3 * inspectAmount;
     }
   }
-  camera.position.set(camX, camY, camZ);
+  camera.position.set(camX, camY + anflugHoch, camZ + anflugWeit);
+  // the target stays down on the specimen, so rising tips the view over it
   camera.lookAt(camX, blickY, 0);
   camera.updateMatrixWorld();
   return x;
@@ -2146,8 +2151,12 @@ function placeCaption(){
      ? innerWidth / 2
      : Math.max(halb + rand, Math.min(innerWidth - halb - rand, nx));
   capEl.style.transform = `translate(${nx}px, ${ny}px) translate(-50%, 0)`;
-  // fades out before it can run into the axis along the bottom
-  capEl.style.opacity = ny > innerHeight - 92 ? '0' : '1';
+  /* Fades out before it can run into the axis along the bottom — and stays
+     away for the whole of the intro. This is an inline value, so it overrides
+     the stylesheet's own intro rule: without the first test the name hangs in
+     open water all through the descent, naming a coral that is not there yet. */
+  capEl.style.opacity =
+    (document.body.classList.contains('introing') || ny > innerHeight - 92) ? '0' : '1';
 
   const [yx, yy] = toScreen((mode === 'draw') ? CAM_HIGH : FIT * 0.52);
   yearBackEl.style.transform = `translate(${yx}px, ${yy}px) translate(-50%, -50%)`;
