@@ -578,11 +578,6 @@
     transition:--fuell .5s cubic-bezier(.3,.7,.3,1);
   }
   #boot .marke{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)}
-  #boot .t{
-    position:absolute;left:50%;top:calc(50% + var(--logo-w) / 6.907 + 30px);
-    transform:translateX(-50%);white-space:nowrap;
-    font-size:10.5px;letter-spacing:.28em;color:rgba(26,30,31,.58);text-transform:uppercase;
-  }
   /* In the archive the mark sits in the middle of the header, above everything.
      It takes var(--ink) rather than a literal white so it survives the two
      places the ground turns to paper — drawing mode and the overview. */
@@ -717,7 +712,9 @@
        Es liegt auf denselben Koordinaten wie das Logo im Intro, also blendet
        das eine beim Verschwinden ins andere über. -->
   <div class="marke" id="bootMarke" aria-hidden="true"></div>
-  <div class="t" id="bootTxt">Archiv wird geladen</div>
+  <!-- Der Ladezustand steht im Logo selbst, das sich von unten füllt. Ein Satz
+       darunter sagt nichts, was der Balken nicht schon zeigt. -->
+  <p class="nurVorleser" id="bootTxt">Archiv wird geladen</p>
 </div>
 
 <video id="envvideo" muted loop playsinline preload="auto"></video>
