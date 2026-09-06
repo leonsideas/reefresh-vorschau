@@ -516,6 +516,28 @@
   #about .step b{display:block;font-weight:600;color:#1a1e1f}
   #about .step span{display:block;margin-top:3px}
   #about .credit{margin-top:22px;color:rgba(26,30,31,.38);font-size:12px}
+  /* Wer das gebaut hat, am Ende und abgesetzt: eine Linie darüber, damit es
+     als Signatur liest und nicht als ein weiterer Absatz. */
+  #about .sign{
+    margin-top:34px;padding-top:20px;border-top:1px solid rgba(26,30,31,.12);
+    display:flex;flex-direction:column;align-items:flex-start;gap:4px;
+  }
+  #about .sign .who{
+    font-family:var(--display);font-size:15px;letter-spacing:.02em;
+    color:#1a1e1f;margin:0;
+  }
+  #about .sign .rolle{font-size:12.5px;color:rgba(26,30,31,.48);margin:0 0 8px}
+  #about .sign a{
+    display:inline-flex;align-items:baseline;gap:8px;
+    font-size:12.5px;color:rgba(26,30,31,.58);text-decoration:none;
+    padding:3px 0;box-shadow:inset 0 -1px 0 rgba(26,30,31,.16);
+    transition:color .2s,box-shadow .2s;
+  }
+  #about .sign a:hover{color:#1a1e1f;box-shadow:inset 0 -1px 0 #1a1e1f}
+  #about .sign a .wo{
+    font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;
+    color:rgba(26,30,31,.34);flex:none;width:78px;
+  }
   #about em{font-style:italic}
   #about p{font-size:13.5px;line-height:1.8;color:rgba(26,30,31,.58);margin-bottom:14px}
   /* The three photographs stand together behind the paragraph that describes
@@ -728,6 +750,9 @@
     <p id="dankText"></p>
     <div class="dank-logos" id="dankLogos"></div>
   </div>
+  <!-- Steht nach dem Dank auf derselben Fläche: wer das Archiv gebaut hat,
+       kurz und allein, bevor das Wasser kommt. -->
+  <div class="dank" id="autor" aria-hidden="true"><p id="autorText"></p></div>
   <div class="mcentre">
     <h1><span class="nurVorleser">Reefresh — Maybe Next Time</span>
       <span class="marke" aria-hidden="true"></span></h1>
@@ -1372,6 +1397,7 @@ const DANK_LOGOS = [
   // {src: 'assets/img/dank/name.svg', name: 'Name der Einrichtung'},
 ];
 const dankEl = document.getElementById('dank');
+const autorEl = document.getElementById('autor');
 
 /* Load them once, up front: the board has to know before it opens whether it
    is introducing a row of marks or standing on its own. */
@@ -1384,6 +1410,7 @@ const dankBereit = Promise.all(DANK_LOGOS.map(logo => new Promise(fertig => {
 
 async function zeigeDank(ohneBewegung){
   const marken = await dankBereit;
+  document.getElementById('autorText').textContent = t('byline');
   document.getElementById('dankText').textContent =
     t(marken.length ? 'thanks' : 'thanksAlone');
   document.getElementById('dankLogos').innerHTML = marken
@@ -1407,15 +1434,21 @@ async function zeigeDank(ohneBewegung){
   await pause(420);                  // they are well on their way before it reads
   dankEl.classList.add('on');
   await pause(2900);                 // fade in, then long enough to read
-  /* The board is left fading rather than waited out: the paper lifts under it
-     and the descent is already running by the time the last of it is gone. */
   dankEl.classList.remove('on');
+  await pause(700);                  // gone before the next line takes its place
+
+  autorEl.classList.add('on');
+  await pause(2000);
+  /* The signature is left fading rather than waited out: the paper lifts under
+     it and the descent is already running by the time the last of it is gone. */
+  autorEl.classList.remove('on');
   await pause(140);
 
   removeEventListener('pointerdown', merker);
   removeEventListener('keydown', merker);
   removeEventListener('wheel', merker);
-  dankEl.classList.remove('on');     // a skip may have cut the fade short
+  dankEl.classList.remove('on');     // a skip may have cut either fade short
+  autorEl.classList.remove('on');
 }
 const nextPaint = () => new Promise(resolve =>
   requestAnimationFrame(() => requestAnimationFrame(resolve)));
@@ -1910,6 +1943,13 @@ function renderAbout(){
       if(b.step)   return `<p class="step"><b>${b.step[0]}</b>${
                              b.step[1] ? `<span>${b.step[1]}</span>` : ''}</p>`;
       if(b.credit) return `<p class="credit">${b.credit}</p>`;
+      if(b.sign)   return `<div class="sign">
+                     <p class="who">${b.sign[0]}</p>
+                     ${b.sign[1] ? `<p class="rolle">${b.sign[1]}</p>` : ''}
+                     ${(b.links || []).map(([wo, handle, href]) =>
+                       `<a href="${href}" target="_blank" rel="noopener noreferrer">
+                          <span class="wo">${wo}</span>${handle}</a>`).join('')}
+                   </div>`;
       if(b.figs)   return `<div class="shots">${b.figs.map(([key, cap]) => AKTION_FOTOS[key]
                      ? `<figure><img src="${AKTION_FOTOS[key]}" alt="${cap}" loading="lazy">
                         <figcaption>${cap}</figcaption></figure>` : '').join('')}</div>`;

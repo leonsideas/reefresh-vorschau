@@ -23,7 +23,8 @@
     "unknownArtist": "Zeichner:in unbekannt — der Name beschreibt die auffälligste Anpassung.",
     "namedAfter": "Benannt nach <strong>{name}</strong>, von der oder dem die Zeichnung stammt.",
     "invented": "Artname, Varietät, Jahr und Verbreitung gehören zum Archiv und sind nicht real vergeben.",
-    "langLabel": "Sprache"
+    "langLabel": "Sprache",
+    "byline": "Ein Projekt von Leon Albers"
   },
   "specimens": {},
   "about": [
@@ -144,6 +145,24 @@
     },
     {
       "credit": "Mitmachaktion Tiefwasserkorallen · Leon Albers"
+    },
+    {
+      "sign": [
+        "Ein Projekt von Leon Albers",
+        "Gestaltung, Umsetzung und Durchführung der Mitmachaktionen."
+      ],
+      "links": [
+        [
+          "Instagram",
+          "@leonsideas",
+          "https://www.instagram.com/leonsideas/"
+        ],
+        [
+          "GitHub",
+          "@leonsideas",
+          "https://github.com/leonsideas"
+        ]
+      ]
     }
   ]
 }

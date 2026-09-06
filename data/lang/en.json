@@ -23,7 +23,8 @@
     "unknownArtist": "Artist unknown — the name describes the most striking adaptation instead.",
     "namedAfter": "Named after <strong>{name}</strong>, who made the drawing.",
     "invented": "Species name, variety, year and distribution belong to the archive and are not real designations.",
-    "langLabel": "Language"
+    "langLabel": "Language",
+    "byline": "A project by Leon Albers"
   },
   "specimens": {},
   "about": [
@@ -144,6 +145,24 @@
     },
     {
       "credit": "Deep-water coral participation project · Leon Albers"
+    },
+    {
+      "sign": [
+        "A project by Leon Albers",
+        "Design, build, and running of the drawing stations."
+      ],
+      "links": [
+        [
+          "Instagram",
+          "@leonsideas",
+          "https://www.instagram.com/leonsideas/"
+        ],
+        [
+          "GitHub",
+          "@leonsideas",
+          "https://github.com/leonsideas"
+        ]
+      ]
     }
   ]
 }

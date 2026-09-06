@@ -23,7 +23,8 @@
     "unknownArtist": "Autoría desconocida — el nombre describe en su lugar la adaptación más llamativa.",
     "namedAfter": "Lleva el nombre de <strong>{name}</strong>, quien hizo el dibujo.",
     "invented": "El nombre de la especie, la variedad, el año y la distribución pertenecen al archivo y no son designaciones reales.",
-    "langLabel": "Idioma"
+    "langLabel": "Idioma",
+    "byline": "Un proyecto de Leon Albers"
   },
   "specimens": {},
   "about": [
@@ -144,6 +145,24 @@
     },
     {
       "credit": "Acción participativa corales de profundidad · Leon Albers"
+    },
+    {
+      "sign": [
+        "Un proyecto de Leon Albers",
+        "Diseño, desarrollo y realización de las estaciones participativas."
+      ],
+      "links": [
+        [
+          "Instagram",
+          "@leonsideas",
+          "https://www.instagram.com/leonsideas/"
+        ],
+        [
+          "GitHub",
+          "@leonsideas",
+          "https://github.com/leonsideas"
+        ]
+      ]
     }
   ]
 }
